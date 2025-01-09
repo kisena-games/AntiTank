@@ -3,7 +3,6 @@ using UnityEngine;
 public class WeaponAttack : MonoBehaviour, ICanAttack
 {
     [SerializeField] private GameObject _bulletPrefab;
-    [SerializeField] private Transform _topTransform;
     [SerializeField] private Transform _bulletSpawnPosition;
 
     private void OnEnable()
@@ -18,6 +17,6 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
 
     public void Attack()
     {
-        Instantiate(_bulletPrefab, _bulletSpawnPosition.position, _topTransform.rotation);
+        Instantiate(_bulletPrefab, _bulletSpawnPosition.position, _bulletSpawnPosition.rotation);
     }
 }
