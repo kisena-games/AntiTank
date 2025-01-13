@@ -11,9 +11,6 @@ public class InputManager : MonoBehaviour
 
     public static Action AttackAction;
 
-    public static bool IsTestMoveTank { get; private set; } = false;
-    public static bool IsTestFireTank { get; private set; } = false;
-
 
     public void OnWeaponMoveBase(InputAction.CallbackContext context)
     {
@@ -51,30 +48,6 @@ public class InputManager : MonoBehaviour
         if (context.performed)
         {
             AttackAction?.Invoke();
-        }
-    }
-
-    public void OnTestMoveTank(InputAction.CallbackContext context)
-    {
-        if (context.performed && !IsTestMoveTank)
-        {
-            IsTestMoveTank = true;
-        }
-        else if (context.canceled && IsTestMoveTank)
-        {
-            IsTestMoveTank = false;
-        }
-    }
-
-    public void OnTestFireTank(InputAction.CallbackContext context)
-    {
-        if (context.performed && !IsTestFireTank)
-        {
-            IsTestFireTank = true;
-        }
-        else if (context.canceled && IsTestFireTank)
-        {
-            IsTestFireTank = false;
         }
     }
 }

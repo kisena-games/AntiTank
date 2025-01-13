@@ -12,9 +12,9 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.TryGetComponent(out Enemy enemy))
+        if(collision.gameObject.TryGetComponent(out HealthManager enemyHealthManager))
         {
-            enemy.TakeDamage(_damage);
+            enemyHealthManager.TakeDamage(_damage);
         }
         Destroy(gameObject);
     }

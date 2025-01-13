@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690b652e110a16d4e9040d75f1d0d255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 0}
-  spawnPoints: []
+  _enemyPrefab: {fileID: 8997466417798084541, guid: d75ca64df1434bd49b3cd8ee6789ce26,
+    type: 3}
+  _spawnPoints: []
+  _player: {fileID: 0}
   spawnInterval: 3

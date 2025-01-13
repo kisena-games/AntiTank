@@ -19,10 +19,6 @@ public class EnemySpawner : MonoBehaviour
 
         GameObject enemyObject = LeanPool.Spawn(_enemyPrefab, spawnPoint.position, Quaternion.identity);
 
-        Enemy enemy = enemyObject.GetComponent<Enemy>();
-        if (enemy != null)
-        {
-            enemy.Init(_player);
-        }
+        
     }
 }
