@@ -59,7 +59,7 @@ public class TankStateMachine : MonoBehaviour
         _bodyStateMachine?.OnUpdate();
     }
 
-    private void FixedUpdate()
+    private void OnFixedUpdate()
     {
         _headStateMachine?.OnUpdate();
         _bodyStateMachine?.OnUpdate();
