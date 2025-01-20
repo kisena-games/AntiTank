@@ -10,12 +10,6 @@ public class SWMovement : MonoBehaviour
 
     private SWListener _listener;
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawRay(transform.position, transform.forward * 45f);
-    }
-
     private void Awake()
     {
         _listener = GetComponent<SWListener>();
@@ -23,10 +17,6 @@ public class SWMovement : MonoBehaviour
 
     private void Update()
     {
-        if (_listener.TargetHealthManager != null)
-        {
-            MoveAndAttackTarget();
-        }
     }
 
     private void MoveAndAttackTarget()
