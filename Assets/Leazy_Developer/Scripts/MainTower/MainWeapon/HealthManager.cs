@@ -16,5 +16,15 @@ public class HealthManager : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
+
+        if (_currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }

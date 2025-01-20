@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float _flySpeed = 50f;
+    [SerializeField] private float _flySpeed = 100f;
+    [SerializeField] private int _damage = 10;
 
     private float _radius = 0.2f;
 
@@ -13,21 +14,16 @@ public class Bullet : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, _radius);
     }
 
-    private void Start()
-    {
-        StartCoroutine(ListenColliders());
-    }
-
     private void Update()
     {
         transform.localPosition += transform.forward * _flySpeed * Time.deltaTime;           
     }
 
-    private IEnumerator ListenColliders()
+    private void OnTriggerEnter(Collider other)
     {
-        while (Physics.OverlapSphere(transform.position, _radius).Length == 0)
+        if (other.TryGetComponent(out HealthManager healthManager))
         {
-            yield return new WaitForSeconds(.05f); // прим. 20 кадров в секунду
+            healthManager.TakeDamage(_damage);
         }
 
         Destroy(gameObject);

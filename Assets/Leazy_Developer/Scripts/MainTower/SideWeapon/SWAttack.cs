@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class SWAttack : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private SWListener _SWListener;
+    private List<HealthManager> _enemies;
+
+    private void OnDisable()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
+    {
+        _SWListener = GetComponent<SWListener>();
+        _enemies = new List<HealthManager>();
+    }
+
+    private void Update()
     {
         
     }
