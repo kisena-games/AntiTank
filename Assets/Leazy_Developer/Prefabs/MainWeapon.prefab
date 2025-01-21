@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de40a663c2299054a8c66ae429c4844c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 8729388428147564537, guid: f0f3033640325ed498f7f44a408cf0e0,
+  _bulletPrefab: {fileID: 7835489689424445374, guid: 1bb0bf3b90213ee4abc96d32c23a9eac,
     type: 3}
   _bulletSpawnPosition: {fileID: 1783425654479907391}
 --- !u!1 &7903039598531638243

@@ -780,8 +780,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 428829244}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.26829726, y: 0, z: 0, w: 0.96333617}
-  m_LocalPosition: {x: 0.005156295, y: 21.106327, z: -17.179543}
+  m_LocalRotation: {x: 0.27827528, y: 0, z: 0, w: 0.9605014}
+  m_LocalPosition: {x: 0.005156295, y: 21.566328, z: -17.389542}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -995,8 +995,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623278512}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.26829726, y: 0, z: 0, w: 0.96333617}
-  m_LocalPosition: {x: 0.005156295, y: 21.106327, z: -17.179543}
+  m_LocalRotation: {x: 0.27827528, y: 0, z: 0, w: 0.9605014}
+  m_LocalPosition: {x: 0.005156295, y: 21.566328, z: -17.389542}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1521,7 +1521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damping: {x: 0.1, y: 0.5, z: 0.3}
-  ShoulderOffset: {x: 0, y: 6.49, z: -9.41}
+  ShoulderOffset: {x: 0, y: 6.95, z: -9.62}
   VerticalArmLength: 0.4
   CameraSide: 1
   CameraDistance: 2
@@ -2480,11 +2480,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MainTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 3133380057392247236, guid: e09215c8021dc5c4c82835044d044eeb,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4445815667550161774, guid: e09215c8021dc5c4c82835044d044eeb,
         type: 3}
