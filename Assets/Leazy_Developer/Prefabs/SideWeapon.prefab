@@ -195,9 +195,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bodyTransform: {fileID: 8379585806082096403}
   _headTransform: {fileID: 7045837112290052996}
-  _trigger: {fileID: 0}
+  _triggers: []
   _rotationSpeed: 50
-  _bulletPrefab: {fileID: 8729388428147564537, guid: f0f3033640325ed498f7f44a408cf0e0,
+  _bulletPrefab: {fileID: 9130539055861110083, guid: a581a91a590f8a445a8453aafd564d6b,
     type: 3}
   _fireRate: 2
 --- !u!1 &8904476887197914606
