@@ -82,9 +82,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dff88ff558ee5c4fa9980bb020092ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _head: {fileID: 2733861415932122798}
-  _headMovement: {fileID: 2249635034788356657}
+  _head: {fileID: 4090949354130855755}
+  _headMovement: {fileID: 765104913453869157}
   _sniperCamera: {fileID: 6267101482935677072}
+  _sniperPanel: {fileID: 6267101482935677072}
 --- !u!1 &4962300631189382256
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,16 +462,16 @@ PrefabInstance:
     - target: {fileID: 6933076178080561520, guid: 73c36cb30bb8d0b4eab15d340035052d,
         type: 3}
       propertyPath: m_Name
-      value: MainWeapon_Default
+      value: MainWeapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73c36cb30bb8d0b4eab15d340035052d, type: 3}
---- !u!114 &2249635034788356657 stripped
+--- !u!114 &765104913453869157 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5990125594405302699, guid: 73c36cb30bb8d0b4eab15d340035052d,
+  m_CorrespondingSourceObject: {fileID: 5082117041440652287, guid: 73c36cb30bb8d0b4eab15d340035052d,
     type: 3}
   m_PrefabInstance: {fileID: 5483550741187892122}
   m_PrefabAsset: {fileID: 0}
@@ -480,9 +481,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2041331285878b849975a68e185185b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2733861415932122798 stripped
+--- !u!1 &4090949354130855755 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7631873080894309684, guid: 73c36cb30bb8d0b4eab15d340035052d,
+  m_CorrespondingSourceObject: {fileID: 8420751208075019473, guid: 73c36cb30bb8d0b4eab15d340035052d,
     type: 3}
   m_PrefabInstance: {fileID: 5483550741187892122}
   m_PrefabAsset: {fileID: 0}

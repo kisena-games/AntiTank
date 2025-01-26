@@ -469,6 +469,61 @@ PrefabInstance:
       propertyPath: _defaultHouse
       value: 
       objectReference: {fileID: 7825016292248311077}
+    - target: {fileID: 8272933368933707891, guid: ae296335e8293a8418efa879de8b8bf4,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 8.605446
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272933368933707891, guid: ae296335e8293a8418efa879de8b8bf4,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 7.5871434
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272933368933707891, guid: ae296335e8293a8418efa879de8b8bf4,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 9.719208
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272933368933707891, guid: ae296335e8293a8418efa879de8b8bf4,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.015911102
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272933368933707891, guid: ae296335e8293a8418efa879de8b8bf4,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 3.2935717
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272933368933707891, guid: ae296335e8293a8418efa879de8b8bf4,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.7319031
+      objectReference: {fileID: 0}
+    - target: {fileID: 8286399926366837834, guid: ae296335e8293a8418efa879de8b8bf4,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 3.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8286399926366837834, guid: ae296335e8293a8418efa879de8b8bf4,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 8286399926366837834, guid: ae296335e8293a8418efa879de8b8bf4,
+        type: 3}
+      propertyPath: m_Extents.x
+      value: 4.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8286399926366837834, guid: ae296335e8293a8418efa879de8b8bf4,
+        type: 3}
+      propertyPath: m_Extents.y
+      value: 4.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 8286399926366837834, guid: ae296335e8293a8418efa879de8b8bf4,
+        type: 3}
+      propertyPath: m_Extents.z
+      value: 4.875
+      objectReference: {fileID: 0}
     - target: {fileID: 8364541017980927120, guid: ae296335e8293a8418efa879de8b8bf4,
         type: 3}
       propertyPath: m_Size.x
