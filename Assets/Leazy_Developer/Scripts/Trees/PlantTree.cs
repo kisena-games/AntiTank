@@ -23,8 +23,7 @@ public class PlantTree : MonoBehaviour, IDamageable
         IsKilled = true;
 
 
-        int randomFallValue = Random.Range(1, 3);
-        Debug.Log(randomFallValue);
+        int randomFallValue = Random.Range(1, 4);
         _animator.SetFloat(TreeAnimationType.RandomFall.ToString(), randomFallValue);
     }
 }

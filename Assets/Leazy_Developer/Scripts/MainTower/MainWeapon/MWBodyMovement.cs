@@ -6,7 +6,6 @@ public class MWBodyMovement : MonoBehaviour
 {
     [Header("Body Moving Parameters")]
     [SerializeField] private Transform _body;
-    [SerializeField] private float _moveBodySpeed = 50f;
 
     private void Update()
     {
@@ -18,6 +17,7 @@ public class MWBodyMovement : MonoBehaviour
 
     private void RotateBase()
     {
-        _body.Rotate(Vector3.up, InputManager.WeaponBaseMoveInput.x * _moveBodySpeed * Time.deltaTime);
+        Vector2 direction = InputManager.WeaponBaseMoveInput;
+        _body.forward = new Vector3(direction.x, 0, direction.y);
     }
 }

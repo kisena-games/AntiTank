@@ -9,7 +9,7 @@ public class SWTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out TankStateMachine stateMachine))
+        if (other.TryGetComponent(out HealthManager stateMachine))
         {
             OnTryFocusAction?.Invoke(stateMachine.transform);
         }

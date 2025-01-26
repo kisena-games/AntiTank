@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
     public static bool IsWeaponTopMoving { get; private set; } = false;
 
     public static Action AttackAction;
+    public static Action SwitchCameraModeAction;
 
 
     public void OnWeaponMoveBase(InputAction.CallbackContext context)
@@ -48,6 +49,14 @@ public class InputManager : MonoBehaviour
         if (context.performed)
         {
             AttackAction?.Invoke();
+        }
+    }
+
+    public void OnSwitchCameraMode(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            SwitchCameraModeAction?.Invoke();
         }
     }
 }
