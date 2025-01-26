@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dff88ff558ee5c4fa9980bb020092ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _head: {fileID: 4497368816280011467}
+  _head: {fileID: 2733861415932122798}
   _headMovement: {fileID: 2249635034788356657}
   _sniperCamera: {fileID: 6267101482935677072}
 --- !u!1 &4962300631189382256
@@ -480,9 +480,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2041331285878b849975a68e185185b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &4497368816280011467 stripped
+--- !u!1 &2733861415932122798 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8246268233999421777, guid: 73c36cb30bb8d0b4eab15d340035052d,
+  m_CorrespondingSourceObject: {fileID: 7631873080894309684, guid: 73c36cb30bb8d0b4eab15d340035052d,
     type: 3}
   m_PrefabInstance: {fileID: 5483550741187892122}
   m_PrefabAsset: {fileID: 0}
