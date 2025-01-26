@@ -1,12 +1,14 @@
 using UnityEngine;
 
-public class HealthManager : MonoBehaviour
+public class HealthManager : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _maxHealth;
 
     private int _currentHealth;
 
     public bool IsDied => _currentHealth <= 0;
+
+    public bool IsKilled { get; private set; }
 
     private void Awake()
     {
@@ -19,6 +21,7 @@ public class HealthManager : MonoBehaviour
 
         if (_currentHealth <= 0)
         {
+            IsKilled = true;
             Die();
         }
     }

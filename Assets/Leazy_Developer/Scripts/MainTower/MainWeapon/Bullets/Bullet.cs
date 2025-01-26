@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -16,14 +17,17 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        transform.localPosition += transform.forward * _flySpeed * Time.deltaTime;           
+        transform.localPosition += transform.forward * _flySpeed * Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out HealthManager healthManager))
+        if (other.TryGetComponent(out IDamageable damageableObject))
         {
-            healthManager.TakeDamage(_damage);
+            if (!damageableObject.IsKilled)
+            {
+                damageableObject.TakeDamage(_damage);
+            }
         }
 
         Destroy(gameObject);
