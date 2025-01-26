@@ -22,6 +22,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other);
         if (other.TryGetComponent(out IDamageable damageableObject))
         {
             if (!damageableObject.IsKilled)

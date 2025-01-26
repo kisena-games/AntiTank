@@ -25,16 +25,21 @@ public class SwitchCameraMode : MonoBehaviour
     {
         if (_currentMode == CameraMode.Default)
         {
-            _head.SetActive(false);
+            
             _headMovement.enabled = false;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+
             _sniperCamera.SetActive(true);
             _currentMode = CameraMode.Sniper;
         }
         else
         {
             _sniperCamera.SetActive(false);
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             _headMovement.enabled = true;
-            _head.SetActive(true);
             _currentMode = CameraMode.Default;
         }
     }
