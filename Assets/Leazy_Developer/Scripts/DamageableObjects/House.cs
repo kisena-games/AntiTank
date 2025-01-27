@@ -3,25 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Formats.Alembic.Importer;
 
-public class House : MonoBehaviour, IDamageable
+public class House : DamageableObject
 {
     [SerializeField] private GameObject _defaultHouse;
     [SerializeField] private GameObject _alembicHouse;
 
-    private Collider _collider;
-
-    public bool IsKilled { get; private set; }
-
-    private void Awake()
+    protected override void OnTakeDamage(int damage)
     {
-        _collider = GetComponent<Collider>();
-    }
-
-    public void TakeDamage(int damage)
-    {
-        _collider.enabled = false;
-        IsKilled = true;
-
         _defaultHouse.SetActive(false);
         _alembicHouse.SetActive(true);
     }

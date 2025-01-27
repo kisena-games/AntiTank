@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlantTree : MonoBehaviour, IDamageable
+public class DamageableObject : MonoBehaviour, IDamageable, IPauseHandler
 {
-    [SerializeField] private GameObject _tree;
-
-    private Collider _collider;
-    private Animator _animator;
-
     public bool IsKilled { get; private set; }
+
+    protected Animator _animator;
+    protected Collider _collider;
 
     private void Awake()
     {
@@ -17,18 +15,18 @@ public class PlantTree : MonoBehaviour, IDamageable
         _collider = GetComponent<Collider>();
     }
 
+    public void IsPaused(bool isPaused)
+    {
+        _animator.enabled = !isPaused;
+    }
+
     public void TakeDamage(int damage)
     {
         _collider.enabled = false;
         IsKilled = true;
 
-
-        int randomFallValue = Random.Range(1, 4);
-        _animator.SetFloat(TreeAnimationType.RandomFall.ToString(), randomFallValue);
+        OnTakeDamage(damage);
     }
-}
 
-public enum TreeAnimationType
-{
-    RandomFall
+    protected virtual void OnTakeDamage(int damage) { }
 }
