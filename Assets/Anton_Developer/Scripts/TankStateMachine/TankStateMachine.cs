@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(HealthManager), typeof(NavMeshAgent))]
-public class TankStateMachine : MonoBehaviour
+public class TankStateMachine : MonoBehaviour, IPauseHandler
 {
     [SerializeField] private Animator _animator;
 
@@ -23,6 +23,16 @@ public class TankStateMachine : MonoBehaviour
         InitializeStateMachine();
     }
 
+    private void Update()
+    {
+        _stateMachine?.OnUpdate();
+    }
+
+    private void FixedUpdate()
+    {
+        _stateMachine?.OnFixedUpdate();
+    }
+
     private void InitializeStateMachine()
     {
         TankAnimationController headAnimationController = new TankAnimationController(_animator);
@@ -37,13 +47,8 @@ public class TankStateMachine : MonoBehaviour
         _stateMachine = new StateMachine(emptyState);
     }
 
-    private void Update()
+    public void IsPaused(bool isPaused)
     {
-        _stateMachine?.OnUpdate();
-    }
-
-    private void FixedUpdate()
-    {
-        _stateMachine?.OnFixedUpdate();
+        
     }
 }
