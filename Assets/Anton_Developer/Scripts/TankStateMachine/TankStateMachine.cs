@@ -4,64 +4,46 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(HealthManager))]
+[RequireComponent(typeof(HealthManager), typeof(NavMeshAgent))]
 public class TankStateMachine : MonoBehaviour
 {
-    [SerializeField] private Animator _headAnimator;
-    [SerializeField] private Animator _bodyAnimator;
-    [SerializeField] private float _moveSpeed = 10f;
+    [SerializeField] private Animator _animator;
 
-    private StateMachine _headStateMachine;
-    private StateMachine _bodyStateMachine;
+    private StateMachine _stateMachine;
 
     public HealthManager TankHealthManager { get; private set; }
 
-    private bool _isBodyMove = false;
-    private bool _isHeadFire = false;
+    private bool _isMove = false;
+    private bool _isFire = false;
 
     private void Awake()
     {
         TankHealthManager = GetComponent<HealthManager>();
 
-        InitializeHeadStateMachine();
-        InitializeBodyStateMachine();
+        InitializeStateMachine();
     }
 
-    private void InitializeHeadStateMachine()
+    private void InitializeStateMachine()
     {
-        TankHeadAnimationController headAnimationController = new TankHeadAnimationController(_headAnimator);
+        TankAnimationController headAnimationController = new TankAnimationController(_animator);
 
         State emptyState = new State();
+        //State moveState = new TankMoveState(transform, );
         State fireState = new TankFireState(headAnimationController);
 
-        emptyState.AddTransition(new StateTransition(fireState, new FuncStateCondition(() => _isHeadFire)));
-        fireState.AddTransition(new StateTransition(emptyState, new FuncStateCondition(() => !_isHeadFire)));
+        emptyState.AddTransition(new StateTransition(fireState, new FuncStateCondition(() => _isFire)));
+        fireState.AddTransition(new StateTransition(emptyState, new FuncStateCondition(() => !_isFire)));
 
-        _headStateMachine = new StateMachine(emptyState);
-    }
-
-    private void InitializeBodyStateMachine()
-    {
-        TankBodyAnimationController bodynimationController = new TankBodyAnimationController(_bodyAnimator);
-
-        State emptyState = new State();
-        State moveState = new TankMoveState(transform, bodynimationController, _moveSpeed);
-
-        emptyState.AddTransition(new StateTransition(moveState, new FuncStateCondition(() => _isBodyMove)));
-        moveState.AddTransition(new StateTransition(emptyState, new FuncStateCondition(() => !_isBodyMove)));
-
-        _bodyStateMachine = new StateMachine(emptyState);
+        _stateMachine = new StateMachine(emptyState);
     }
 
     private void Update()
     {
-        _headStateMachine?.OnUpdate();
-        _bodyStateMachine?.OnUpdate();
+        _stateMachine?.OnUpdate();
     }
 
-    private void OnFixedUpdate()
+    private void FixedUpdate()
     {
-        _headStateMachine?.OnUpdate();
-        _bodyStateMachine?.OnUpdate();
+        _stateMachine?.OnFixedUpdate();
     }
 }
