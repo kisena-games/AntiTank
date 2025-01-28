@@ -501,6 +501,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8286399926366837834, guid: ae296335e8293a8418efa879de8b8bf4,
         type: 3}
+      propertyPath: m_Carve
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8286399926366837834, guid: ae296335e8293a8418efa879de8b8bf4,
+        type: 3}
       propertyPath: m_Center.y
       value: 3.02
       objectReference: {fileID: 0}

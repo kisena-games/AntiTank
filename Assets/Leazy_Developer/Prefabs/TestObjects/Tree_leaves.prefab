@@ -331,6 +331,31 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 6.4825583
       objectReference: {fileID: 0}
+    - target: {fileID: 3514795119377163183, guid: db33a77e40e228e498eeca55b5abf916,
+        type: 3}
+      propertyPath: m_Carve
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514795119377163183, guid: db33a77e40e228e498eeca55b5abf916,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 2.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514795119377163183, guid: db33a77e40e228e498eeca55b5abf916,
+        type: 3}
+      propertyPath: m_Extents.x
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514795119377163183, guid: db33a77e40e228e498eeca55b5abf916,
+        type: 3}
+      propertyPath: m_Extents.y
+      value: 2.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 3514795119377163183, guid: db33a77e40e228e498eeca55b5abf916,
+        type: 3}
+      propertyPath: m_Extents.z
+      value: 0.925
+      objectReference: {fileID: 0}
     - target: {fileID: 5998532063253968612, guid: db33a77e40e228e498eeca55b5abf916,
         type: 3}
       propertyPath: m_Name

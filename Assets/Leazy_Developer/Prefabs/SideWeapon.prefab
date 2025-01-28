@@ -165,8 +165,12 @@ MonoBehaviour:
   _triggers:
   - {fileID: 0}
   - {fileID: 0}
+  _maxDistance: 100
+  _terrainLayer:
+    serializedVersion: 2
+    m_Bits: 0
   _rotationSpeed: 50
-  _bulletPrefab: {fileID: 6777005443149481338, guid: a9cbf0cd0672ca441b6b17c7cfe23a3c,
+  _bulletPrefab: {fileID: 9130539055861110083, guid: a581a91a590f8a445a8453aafd564d6b,
     type: 3}
   _fireRate: 2
 --- !u!1 &8079576406112656293
