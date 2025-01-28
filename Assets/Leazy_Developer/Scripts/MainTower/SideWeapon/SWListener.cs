@@ -76,12 +76,6 @@ public class SWListener : MonoBehaviour
             RotateBodyTowardsEnemy();
             RotateHeadTowardsEnemy();
 
-            //if (Time.time >= _nextFireTime)
-            //{
-            //    Shoot();
-            //    _nextFireTime = Time.time + 1f / _fireRate;
-            //}
-
             //if (Physics.Raycast(new Ray(_headTransform.position, _headTransform.forward), out RaycastHit hitInfo))
             //{
             //    if (hitInfo.collider.TryGetComponent(out HealthManager healthManager))

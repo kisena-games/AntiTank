@@ -16,6 +16,7 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler
     [Header("Attack Parameters")]
     [SerializeField] private GameObject _bulettPrefab;
 
+    private TankAudioManager _audioManager;
     private Transform _aimToAttack;
     private NavMeshAgent _agent;
     private StateMachine _stateMachine;
@@ -27,6 +28,7 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler
     {
         _aimToAttack = FindObjectOfType<MWHeadMovement>().transform;
         _agent = GetComponent<NavMeshAgent>();
+        _audioManager = GetComponent<TankAudioManager>();
         InitializeStateMachine();
     }
 
@@ -55,8 +57,8 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler
         _animationController = new TankAnimationController(_animator);
 
         State emptyState = new State();
-        State moveState = new TankMoveState(_animationController, _agent, _path);
-        State fireState = new TankFireState(_animationController, _agent, transform, _aimToAttack, _bulettPrefab);
+        State moveState = new TankMoveState(_audioManager, _animationController, _agent, _path);
+        State fireState = new TankFireState(_audioManager, _animationController, _agent, transform, _aimToAttack, _bulettPrefab);
 
         emptyState.AddTransition(new StateTransition(moveState, new FuncStateCondition(() => _isMove)));
         moveState.AddTransition(new StateTransition(fireState, new FuncStateCondition(() => _distanceToLastDestination <= _agent.stoppingDistance)));
