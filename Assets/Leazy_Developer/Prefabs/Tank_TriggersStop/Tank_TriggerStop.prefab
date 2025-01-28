@@ -97,8 +97,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1080929343055063789}
-  - component: {fileID: 6650602508926800057}
-  - component: {fileID: 6392223931469296821}
   m_Layer: 0
   m_Name: Tank_TriggerStop
   m_TagString: Untagged
@@ -127,39 +125,6 @@ Transform:
   - {fileID: 2145826095708424788}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6650602508926800057
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517196741292077660}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 51.877842, y: 0.47274572, z: 1}
-  m_Center: {x: -0.30927467, y: -0.26362714, z: 0}
---- !u!114 &6392223931469296821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517196741292077660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af109b0b3b1133d4097201f70265d4d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1773242655105674346
 GameObject:
   m_ObjectHideFlags: 0
