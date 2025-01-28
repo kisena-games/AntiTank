@@ -14,9 +14,9 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler
     [SerializeField] private List<Transform> _path;
 
     [Header("Attack Parameters")]
-    [SerializeField] private Transform _aimToAttack;
     [SerializeField] private GameObject _bulettPrefab;
 
+    private Transform _aimToAttack;
     private NavMeshAgent _agent;
     private StateMachine _stateMachine;
     private TankAnimationController _animationController;
@@ -25,6 +25,7 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler
 
     private void Awake()
     {
+        _aimToAttack = FindObjectOfType<MWHeadMovement>().transform;
         _agent = GetComponent<NavMeshAgent>();
         InitializeStateMachine();
     }
