@@ -9,6 +9,11 @@ public class MWBodyMovement : MonoBehaviour
 
     private void Update()
     {
+        if (GamePause.Instance.IsPause)
+        {
+            return;
+        }
+
         if (InputManager.IsWeaponBaseMoving)
         {
             RotateBase();

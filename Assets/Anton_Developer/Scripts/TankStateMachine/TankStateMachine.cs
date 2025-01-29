@@ -24,6 +24,18 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler
     private float _distanceToLastDestination = 1f;
     private bool _isMove = false;
 
+    private Vector3 _targetPosition = Vector3.zero;
+
+    private void OnEnable()
+    {
+        GamePause.Instance?.AddPauseList(this);
+    }
+
+    private void OnDisable()
+    {
+        GamePause.Instance?.RemovePauseList(this);
+    }
+
     private void Awake()
     {
         _aimToAttack = FindObjectOfType<MWHeadMovement>().transform;
@@ -39,7 +51,10 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler
 
     private void Update()
     {
-        // if pause -> return
+        if (GamePause.Instance.IsPause)
+        {
+            return;
+        }
 
         _distanceToLastDestination = Vector3.Distance(transform.position, _path[_path.Count - 1].position);
         _stateMachine?.OnUpdate();
@@ -47,7 +62,10 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler
 
     private void FixedUpdate()
     {
-        // if pause -> return
+        if (GamePause.Instance.IsPause)
+        {
+            return;
+        }
 
         _stateMachine?.OnFixedUpdate();
     }
@@ -72,11 +90,14 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler
         {
             _animationController.StopAnimator();
             _agent.isStopped = true;
+            _targetPosition = _agent.destination;
+            _agent.Warp(_agent.transform.position);
         }
         else
         {
             _animationController.PlayAnimator();
             _agent.isStopped = false;
+            _agent.SetDestination(_targetPosition);
         }
         
     }

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 764181802885982842}
   - component: {fileID: 4270807771348035628}
-  - component: {fileID: 1804419429328015056}
   - component: {fileID: 3580821059455622553}
   m_Layer: 0
   m_Name: GameManager
@@ -47,18 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cursorTexture: {fileID: 2800000, guid: 73a316690001da842a63fc4407b1f11a, type: 3}
---- !u!114 &1804419429328015056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6457413739013153605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0de471a285aa19941ba90e4571ea9d89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &3580821059455622553
 AudioSource:
   m_ObjectHideFlags: 0

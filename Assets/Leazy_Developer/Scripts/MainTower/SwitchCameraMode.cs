@@ -23,6 +23,11 @@ public class SwitchCameraMode : MonoBehaviour
 
     private void Switch()
     {
+        if (GamePause.Instance.IsPause)
+        {
+            return;
+        }
+
         if (_currentMode == CameraMode.Default)
         {
             

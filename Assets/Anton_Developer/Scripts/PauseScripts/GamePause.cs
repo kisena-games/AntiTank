@@ -5,6 +5,8 @@ public class GamePause : MonoBehaviour
 {
     public static GamePause Instance;
 
+    [SerializeField] GameObject _pausePanel;
+
     public bool IsPause { get; private set; }
     
 
@@ -29,6 +31,7 @@ public class GamePause : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SetPause(!IsPause);
+            _pausePanel.SetActive(IsPause);
         }
     }
 

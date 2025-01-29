@@ -17,6 +17,11 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
 
     public void Attack()
     {
+        if (GamePause.Instance.IsPause)
+        {
+            return;
+        }
+
         Instantiate(_bulletPrefab, _bulletSpawnPosition.position, _bulletSpawnPosition.rotation);
     }
 }

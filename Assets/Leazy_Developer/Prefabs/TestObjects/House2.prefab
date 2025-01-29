@@ -461,6 +461,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7129936780642974918, guid: ae296335e8293a8418efa879de8b8bf4,
         type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 6999573314308581299}
+    - target: {fileID: 7129936780642974918, guid: ae296335e8293a8418efa879de8b8bf4,
+        type: 3}
       propertyPath: _alembicHouse
       value: 
       objectReference: {fileID: 7836142605901768193}

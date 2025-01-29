@@ -26,6 +26,11 @@ public class MWMovement : MonoBehaviour
 
     private void Update()
     {
+        if (GamePause.Instance.IsPause)
+        {
+            return;
+        }
+
         CalculateDirections();
         if (InputManager.IsWeaponTopMoving)
         {

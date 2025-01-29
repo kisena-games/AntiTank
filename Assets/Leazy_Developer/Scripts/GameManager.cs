@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] Texture2D _cursorTexture;
+    
 
     private void Awake()
     {

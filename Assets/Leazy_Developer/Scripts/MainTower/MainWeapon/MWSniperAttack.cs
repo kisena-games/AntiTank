@@ -13,6 +13,11 @@ public class MWSniperAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GamePause.Instance.IsPause)
+        {
+            return;
+        }
+
+
     }
 }

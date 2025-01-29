@@ -65,7 +65,6 @@ public class SWListener : MonoBehaviour, IPauseHandler
             return;
         }
 
-
         CheckDiedTanks();
 
         if (_targetTank == null && _tanks.Count > 0)
