@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8376763208094790979}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SWHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8665187873298086675}
   - component: {fileID: 6282422290089243114}
   - component: {fileID: 9083642668431135952}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SWHead_Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6435079169137366286}
   - component: {fileID: 1166445682315387792}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SideWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6392973588825903179}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SWBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 3965870507270290132}
   - component: {fileID: 2881764119249520489}
   - component: {fileID: 5041325406568398159}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SWBody_Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,10 +9,12 @@ public class TankMoveState : State
     private readonly NavMeshAgent _agent;
     private readonly TankAnimationController _controller;
     private readonly List<Transform> _path;
+    private readonly string _name;
     private int _indexOfDestination = 0;
 
-    public TankMoveState(TankAudioManager audioManager, TankAnimationController controller, NavMeshAgent agent, List<Transform> path)
+    public TankMoveState(string name, TankAudioManager audioManager, TankAnimationController controller, NavMeshAgent agent, List<Transform> path)
     {
+        _name = name;
         _audioManager = audioManager;
         _agent = agent;
         _controller = controller;
@@ -33,8 +35,14 @@ public class TankMoveState : State
 
     public override void OnUpdate()
     {
-        if (_agent.remainingDistance <= _agent.stoppingDistance && _indexOfDestination < _path.Count)
+        float distanceToTarget = Vector3.Distance(_agent.transform.position, _agent.destination);
+
+        if (distanceToTarget <= _agent.stoppingDistance && _indexOfDestination < _path.Count)
         {
+            //bool temp = _agent.pathPending;
+            //bool temp2 = _agent.hasPath;
+            //float distanceToTarget = Vector3.Distance(_agent.transform.position, _path[_indexOfDestination].position);
+            //_agent.destination = _path[_indexOfDestination++].position;
             _agent.SetDestination(_path[_indexOfDestination++].position);
         }
     }

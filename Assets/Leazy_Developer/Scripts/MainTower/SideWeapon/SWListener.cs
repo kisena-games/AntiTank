@@ -76,17 +76,17 @@ public class SWListener : MonoBehaviour
             RotateBodyTowardsEnemy();
             RotateHeadTowardsEnemy();
 
-            //if (Physics.Raycast(new Ray(_headTransform.position, _headTransform.forward), out RaycastHit hitInfo))
-            //{
-            //    if (hitInfo.collider.TryGetComponent(out HealthManager healthManager))
-            //    {
-            //        if (healthManager.transform == _targetTank && Time.time >= _nextFireTime)
-            //        {
-            //            Shoot();
-            //            _nextFireTime = Time.time + 1f / _fireRate;
-            //        }
-            //    }
-            //}
+            if (Physics.Raycast(new Ray(_headTransform.position, _headTransform.forward), out RaycastHit hitInfo))
+            {
+                if (hitInfo.collider.TryGetComponent(out HealthManager healthManager))
+                {
+                    if (healthManager.transform == _targetTank && Time.time >= _nextFireTime)
+                    {
+                        Shoot();
+                        _nextFireTime = Time.time + 1f / _fireRate;
+                    }
+                }
+            }
         }
         else if (_targetTank == null && _state == SWState.Attack)
         {

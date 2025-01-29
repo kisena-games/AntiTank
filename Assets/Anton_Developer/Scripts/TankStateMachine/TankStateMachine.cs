@@ -57,7 +57,7 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler
         _animationController = new TankAnimationController(_animator);
 
         State emptyState = new State();
-        State moveState = new TankMoveState(_audioManager, _animationController, _agent, _path);
+        State moveState = new TankMoveState(transform.gameObject.ToString(), _audioManager, _animationController, _agent, _path);
         State fireState = new TankFireState(_audioManager, _animationController, _agent, transform, _aimToAttack, _bulettPrefab);
 
         emptyState.AddTransition(new StateTransition(moveState, new FuncStateCondition(() => _isMove)));

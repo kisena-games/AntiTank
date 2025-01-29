@@ -268,6 +268,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 4334975698805268047}
-  _audioManager: {fileID: 7549724121218205893}
   _path: []
   _bulettPrefab: {fileID: 0}
