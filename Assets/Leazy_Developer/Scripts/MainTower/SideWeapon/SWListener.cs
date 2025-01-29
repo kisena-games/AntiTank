@@ -9,7 +9,11 @@ public class SWListener : MonoBehaviour
 {
     [SerializeField] private Transform _bodyTransform;
     [SerializeField] private Transform _headTransform;
+
+    [Header("Trigger Parameters")]
     [SerializeField] private List<SWTrigger> _triggers;
+    [SerializeField] private float _maxDistance = 30f;
+    [SerializeField] private LayerMask _terrainLayer;
 
     [Header("Rotation Parameters")]
     [SerializeField] private float _rotationSpeed = 50f;
@@ -20,6 +24,7 @@ public class SWListener : MonoBehaviour
 
     private Quaternion _originBodyRotation;
     private Transform _targetTank;
+    private HealthManager _targetHealthManager;
 
     private List<Transform> _enemies;
 
@@ -30,7 +35,7 @@ public class SWListener : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawRay(_headTransform.position, _headTransform.forward * 45f);
+        Gizmos.DrawRay(_headTransform.position, _headTransform.forward * 100f);
     }
 
     private void OnEnable()
@@ -62,6 +67,7 @@ public class SWListener : MonoBehaviour
         if (_targetTank == null && _enemies.Count > 0)
         {
             _targetTank = _enemies[0];
+            _targetHealthManager = _targetTank.GetComponent<HealthManager>();
             _state = SWState.Attack;
         }
 
@@ -70,17 +76,17 @@ public class SWListener : MonoBehaviour
             RotateBodyTowardsEnemy();
             RotateHeadTowardsEnemy();
 
-            if (Physics.Raycast(new Ray(_headTransform.position, _headTransform.forward), out RaycastHit hitInfo))
-            {
-                if (hitInfo.collider.TryGetComponent(out HealthManager healthManager))
-                {
-                    if (healthManager.transform == _targetTank && Time.time >= _nextFireTime)
-                    {
-                        Shoot();
-                        _nextFireTime = Time.time + 1f / _fireRate;
-                    }
-                }
-            }
+            //if (Physics.Raycast(new Ray(_headTransform.position, _headTransform.forward), out RaycastHit hitInfo))
+            //{
+            //    if (hitInfo.collider.TryGetComponent(out HealthManager healthManager))
+            //    {
+            //        if (healthManager.transform == _targetTank && Time.time >= _nextFireTime)
+            //        {
+            //            Shoot();
+            //            _nextFireTime = Time.time + 1f / _fireRate;
+            //        }
+            //    }
+            //}
         }
         else if (_targetTank == null && _state == SWState.Attack)
         {
