@@ -5,15 +5,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class SWListener : MonoBehaviour
+public class SWListener : MonoBehaviour, IPauseHandler
 {
     [SerializeField] private Transform _bodyTransform;
     [SerializeField] private Transform _headTransform;
 
     [Header("Trigger Parameters")]
     [SerializeField] private List<SWTrigger> _triggers;
-    [SerializeField] private float _maxDistance = 30f;
-    [SerializeField] private LayerMask _terrainLayer;
 
     [Header("Rotation Parameters")]
     [SerializeField] private float _rotationSpeed = 50f;
@@ -24,12 +22,8 @@ public class SWListener : MonoBehaviour
 
     private Quaternion _originBodyRotation;
     private Transform _targetTank;
-    private HealthManager _targetHealthManager;
-
-    private List<Transform> _enemies;
-
+    private List<Transform> _tanks;
     private SWState _state = SWState.Wait;
-
     private float _nextFireTime = 0f;
 
     private void OnDrawGizmos()
@@ -40,6 +34,8 @@ public class SWListener : MonoBehaviour
 
     private void OnEnable()
     {
+        //GamePause.Instance.AddPauseList(this);
+
         foreach (var _trigger in _triggers)
         {
             _trigger.OnTryFocusAction += OnTryFocus;
@@ -48,6 +44,8 @@ public class SWListener : MonoBehaviour
 
     private void OnDisable()
     {
+        //GamePause.Instance.RemovePauseList(this);
+
         foreach (var _trigger in _triggers)
         {
             _trigger.OnTryFocusAction -= OnTryFocus;
@@ -56,18 +54,23 @@ public class SWListener : MonoBehaviour
 
     private void Awake()
     {
-        _enemies = new List<Transform>();
+        _tanks = new List<Transform>();
         _originBodyRotation = _bodyTransform.rotation;
     }
 
     private void Update()
     {
+        if (GamePause.Instance.IsPause)
+        {
+            return;
+        }
+
+
         CheckDiedTanks();
 
-        if (_targetTank == null && _enemies.Count > 0)
+        if (_targetTank == null && _tanks.Count > 0)
         {
-            _targetTank = _enemies[0];
-            _targetHealthManager = _targetTank.GetComponent<HealthManager>();
+            _targetTank = _tanks[0];
             _state = SWState.Attack;
         }
 
@@ -98,7 +101,7 @@ public class SWListener : MonoBehaviour
 
     private void CheckDiedTanks()
     {
-        _enemies.RemoveAll(enemy => enemy == null);
+        _tanks.RemoveAll(enemy => enemy == null);
     }
 
     private void Shoot()
@@ -126,7 +129,7 @@ public class SWListener : MonoBehaviour
     {
         if (tank != null)
         {
-            _enemies.Add(tank);
+            _tanks.Add(tank);
         }
     }
 
@@ -142,6 +145,12 @@ public class SWListener : MonoBehaviour
             _bodyTransform.rotation = Quaternion.RotateTowards(_bodyTransform.rotation, _originBodyRotation, _rotationSpeed * Time.deltaTime);
             yield return new WaitForEndOfFrame();
         }
+    }
+
+
+    public void IsPaused(bool isPaused)
+    {
+        throw new NotImplementedException();
     }
 }
 

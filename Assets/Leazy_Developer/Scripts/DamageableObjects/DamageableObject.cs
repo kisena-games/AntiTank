@@ -9,6 +9,16 @@ public class DamageableObject : MonoBehaviour, IDamageable, IPauseHandler
     protected Animator _animator;
     protected Collider _collider;
 
+    private void OnEnable()
+    {
+        GamePause.Instance.AddPauseList(this);
+    }
+
+    private void OnDisable()
+    {
+        GamePause.Instance.RemovePauseList(this);
+    }
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();

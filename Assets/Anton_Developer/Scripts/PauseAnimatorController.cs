@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 
-public class PauseAnimatorController : MonoBehaviour, IsPauseHandler
+public class PauseAnimatorController : MonoBehaviour, IPauseHandler
 {
     private Animator _animator;
 
