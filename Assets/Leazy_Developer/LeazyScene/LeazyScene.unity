@@ -146,11 +146,6 @@ PrefabInstance:
       propertyPath: _triggers.Array.data[1]
       value: 
       objectReference: {fileID: 1750753824}
-    - target: {fileID: 634865050969860816, guid: e09215c8021dc5c4c82835044d044eeb,
-        type: 3}
-      propertyPath: _sniperPanel
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2025289697206231098, guid: e09215c8021dc5c4c82835044d044eeb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -226,11 +221,6 @@ PrefabInstance:
       propertyPath: _triggers.Array.data[1]
       value: 
       objectReference: {fileID: 1130317520}
-    - target: {fileID: 6267101482935677072, guid: e09215c8021dc5c4c82835044d044eeb,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7923473414866361783, guid: e09215c8021dc5c4c82835044d044eeb,
         type: 3}
       propertyPath: _triggers.Array.data[0]
@@ -358,6 +348,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CanvasInGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7433618191375702537, guid: be81cc7e638e9f841b347688f92fe42d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8482793358613789578, guid: be81cc7e638e9f841b347688f92fe42d,
         type: 3}
@@ -1121,7 +1116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623278512}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22070077, y: 0, z: 0, w: 0.97534156}
+  m_LocalRotation: {x: 0.22070082, y: 0, z: 0, w: 0.97534156}
   m_LocalPosition: {x: -0.45001608, y: 35.025467, z: -38.49311}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

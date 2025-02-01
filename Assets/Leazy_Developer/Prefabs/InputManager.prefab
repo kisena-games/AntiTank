@@ -91,7 +91,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4773594837155657585}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: OnWeaponMoveTopDelta
+        m_MethodName: OnWeaponTopMoveDelta
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -123,7 +123,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4773594837155657585}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: OnWeaponMoveTopInput
+        m_MethodName: OnWeaponTopMoveInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

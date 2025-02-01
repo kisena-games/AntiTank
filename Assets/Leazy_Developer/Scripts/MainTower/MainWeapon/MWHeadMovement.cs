@@ -1,15 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(SwitchCameraMode))]
 public class MWHeadMovement : MonoBehaviour
 {
     [Header("Head Moving Parameters")]
     [SerializeField] private Transform _head;
 
+    [Header("Sniper Mode Parameters")]
+    [SerializeField] private float _mouseSensitivity = 2.0f;
+    [SerializeField] private float verticalClampAngle = 10.0f;
+    [SerializeField] private float horizontalClampAngle = 45.0f;
+
     private Vector3 _directionCameraToWeapon = Vector3.zero;
     private Vector3 _directionCameraToWorldCursor = Vector3.zero;
     private Vector3 _directionWeaponToCursorAim = Vector3.zero;
+
+    private Vector2 _rotation = Vector2.zero;
 
     private void OnDrawGizmos()
     {
@@ -25,16 +35,43 @@ public class MWHeadMovement : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(string.Format("_directionWeaponToCursorAim: {0}, _rotation: {1}", _directionWeaponToCursorAim, _rotation));
+
         if (GamePause.Instance.IsPause)
         {
             return;
         }
 
-        CalculateDirections();
         if (InputManager.IsWeaponTopMoving)
         {
-            RotateTop();
+            switch (SwitchCameraMode.CurrentMode)
+            {
+                case CameraMode.Default: DefaultUpdate(); break;
+                case CameraMode.Sniper: SniperUpdate(); break;
+                default: break;
+            }
         }
+    }
+
+    private void DefaultUpdate()
+    {
+        CalculateDirections();
+        RotateTop();
+    }
+
+    private void SniperUpdate()
+    {
+        //_rotation = transform.localRotation;
+        Vector2 mouseDelta = InputManager.WeaponTopMoveDelta * Time.deltaTime;
+
+        _rotation.y += mouseDelta.x * _mouseSensitivity;
+        _rotation.x += mouseDelta.y * _mouseSensitivity;
+
+        _rotation.x = Mathf.Clamp(_rotation.x, -verticalClampAngle, verticalClampAngle);
+        _rotation.y = Mathf.Clamp(_rotation.y, -horizontalClampAngle, horizontalClampAngle);
+
+        _head.transform.localRotation = Quaternion.Euler(-_rotation.x, _rotation.y, 0.0f);
+        //_head.rotation = Quaternion.Euler(0.0f, _rotation.y, 0.0f);
     }
 
     private void CalculateDirections()

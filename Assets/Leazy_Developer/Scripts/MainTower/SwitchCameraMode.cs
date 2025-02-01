@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class SwitchCameraMode : MonoBehaviour
 {
-    [SerializeField] private GameObject _head;
-    [SerializeField] private MWHeadMovement _headMovement;
     [SerializeField] private GameObject _sniperCamera;
+    //[SerializeField] private GameObject _sniperPanel;
 
-    private CameraMode _currentMode = CameraMode.Default;
+    public static CameraMode CurrentMode { get; private set; }
 
     private void OnEnable()
     {
@@ -28,24 +27,24 @@ public class SwitchCameraMode : MonoBehaviour
             return;
         }
 
-        if (_currentMode == CameraMode.Default)
+        if (CurrentMode == CameraMode.Default)
         {
             
-            _headMovement.enabled = false;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
 
+            //_sniperPanel.SetActive(true);
             _sniperCamera.SetActive(true);
-            _currentMode = CameraMode.Sniper;
+            CurrentMode = CameraMode.Sniper;
         }
         else
         {
+            //_sniperPanel.SetActive(false);
             _sniperCamera.SetActive(false);
 
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            _headMovement.enabled = true;
-            _currentMode = CameraMode.Default;
+            CurrentMode = CameraMode.Default;
         }
     }
 }

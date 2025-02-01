@@ -3,7 +3,12 @@ using UnityEngine;
 public class WeaponAttack : MonoBehaviour, ICanAttack
 {
     [SerializeField] private GameObject _bulletPrefab;
-    [SerializeField] private Transform _bulletSpawnPosition;
+
+    [Header("Default Mode Parameters")]
+    [SerializeField] private Transform _bulletDefaultSpawnPosition;
+
+    [Header("Sniper Mode Parameters")]
+    [SerializeField] private Transform _bulletSniperSpawnPosition;
 
     private void OnEnable()
     {
@@ -22,6 +27,20 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
             return;
         }
 
-        Instantiate(_bulletPrefab, _bulletSpawnPosition.position, _bulletSpawnPosition.rotation);
+        switch (SwitchCameraMode.CurrentMode)
+        {
+            case CameraMode.Default: DefaultAttack(); break;
+            case CameraMode.Sniper: SniperAttack(); break;
+        }
+    }
+
+    public void DefaultAttack()
+    {
+        Instantiate(_bulletPrefab, _bulletDefaultSpawnPosition.position, _bulletDefaultSpawnPosition.rotation);
+    }
+
+    public void SniperAttack()
+    {
+        Instantiate(_bulletPrefab, _bulletSniperSpawnPosition.position, _bulletSniperSpawnPosition.rotation);
     }
 }
