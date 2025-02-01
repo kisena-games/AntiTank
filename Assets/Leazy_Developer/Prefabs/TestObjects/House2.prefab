@@ -351,6 +351,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 600717094221933846, guid: ae296335e8293a8418efa879de8b8bf4,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 600717094221933846, guid: ae296335e8293a8418efa879de8b8bf4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 600717094221933846, guid: ae296335e8293a8418efa879de8b8bf4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 600717094221933846, guid: ae296335e8293a8418efa879de8b8bf4,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -12
       objectReference: {fileID: 0}
