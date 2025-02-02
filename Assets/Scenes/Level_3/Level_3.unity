@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 42237344}
   - component: {fileID: 42237343}
   m_Layer: 0
-  m_Name: TankDestination_Z-L2
+  m_Name: TankDestination_SL2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 54511606}
   - component: {fileID: 54511605}
   m_Layer: 0
-  m_Name: TankDestination_S-R1
+  m_Name: TankDestination_VR1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 158765618}
   - component: {fileID: 158765617}
   m_Layer: 0
-  m_Name: TankDestination_S-R1 (3)
+  m_Name: TankDestination_VR4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 163362984}
   - component: {fileID: 163362983}
   m_Layer: 0
-  m_Name: TankDestination_Y-R1 (2)
+  m_Name: TankDestination_ZR3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 210997829}
   - component: {fileID: 210997828}
   m_Layer: 0
-  m_Name: TankDestination_V-R1 (2)
+  m_Name: TankDestination_YR3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -740,7 +740,7 @@ PrefabInstance:
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 63.899994
+      value: 62.4
       objectReference: {fileID: 0}
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
@@ -750,7 +750,7 @@ PrefabInstance:
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 601.4
+      value: 610.8
       objectReference: {fileID: 0}
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
@@ -1184,7 +1184,7 @@ GameObject:
   - component: {fileID: 300016616}
   - component: {fileID: 300016615}
   m_Layer: 0
-  m_Name: TankDestination_S-R1 (5)
+  m_Name: TankDestination_VR3A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1211,7 +1211,7 @@ Transform:
   m_GameObject: {fileID: 300016614}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 342.57852, y: 155.45743, z: -201.9429}
+  m_LocalPosition: {x: 342.9, y: 155.45743, z: -194.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1228,7 +1228,7 @@ PrefabInstance:
     - target: {fileID: 2335979843599270401, guid: 9388cdcc87d6b80489979d6a0938cf1a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 261.3
+      value: 259.1
       objectReference: {fileID: 0}
     - target: {fileID: 2335979843599270401, guid: 9388cdcc87d6b80489979d6a0938cf1a,
         type: 3}
@@ -1238,7 +1238,7 @@ PrefabInstance:
     - target: {fileID: 2335979843599270401, guid: 9388cdcc87d6b80489979d6a0938cf1a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 97.100006
+      value: 108.6
       objectReference: {fileID: 0}
     - target: {fileID: 2335979843599270401, guid: 9388cdcc87d6b80489979d6a0938cf1a,
         type: 3}
@@ -1660,7 +1660,7 @@ PrefabInstance:
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 54.899994
+      value: 59.2
       objectReference: {fileID: 0}
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
@@ -1670,7 +1670,7 @@ PrefabInstance:
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 72.899994
+      value: 72.9
       objectReference: {fileID: 0}
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
@@ -1734,7 +1734,7 @@ PrefabInstance:
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 95.01883
+      value: 88.9
       objectReference: {fileID: 0}
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
@@ -1744,7 +1744,7 @@ PrefabInstance:
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 665.95514
+      value: 666.5
       objectReference: {fileID: 0}
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
@@ -1802,7 +1802,7 @@ GameObject:
   - component: {fileID: 424572567}
   - component: {fileID: 424572566}
   m_Layer: 0
-  m_Name: TankDestination_S-L1 (4)
+  m_Name: TankDestination_VL2A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1846,7 +1846,7 @@ PrefabInstance:
     - target: {fileID: 2335979843599270401, guid: 9388cdcc87d6b80489979d6a0938cf1a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 362.8
+      value: 373.4
       objectReference: {fileID: 0}
     - target: {fileID: 2335979843599270401, guid: 9388cdcc87d6b80489979d6a0938cf1a,
         type: 3}
@@ -1856,7 +1856,7 @@ PrefabInstance:
     - target: {fileID: 2335979843599270401, guid: 9388cdcc87d6b80489979d6a0938cf1a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 541.6
+      value: 531.5
       objectReference: {fileID: 0}
     - target: {fileID: 2335979843599270401, guid: 9388cdcc87d6b80489979d6a0938cf1a,
         type: 3}
@@ -1920,7 +1920,7 @@ GameObject:
   - component: {fileID: 457335831}
   - component: {fileID: 457335830}
   m_Layer: 0
-  m_Name: TankDestination_Z-L1 (1)
+  m_Name: TankDestination_ZR2A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1947,11 +1947,11 @@ Transform:
   m_GameObject: {fileID: 457335829}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -147.44836, y: 291.74103, z: 156.802}
+  m_LocalPosition: {x: -151.07312, y: 155.45743, z: 179.95514}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1867274533}
+  m_Father: {fileID: 1186778873}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &475552711
 GameObject:
@@ -1964,7 +1964,7 @@ GameObject:
   - component: {fileID: 475552713}
   - component: {fileID: 475552712}
   m_Layer: 0
-  m_Name: TankDestination_Z-R1 (5)
+  m_Name: TankDestination_SL5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1991,7 +1991,7 @@ Transform:
   m_GameObject: {fileID: 475552711}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.251648, y: 291.74103, z: 150.60199}
+  m_LocalPosition: {x: 13.7, y: 291.74103, z: 134}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2168,7 +2168,7 @@ PrefabInstance:
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 124.79999
+      value: 115.2
       objectReference: {fileID: 0}
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
@@ -2178,7 +2178,7 @@ PrefabInstance:
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 667.8
+      value: 666.4
       objectReference: {fileID: 0}
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
@@ -2236,7 +2236,7 @@ GameObject:
   - component: {fileID: 513297426}
   - component: {fileID: 513297425}
   m_Layer: 0
-  m_Name: TankDestination_Z-R1
+  m_Name: TankDestination_SR1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2348,7 +2348,7 @@ GameObject:
   - component: {fileID: 530854879}
   - component: {fileID: 530854878}
   m_Layer: 0
-  m_Name: TankDestination_S-L1
+  m_Name: TankDestination_VL1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2466,7 +2466,7 @@ PrefabInstance:
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 467.9773
+      value: 456.1
       objectReference: {fileID: 0}
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
@@ -2476,7 +2476,7 @@ PrefabInstance:
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 80.00177
+      value: 79.1
       objectReference: {fileID: 0}
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
@@ -2540,7 +2540,7 @@ PrefabInstance:
     - target: {fileID: 4188385185888380339, guid: 3a6b08d1e6f90b6469cef78491752fa0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 322.31604
+      value: 328.5
       objectReference: {fileID: 0}
     - target: {fileID: 4188385185888380339, guid: 3a6b08d1e6f90b6469cef78491752fa0,
         type: 3}
@@ -2550,7 +2550,7 @@ PrefabInstance:
     - target: {fileID: 4188385185888380339, guid: 3a6b08d1e6f90b6469cef78491752fa0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 490.21753
+      value: 489.2
       objectReference: {fileID: 0}
     - target: {fileID: 4188385185888380339, guid: 3a6b08d1e6f90b6469cef78491752fa0,
         type: 3}
@@ -2597,6 +2597,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a6b08d1e6f90b6469cef78491752fa0, type: 3}
+--- !u!1 &590861212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 590861213}
+  - component: {fileID: 590861214}
+  m_Layer: 0
+  m_Name: TankDestination_YL2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &590861213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590861212}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 197.8, y: 155.45743, z: -209.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1795075838}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &590861214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590861212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce170aa51ad5314baf217eb8d1bb086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &614845646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2608,7 +2652,7 @@ PrefabInstance:
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.399994
+      value: 33.6
       objectReference: {fileID: 0}
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
@@ -2618,7 +2662,7 @@ PrefabInstance:
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 207.20001
+      value: 208.2
       objectReference: {fileID: 0}
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
@@ -2865,7 +2909,7 @@ PrefabInstance:
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 621.8
+      value: 626.3
       objectReference: {fileID: 0}
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
@@ -2875,7 +2919,7 @@ PrefabInstance:
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 81.600006
+      value: 81.5
       objectReference: {fileID: 0}
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
@@ -2946,7 +2990,7 @@ GameObject:
   - component: {fileID: 674481087}
   - component: {fileID: 674481086}
   m_Layer: 0
-  m_Name: TankDestination_Z-L2 (1)
+  m_Name: TankDestination_SL4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3151,6 +3195,50 @@ Transform:
   - {fileID: 827990265}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &701494201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 701494202}
+  - component: {fileID: 701494203}
+  m_Layer: 0
+  m_Name: TankDestination_SL6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &701494202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701494201}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15.1, y: 291.74103, z: 46.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1867274533}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &701494203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701494201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce170aa51ad5314baf217eb8d1bb086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &702491383 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
@@ -3168,7 +3256,7 @@ GameObject:
   - component: {fileID: 704154565}
   - component: {fileID: 704154564}
   m_Layer: 0
-  m_Name: TankDestination_V-L1
+  m_Name: TankDestination_YL1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3195,7 +3283,7 @@ Transform:
   m_GameObject: {fileID: 704154563}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 250.47849, y: 155.45743, z: -340.3429}
+  m_LocalPosition: {x: 223.3, y: 155.45743, z: -338.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3212,7 +3300,7 @@ GameObject:
   - component: {fileID: 705948107}
   - component: {fileID: 705948106}
   m_Layer: 0
-  m_Name: TankDestination_Z-R1 (1)
+  m_Name: TankDestination_SR2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3239,7 +3327,7 @@ Transform:
   m_GameObject: {fileID: 705948105}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 255.35162, y: 291.74103, z: 264.602}
+  m_LocalPosition: {x: 258.5, y: 291.74103, z: 256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3256,7 +3344,7 @@ GameObject:
   - component: {fileID: 707336965}
   - component: {fileID: 707336964}
   m_Layer: 0
-  m_Name: TankDestination_Y-R1
+  m_Name: TankDestination_ZR1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3283,7 +3371,7 @@ Transform:
   m_GameObject: {fileID: 707336963}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -248.9215, y: 155.45743, z: 219.35712}
+  m_LocalPosition: {x: -249.2, y: 155.45743, z: 177.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3300,7 +3388,7 @@ GameObject:
   - component: {fileID: 708288129}
   - component: {fileID: 708288128}
   m_Layer: 0
-  m_Name: TankDestination_S-L1 (5)
+  m_Name: TankDestination_VL3A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3344,7 +3432,7 @@ GameObject:
   - component: {fileID: 750454010}
   - component: {fileID: 750454009}
   m_Layer: 0
-  m_Name: TankDestination_S-R1 (1)
+  m_Name: TankDestination_VR2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3388,7 +3476,7 @@ GameObject:
   - component: {fileID: 758058054}
   - component: {fileID: 758058053}
   m_Layer: 0
-  m_Name: TankDestination_S-R1 (4)
+  m_Name: TankDestination_VR2A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3415,7 +3503,7 @@ Transform:
   m_GameObject: {fileID: 758058052}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 342.27853, y: 155.45743, z: -264.0429}
+  m_LocalPosition: {x: 339.4, y: 155.45743, z: -263.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3642,7 +3730,7 @@ GameObject:
   - component: {fileID: 769286893}
   - component: {fileID: 769286892}
   m_Layer: 0
-  m_Name: TankDestination_Y-L2
+  m_Name: TankDestination_ZL2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3669,7 +3757,7 @@ Transform:
   m_GameObject: {fileID: 769286891}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -157.02148, y: 155.45743, z: -144.24289}
+  m_LocalPosition: {x: -147.7, y: 155.45743, z: -116.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3760,7 +3848,7 @@ GameObject:
   - component: {fileID: 803542814}
   - component: {fileID: 803542813}
   m_Layer: 0
-  m_Name: TankDestination_S-R1 (6)
+  m_Name: TankDestination_VR4A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3862,7 +3950,7 @@ PrefabInstance:
     - target: {fileID: 4188385185888380339, guid: 3a6b08d1e6f90b6469cef78491752fa0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 270.1
+      value: 262.6
       objectReference: {fileID: 0}
     - target: {fileID: 4188385185888380339, guid: 3a6b08d1e6f90b6469cef78491752fa0,
         type: 3}
@@ -3872,7 +3960,7 @@ PrefabInstance:
     - target: {fileID: 4188385185888380339, guid: 3a6b08d1e6f90b6469cef78491752fa0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 489.40002
+      value: 489.5
       objectReference: {fileID: 0}
     - target: {fileID: 4188385185888380339, guid: 3a6b08d1e6f90b6469cef78491752fa0,
         type: 3}
@@ -4232,7 +4320,7 @@ PrefabInstance:
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.699997
+      value: 27.3
       objectReference: {fileID: 0}
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
@@ -4242,7 +4330,7 @@ PrefabInstance:
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 72.399994
+      value: 72.9
       objectReference: {fileID: 0}
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
@@ -4306,7 +4394,7 @@ GameObject:
   - component: {fileID: 938246568}
   - component: {fileID: 938246567}
   m_Layer: 0
-  m_Name: TankDestination_Z-L1 (2)
+  m_Name: TankDestination_ZR3A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4333,11 +4421,11 @@ Transform:
   m_GameObject: {fileID: 938246566}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -131.94836, y: 291.74103, z: 46.501953}
+  m_LocalPosition: {x: -139.87314, y: 155.45743, z: 81.15515}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1867274533}
+  m_Father: {fileID: 1186778873}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &944899197
 PrefabInstance:
@@ -4545,7 +4633,7 @@ GameObject:
   - component: {fileID: 971576631}
   - component: {fileID: 971576630}
   m_Layer: 0
-  m_Name: TankDestination_V-R1 (3)
+  m_Name: TankDestination_YR2A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4572,7 +4660,7 @@ Transform:
   m_GameObject: {fileID: 971576629}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 100.37851, y: 155.45743, z: -324.3429}
+  m_LocalPosition: {x: 106.3, y: 155.45743, z: -323.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5021,7 +5109,7 @@ GameObject:
   - component: {fileID: 1090373751}
   - component: {fileID: 1090373750}
   m_Layer: 0
-  m_Name: TankDestination_S-R1 (9)
+  m_Name: TankDestination_VR5B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5065,7 +5153,7 @@ GameObject:
   - component: {fileID: 1097050349}
   - component: {fileID: 1097050348}
   m_Layer: 0
-  m_Name: TankDestination_Z-R1 (3)
+  m_Name: TankDestination_SR4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5092,7 +5180,7 @@ Transform:
   m_GameObject: {fileID: 1097050347}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 168.05164, y: 291.74103, z: 115.10199}
+  m_LocalPosition: {x: 173.2, y: 291.74103, z: 147.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5128,20 +5216,20 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 54511606}
+  - {fileID: 750454010}
+  - {fileID: 1165306875}
+  - {fileID: 158765618}
   - {fileID: 758058054}
   - {fileID: 1497849682}
   - {fileID: 1193765507}
   - {fileID: 1090373751}
-  - {fileID: 750454010}
   - {fileID: 300016616}
   - {fileID: 803542814}
-  - {fileID: 1165306875}
-  - {fileID: 158765618}
   - {fileID: 530854879}
-  - {fileID: 424572567}
   - {fileID: 1400108946}
-  - {fileID: 708288129}
   - {fileID: 1367012045}
+  - {fileID: 424572567}
+  - {fileID: 708288129}
   - {fileID: 1347634329}
   m_Father: {fileID: 1549713906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5230,7 +5318,7 @@ GameObject:
   - component: {fileID: 1131232773}
   - component: {fileID: 1131232772}
   m_Layer: 0
-  m_Name: TankDestination_Z-R1 (2)
+  m_Name: TankDestination_SR3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5280,7 +5368,7 @@ GameObject:
   - component: {fileID: 1165306875}
   - component: {fileID: 1165306874}
   m_Layer: 0
-  m_Name: TankDestination_S-R1 (2)
+  m_Name: TankDestination_VR3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5350,7 +5438,9 @@ Transform:
   m_Children:
   - {fileID: 707336965}
   - {fileID: 2014139419}
+  - {fileID: 457335831}
   - {fileID: 163362984}
+  - {fileID: 938246568}
   - {fileID: 1685557626}
   - {fileID: 769286893}
   m_Father: {fileID: 1549713906}
@@ -5366,7 +5456,7 @@ GameObject:
   - component: {fileID: 1193765507}
   - component: {fileID: 1193765506}
   m_Layer: 0
-  m_Name: TankDestination_S-R1 (8)
+  m_Name: TankDestination_VR4B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5673,6 +5763,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7014067207726713546, guid: 3a6b08d1e6f90b6469cef78491752fa0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014067207726713546, guid: 3a6b08d1e6f90b6469cef78491752fa0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 8326477492132357852, guid: 3a6b08d1e6f90b6469cef78491752fa0,
         type: 3}
       propertyPath: m_Name
@@ -5694,7 +5794,7 @@ PrefabInstance:
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 497.09998
+      value: 480.6
       objectReference: {fileID: 0}
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
@@ -5704,7 +5804,7 @@ PrefabInstance:
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 80.100006
+      value: 81.8
       objectReference: {fileID: 0}
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
@@ -5768,7 +5868,7 @@ PrefabInstance:
     - target: {fileID: 4188385185888380339, guid: 3a6b08d1e6f90b6469cef78491752fa0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 493.27942
+      value: 503.2
       objectReference: {fileID: 0}
     - target: {fileID: 4188385185888380339, guid: 3a6b08d1e6f90b6469cef78491752fa0,
         type: 3}
@@ -5778,7 +5878,7 @@ PrefabInstance:
     - target: {fileID: 4188385185888380339, guid: 3a6b08d1e6f90b6469cef78491752fa0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 208.53915
+      value: 212.7
       objectReference: {fileID: 0}
     - target: {fileID: 4188385185888380339, guid: 3a6b08d1e6f90b6469cef78491752fa0,
         type: 3}
@@ -6132,7 +6232,7 @@ GameObject:
   - component: {fileID: 1347634329}
   - component: {fileID: 1347634328}
   m_Layer: 0
-  m_Name: TankDestination_S-L1 (3)
+  m_Name: TankDestination_VL4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6244,7 +6344,7 @@ GameObject:
   - component: {fileID: 1367012045}
   - component: {fileID: 1367012044}
   m_Layer: 0
-  m_Name: TankDestination_S-L1 (2)
+  m_Name: TankDestination_VL3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6356,7 +6456,7 @@ PrefabInstance:
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.300003
+      value: 59.2
       objectReference: {fileID: 0}
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
@@ -6366,7 +6466,7 @@ PrefabInstance:
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 207.79999
+      value: 208.4
       objectReference: {fileID: 0}
     - target: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
         type: 3}
@@ -6430,7 +6530,7 @@ GameObject:
   - component: {fileID: 1400108946}
   - component: {fileID: 1400108945}
   m_Layer: 0
-  m_Name: TankDestination_S-L1 (1)
+  m_Name: TankDestination_VL2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6633,7 +6733,7 @@ PrefabInstance:
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 595.64886
+      value: 599.3
       objectReference: {fileID: 0}
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
@@ -6643,7 +6743,7 @@ PrefabInstance:
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 209.46179
+      value: 210.3
       objectReference: {fileID: 0}
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
@@ -6702,7 +6802,7 @@ GameObject:
   - component: {fileID: 1464559357}
   - component: {fileID: 1464559356}
   m_Layer: 0
-  m_Name: TankDestination_V-R1 (4)
+  m_Name: TankDestination_YR3A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6752,7 +6852,7 @@ GameObject:
   - component: {fileID: 1497849682}
   - component: {fileID: 1497849681}
   m_Layer: 0
-  m_Name: TankDestination_S-R1 (7)
+  m_Name: TankDestination_VR3B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6797,6 +6897,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 846030435}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1525226232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1525226233}
+  - component: {fileID: 1525226234}
+  m_Layer: 0
+  m_Name: TankDestination_YL3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1525226233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525226232}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 162.1, y: 155.45743, z: -141}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1795075838}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1525226234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525226232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce170aa51ad5314baf217eb8d1bb086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1535047535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6808,7 +6952,7 @@ PrefabInstance:
     - target: {fileID: 2335979843599270401, guid: 9388cdcc87d6b80489979d6a0938cf1a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 473.09998
+      value: 480.7
       objectReference: {fileID: 0}
     - target: {fileID: 2335979843599270401, guid: 9388cdcc87d6b80489979d6a0938cf1a,
         type: 3}
@@ -6818,7 +6962,7 @@ PrefabInstance:
     - target: {fileID: 2335979843599270401, guid: 9388cdcc87d6b80489979d6a0938cf1a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 490.2
+      value: 489.5
       objectReference: {fileID: 0}
     - target: {fileID: 2335979843599270401, guid: 9388cdcc87d6b80489979d6a0938cf1a,
         type: 3}
@@ -7077,7 +7221,7 @@ PrefabInstance:
     - target: {fileID: 2335979843599270401, guid: 9388cdcc87d6b80489979d6a0938cf1a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 547.4653
+      value: 545.8
       objectReference: {fileID: 0}
     - target: {fileID: 2335979843599270401, guid: 9388cdcc87d6b80489979d6a0938cf1a,
         type: 3}
@@ -7087,7 +7231,7 @@ PrefabInstance:
     - target: {fileID: 2335979843599270401, guid: 9388cdcc87d6b80489979d6a0938cf1a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 212.04831
+      value: 210.7
       objectReference: {fileID: 0}
     - target: {fileID: 2335979843599270401, guid: 9388cdcc87d6b80489979d6a0938cf1a,
         type: 3}
@@ -7151,7 +7295,7 @@ GameObject:
   - component: {fileID: 1596052424}
   - component: {fileID: 1596052423}
   m_Layer: 0
-  m_Name: TankDestination_V-R1 (1)
+  m_Name: TankDestination_YR2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7258,6 +7402,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1600252130}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1642885290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1642885291}
+  - component: {fileID: 1642885292}
+  m_Layer: 0
+  m_Name: TankDestination_SR4A
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1642885291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642885290}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 78.9, y: 291.74103, z: 149.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1867274533}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1642885292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642885290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce170aa51ad5314baf217eb8d1bb086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1648992261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7274,7 +7462,7 @@ PrefabInstance:
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 66
+      value: 64.8
       objectReference: {fileID: 0}
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
@@ -7284,7 +7472,7 @@ PrefabInstance:
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 529.2
+      value: 522.4
       objectReference: {fileID: 0}
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
@@ -7485,7 +7673,7 @@ GameObject:
   - component: {fileID: 1685557626}
   - component: {fileID: 1685557625}
   m_Layer: 0
-  m_Name: TankDestination_Y-L1
+  m_Name: TankDestination_ZL1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7512,7 +7700,7 @@ Transform:
   m_GameObject: {fileID: 1685557624}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -158.3215, y: 155.45743, z: -332.7429}
+  m_LocalPosition: {x: -273.1, y: 155.45743, z: -155.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -7695,7 +7883,7 @@ GameObject:
   - component: {fileID: 1745891569}
   - component: {fileID: 1745891568}
   m_Layer: 0
-  m_Name: TankDestination_Z-R1 (4)
+  m_Name: TankDestination_SR5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7722,7 +7910,7 @@ Transform:
   m_GameObject: {fileID: 1745891567}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 163.35162, y: 291.74103, z: 43.10199}
+  m_LocalPosition: {x: 173.5, y: 291.74103, z: 42.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -7739,7 +7927,7 @@ GameObject:
   - component: {fileID: 1753701935}
   - component: {fileID: 1753701934}
   m_Layer: 0
-  m_Name: TankDestination_V-R1
+  m_Name: TankDestination_YR1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8180,7 +8368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1795075838}
   m_Layer: 0
-  m_Name: TankDEstinationYUG
+  m_Name: TankDestinationYUG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8200,11 +8388,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1753701935}
-  - {fileID: 971576631}
-  - {fileID: 704154565}
-  - {fileID: 1464559357}
   - {fileID: 1596052424}
   - {fileID: 210997829}
+  - {fileID: 971576631}
+  - {fileID: 1464559357}
+  - {fileID: 704154565}
+  - {fileID: 590861213}
+  - {fileID: 1525226233}
   m_Father: {fileID: 1549713906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1802839142
@@ -8413,7 +8603,7 @@ PrefabInstance:
     - target: {fileID: 1793218718953439136, guid: c9edcf38402c76b409b138242f7cc9a5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 165.33441
+      value: 161.3
       objectReference: {fileID: 0}
     - target: {fileID: 1793218718953439136, guid: c9edcf38402c76b409b138242f7cc9a5,
         type: 3}
@@ -8423,7 +8613,7 @@ PrefabInstance:
     - target: {fileID: 1793218718953439136, guid: c9edcf38402c76b409b138242f7cc9a5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 193.69461
+      value: 193.7
       objectReference: {fileID: 0}
     - target: {fileID: 1793218718953439136, guid: c9edcf38402c76b409b138242f7cc9a5,
         type: 3}
@@ -8575,16 +8765,17 @@ Transform:
   m_Children:
   - {fileID: 513297426}
   - {fileID: 1921889137}
-  - {fileID: 457335831}
-  - {fileID: 938246568}
   - {fileID: 42237344}
-  - {fileID: 674481087}
   - {fileID: 1951078705}
+  - {fileID: 674481087}
+  - {fileID: 475552713}
+  - {fileID: 701494202}
   - {fileID: 705948107}
   - {fileID: 1131232773}
   - {fileID: 1097050349}
-  - {fileID: 475552713}
   - {fileID: 1745891569}
+  - {fileID: 1642885291}
+  - {fileID: 2110671215}
   m_Father: {fileID: 1549713906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1871781221 stripped
@@ -8746,7 +8937,7 @@ GameObject:
   - component: {fileID: 1921889137}
   - component: {fileID: 1921889136}
   m_Layer: 0
-  m_Name: TankDestination_Z-L1
+  m_Name: TankDestination_SL1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8773,7 +8964,7 @@ Transform:
   m_GameObject: {fileID: 1921889135}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -137.14838, y: 291.74103, z: 275.302}
+  m_LocalPosition: {x: -142.2, y: 291.74103, z: 271.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -8937,7 +9128,7 @@ PrefabInstance:
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 64.600006
+      value: 62.6
       objectReference: {fileID: 0}
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
@@ -8947,7 +9138,7 @@ PrefabInstance:
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 567.1
+      value: 577.7
       objectReference: {fileID: 0}
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
@@ -9000,7 +9191,7 @@ GameObject:
   - component: {fileID: 1951078705}
   - component: {fileID: 1951078704}
   m_Layer: 0
-  m_Name: TankDestination_Z-R1 (8)
+  m_Name: TankDestination_SL3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9027,7 +9218,7 @@ Transform:
   m_GameObject: {fileID: 1951078703}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -49.948364, y: 291.74103, z: 270.802}
+  m_LocalPosition: {x: -45.7, y: 291.74103, z: 226.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -9049,7 +9240,7 @@ PrefabInstance:
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.300003
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
@@ -9059,7 +9250,7 @@ PrefabInstance:
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 131.9
+      value: 132.2
       objectReference: {fileID: 0}
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
@@ -9452,7 +9643,7 @@ GameObject:
   - component: {fileID: 2014139419}
   - component: {fileID: 2014139418}
   m_Layer: 0
-  m_Name: TankDestination_Y-R1 (1)
+  m_Name: TankDestination_ZR2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9575,7 +9766,7 @@ PrefabInstance:
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 369.82477
+      value: 380
       objectReference: {fileID: 0}
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
@@ -9585,7 +9776,7 @@ PrefabInstance:
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 491.59766
+      value: 490.5
       objectReference: {fileID: 0}
     - target: {fileID: 5902420015474591296, guid: 7c6d08d2ed042bd48ba311017582d6d3,
         type: 3}
@@ -9905,6 +10096,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9388cdcc87d6b80489979d6a0938cf1a, type: 3}
+--- !u!1 &2110671214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2110671215}
+  - component: {fileID: 2110671216}
+  m_Layer: 0
+  m_Name: TankDestination_SR5A
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2110671215
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110671214}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 80.9, y: 291.74103, z: 43.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1867274533}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2110671216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110671214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce170aa51ad5314baf217eb8d1bb086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2129660151 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2335979843599270401, guid: 9388cdcc87d6b80489979d6a0938cf1a,
