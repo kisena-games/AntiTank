@@ -235,21 +235,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasMainMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 1118386204113334508, guid: b866dd256d5e1c249af1d7101ee9ffd4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 2053156408394915876, guid: b866dd256d5e1c249af1d7101ee9ffd4, type: 3}
-    - {fileID: 242066359458275616, guid: b866dd256d5e1c249af1d7101ee9ffd4, type: 3}
-    - {fileID: 205988967896917700, guid: b866dd256d5e1c249af1d7101ee9ffd4, type: 3}
-    - {fileID: 3693069561591057564, guid: b866dd256d5e1c249af1d7101ee9ffd4, type: 3}
-    - {fileID: 271292579563475932, guid: b866dd256d5e1c249af1d7101ee9ffd4, type: 3}
-    - {fileID: 2058412418895810701, guid: b866dd256d5e1c249af1d7101ee9ffd4, type: 3}
-    - {fileID: 52174302749431104, guid: b866dd256d5e1c249af1d7101ee9ffd4, type: 3}
-    - {fileID: 8678375423026863729, guid: b866dd256d5e1c249af1d7101ee9ffd4, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b866dd256d5e1c249af1d7101ee9ffd4, type: 3}
