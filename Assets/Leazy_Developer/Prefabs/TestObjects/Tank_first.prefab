@@ -3481,6 +3481,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7772460404533441695, guid: df9a19fa662336c4ca505c6101dee806,
         type: 3}
+      propertyPath: _tankSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 88b313adf3471ee4eb68adf047458379,
+        type: 2}
+    - target: {fileID: -7772460404533441695, guid: df9a19fa662336c4ca505c6101dee806,
+        type: 3}
       propertyPath: _bulettPrefab
       value: 
       objectReference: {fileID: 6777005443149481338, guid: a9cbf0cd0672ca441b6b17c7cfe23a3c,
@@ -3505,6 +3511,12 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.07256943
       objectReference: {fileID: 0}
+    - target: {fileID: -1432831548739022167, guid: df9a19fa662336c4ca505c6101dee806,
+        type: 3}
+      propertyPath: _tankSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 88b313adf3471ee4eb68adf047458379,
+        type: 2}
     - target: {fileID: -1158889903681243104, guid: df9a19fa662336c4ca505c6101dee806,
         type: 3}
       propertyPath: Loop

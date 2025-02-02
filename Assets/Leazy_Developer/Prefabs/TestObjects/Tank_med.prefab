@@ -3985,6 +3985,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7772460404533441695, guid: df9a19fa662336c4ca505c6101dee806,
         type: 3}
+      propertyPath: _tankSO
+      value: 
+      objectReference: {fileID: 11400000, guid: c0de9ffedc9d1664f9b04f18e02fdcc7,
+        type: 2}
+    - target: {fileID: -7772460404533441695, guid: df9a19fa662336c4ca505c6101dee806,
+        type: 3}
       propertyPath: _bulettPrefab
       value: 
       objectReference: {fileID: 6777005443149481338, guid: a9cbf0cd0672ca441b6b17c7cfe23a3c,
@@ -4009,6 +4015,12 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.04354179
       objectReference: {fileID: 0}
+    - target: {fileID: -1432831548739022167, guid: df9a19fa662336c4ca505c6101dee806,
+        type: 3}
+      propertyPath: _tankSO
+      value: 
+      objectReference: {fileID: 11400000, guid: c0de9ffedc9d1664f9b04f18e02fdcc7,
+        type: 2}
     - target: {fileID: 4142900402732817498, guid: df9a19fa662336c4ca505c6101dee806,
         type: 3}
       propertyPath: m_Speed

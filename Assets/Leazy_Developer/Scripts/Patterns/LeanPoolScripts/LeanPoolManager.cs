@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MWSniperAttack : MonoBehaviour
+public class LeanPoolManager : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,11 +13,6 @@ public class MWSniperAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GamePause.Instance.IsPause)
-        {
-            return;
-        }
-
-
+        
     }
 }

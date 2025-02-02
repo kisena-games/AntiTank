@@ -6,7 +6,6 @@ using UnityEngine;
 public class SwitchCameraMode : MonoBehaviour
 {
     [SerializeField] private GameObject _sniperCamera;
-    //[SerializeField] private GameObject _sniperPanel;
 
     public static CameraMode CurrentMode { get; private set; }
 
@@ -22,28 +21,20 @@ public class SwitchCameraMode : MonoBehaviour
 
     private void Switch()
     {
-        if (GamePause.Instance.IsPause)
-        {
-            return;
-        }
-
         if (CurrentMode == CameraMode.Default)
         {
-            
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-
-            //_sniperPanel.SetActive(true);
+            
             _sniperCamera.SetActive(true);
             CurrentMode = CameraMode.Sniper;
         }
         else
         {
-            //_sniperPanel.SetActive(false);
-            _sniperCamera.SetActive(false);
-
-            Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            _sniperCamera.SetActive(false);
             CurrentMode = CameraMode.Default;
         }
     }
