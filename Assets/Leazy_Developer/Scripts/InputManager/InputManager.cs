@@ -49,6 +49,11 @@ public class InputManager : MonoBehaviour
 
     public void OnAttack(InputAction.CallbackContext context)
     {
+        if (GamePause.Instance.IsPause)
+        {
+            return;
+        }
+
         if (context.performed)
         {
             AttackAction?.Invoke();
@@ -57,6 +62,11 @@ public class InputManager : MonoBehaviour
 
     public void OnSwitchCameraMode(InputAction.CallbackContext context)
     {
+        if (GamePause.Instance.IsPause)
+        {
+            return;
+        }
+
         if (context.performed)
         {
             SwitchCameraModeAction?.Invoke();

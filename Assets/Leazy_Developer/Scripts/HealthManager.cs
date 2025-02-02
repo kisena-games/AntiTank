@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour, IDamageable
 {
-    [SerializeField] private int _maxHealth;
+    [SerializeField] private int _maxHealth = 100;
 
     private int _currentHealth;
 

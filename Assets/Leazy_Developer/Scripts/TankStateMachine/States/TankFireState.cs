@@ -10,18 +10,18 @@ public class TankFireState : State
     private readonly NavMeshAgent _agent;
     private readonly Transform _aimToAttack;
     private readonly Transform _tank;
-    private readonly GameObject _bulettPrefab;
+    private readonly BulletSO _bulettSO;
 
     Vector3 _targetDirection = Vector3.zero;
 
-    public TankFireState(TankAudioManager audioManager, TankAnimationController controller, NavMeshAgent agent, Transform tank, Transform aimToAttack, GameObject bulettPrefab)
+    public TankFireState(TankAudioManager audioManager, TankAnimationController controller, NavMeshAgent agent, Transform tank, Transform aimToAttack, BulletSO bulettSO)
     {
         _audioManager = audioManager;
         _controller = controller;
         _agent = agent;
         _aimToAttack = aimToAttack;
         _tank = tank;
-        _bulettPrefab = bulettPrefab;
+        _bulettSO = bulettSO;
         _targetDirection = (_aimToAttack.position - _tank.position);
     }
 

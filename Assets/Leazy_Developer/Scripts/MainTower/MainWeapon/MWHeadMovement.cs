@@ -35,8 +35,6 @@ public class MWHeadMovement : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(string.Format("_directionWeaponToCursorAim: {0}, _rotation: {1}", _directionWeaponToCursorAim, _rotation));
-
         if (GamePause.Instance.IsPause)
         {
             return;
@@ -44,34 +42,27 @@ public class MWHeadMovement : MonoBehaviour
 
         if (InputManager.IsWeaponTopMoving)
         {
+            CalculateDirections();
+            CalculateRotation();
+
             switch (SwitchCameraMode.CurrentMode)
             {
-                case CameraMode.Default: DefaultUpdate(); break;
-                case CameraMode.Sniper: SniperUpdate(); break;
+                case CameraMode.Default: DefaultRotateHead(); break;
+                case CameraMode.Sniper: SniperRotateHead(); break;
                 default: break;
             }
         }
     }
 
-    private void DefaultUpdate()
+    private void DefaultRotateHead()
     {
-        CalculateDirections();
-        RotateTop();
+        _head.forward = _directionWeaponToCursorAim.normalized;
     }
 
-    private void SniperUpdate()
+    private void SniperRotateHead()
     {
-        //_rotation = transform.localRotation;
-        Vector2 mouseDelta = InputManager.WeaponTopMoveDelta * Time.deltaTime;
-
-        _rotation.y += mouseDelta.x * _mouseSensitivity;
-        _rotation.x += mouseDelta.y * _mouseSensitivity;
-
-        _rotation.x = Mathf.Clamp(_rotation.x, -verticalClampAngle, verticalClampAngle);
-        _rotation.y = Mathf.Clamp(_rotation.y, -horizontalClampAngle, horizontalClampAngle);
-
+        
         _head.transform.localRotation = Quaternion.Euler(-_rotation.x, _rotation.y, 0.0f);
-        //_head.rotation = Quaternion.Euler(0.0f, _rotation.y, 0.0f);
     }
 
     private void CalculateDirections()
@@ -91,8 +82,14 @@ public class MWHeadMovement : MonoBehaviour
         _directionWeaponToCursorAim = resultPosition - _head.position;
     }
 
-    private void RotateTop()
+    private void CalculateRotation()
     {
-        _head.forward = _directionWeaponToCursorAim.normalized;
+        Vector2 mouseDelta = InputManager.WeaponTopMoveDelta * Time.deltaTime;
+
+        _rotation.y += mouseDelta.x * _mouseSensitivity;
+        _rotation.x += mouseDelta.y * _mouseSensitivity;
+
+        _rotation.x = Mathf.Clamp(_rotation.x, -verticalClampAngle, verticalClampAngle);
+        _rotation.y = Mathf.Clamp(_rotation.y, -horizontalClampAngle, horizontalClampAngle);
     }
 }
