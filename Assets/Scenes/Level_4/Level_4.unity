@@ -122,6 +122,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &29772129 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5764639828414551232, guid: 86611be70142d2d4c9c1026e261df7bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 387571523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &30434149 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 85103063808690692, guid: 4c4049c4be9ca6544935095038d73385,
@@ -164,14 +170,14 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1244963532}
-  - {fileID: 539112138}
-  - {fileID: 319249421}
-  - {fileID: 1766207507}
-  - {fileID: 306124911}
   - {fileID: 386175568}
+  - {fileID: 539112138}
   - {fileID: 527219437}
+  - {fileID: 319249421}
   - {fileID: 1854058516}
+  - {fileID: 1766207507}
   - {fileID: 1296637672}
+  - {fileID: 306124911}
   - {fileID: 1341715222}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -362,6 +368,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_fast (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[0]
+      value: 
+      objectReference: {fileID: 539112138}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[1]
+      value: 
+      objectReference: {fileID: 527219437}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[2]
+      value: 
+      objectReference: {fileID: 1507415977}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -560,6 +586,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_fast (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[0]
+      value: 
+      objectReference: {fileID: 306124911}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[1]
+      value: 
+      objectReference: {fileID: 1341715222}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[2]
+      value: 
+      objectReference: {fileID: 1707333725}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -722,6 +768,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_fast (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[0]
+      value: 
+      objectReference: {fileID: 319249421}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[1]
+      value: 
+      objectReference: {fileID: 1854058516}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[2]
+      value: 
+      objectReference: {fileID: 2075461459}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1137,6 +1203,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 473727900}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &408227035 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7686153386501261940, guid: 86611be70142d2d4c9c1026e261df7bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 387571523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &414258865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1200,6 +1272,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_fast (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[0]
+      value: 
+      objectReference: {fileID: 1869076642}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[1]
+      value: 
+      objectReference: {fileID: 1907742994}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[2]
+      value: 
+      objectReference: {fileID: 573529072}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[3]
+      value: 
+      objectReference: {fileID: 1869076642}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1299,6 +1396,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce170aa51ad5314baf217eb8d1bb086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &470148741 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4780619071066637459, guid: 86611be70142d2d4c9c1026e261df7bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 387571523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &473727900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1543,6 +1646,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce170aa51ad5314baf217eb8d1bb086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &572745208 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6357205113499121696, guid: 86611be70142d2d4c9c1026e261df7bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 387571523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &573529072 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6834161832932195325, guid: 86611be70142d2d4c9c1026e261df7bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 387571523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &587656681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1956,6 +2071,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_fast (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[0]
+      value: 
+      objectReference: {fileID: 1095915471}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[1]
+      value: 
+      objectReference: {fileID: 997281570}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[2]
+      value: 
+      objectReference: {fileID: 1974741252}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2677,6 +2812,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_fast (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[0]
+      value: 
+      objectReference: {fileID: 387679968}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[1]
+      value: 
+      objectReference: {fileID: 1189674100}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[2]
+      value: 
+      objectReference: {fileID: 1827114696}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2745,6 +2900,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_fast (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[0]
+      value: 
+      objectReference: {fileID: 1244963532}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[1]
+      value: 
+      objectReference: {fileID: 386175568}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[2]
+      value: 
+      objectReference: {fileID: 572745208}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3161,6 +3336,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_fast (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[0]
+      value: 
+      objectReference: {fileID: 183352777}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[1]
+      value: 
+      objectReference: {fileID: 1282307585}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[2]
+      value: 
+      objectReference: {fileID: 1527195306}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3278,6 +3473,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 478432e391b1e384baff0d97be2561ad, type: 3}
+--- !u!4 &1368061921 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 656755034923007998, guid: 86611be70142d2d4c9c1026e261df7bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 387571523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1369875965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3341,6 +3542,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_fast (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[0]
+      value: 
+      objectReference: {fileID: 174185878}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[1]
+      value: 
+      objectReference: {fileID: 1004803163}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[2]
+      value: 
+      objectReference: {fileID: 1368061921}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3518,11 +3739,29 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be81cc7e638e9f841b347688f92fe42d, type: 3}
+--- !u!4 &1507415977 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2183750020051101771, guid: 86611be70142d2d4c9c1026e261df7bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 387571523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1527195306 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8127814395575744199, guid: 86611be70142d2d4c9c1026e261df7bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 387571523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1530362498 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 85103063808690692, guid: 4c4049c4be9ca6544935095038d73385,
     type: 3}
   m_PrefabInstance: {fileID: 1645272512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1586820478 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4951336238821885774, guid: 86611be70142d2d4c9c1026e261df7bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 387571523}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1596948627
 PrefabInstance:
@@ -3592,6 +3831,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e87c9156c10a06a4e974e4ad48557303, type: 3}
+--- !u!4 &1606266754 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4422571168828919415, guid: 86611be70142d2d4c9c1026e261df7bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 387571523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1631223953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3671,7 +3916,7 @@ PrefabInstance:
     - target: {fileID: 85103063808690692, guid: 4c4049c4be9ca6544935095038d73385,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 611.05664
+      value: 611.8
       objectReference: {fileID: 0}
     - target: {fileID: 85103063808690692, guid: 4c4049c4be9ca6544935095038d73385,
         type: 3}
@@ -3723,6 +3968,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_fast (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[0]
+      value: 
+      objectReference: {fileID: 432722699}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[1]
+      value: 
+      objectReference: {fileID: 153783467}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[2]
+      value: 
+      objectReference: {fileID: 29772129}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3840,6 +4105,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce170aa51ad5314baf217eb8d1bb086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1707333725 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2445414219935953177, guid: 86611be70142d2d4c9c1026e261df7bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 387571523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1748974844 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7241083774506739017, guid: 86611be70142d2d4c9c1026e261df7bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 387571523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1757669340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3903,6 +4180,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_fast (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[0]
+      value: 
+      objectReference: {fileID: 85249923}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[1]
+      value: 
+      objectReference: {fileID: 1242109771}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[2]
+      value: 
+      objectReference: {fileID: 1586820478}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4027,11 +4324,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_fast (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[0]
+      value: 
+      objectReference: {fileID: 564883032}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[1]
+      value: 
+      objectReference: {fileID: 1697383657}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[2]
+      value: 
+      objectReference: {fileID: 408227035}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c4049c4be9ca6544935095038d73385, type: 3}
+--- !u!4 &1827114696 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 198659072561764133, guid: 86611be70142d2d4c9c1026e261df7bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 387571523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1834003669 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4188385185888380339, guid: 3a6b08d1e6f90b6469cef78491752fa0,
@@ -4189,6 +4512,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_fast
       objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[0]
+      value: 
+      objectReference: {fileID: 524416556}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[1]
+      value: 
+      objectReference: {fileID: 419420822}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[2]
+      value: 
+      objectReference: {fileID: 1606266754}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4369,6 +4712,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_fast (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[0]
+      value: 
+      objectReference: {fileID: 1048516419}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[1]
+      value: 
+      objectReference: {fileID: 989264125}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[2]
+      value: 
+      objectReference: {fileID: 1748974844}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4511,6 +4874,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_fast (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[0]
+      value: 
+      objectReference: {fileID: 1766207507}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[1]
+      value: 
+      objectReference: {fileID: 1296637672}
+    - target: {fileID: 8332908695235718489, guid: 4c4049c4be9ca6544935095038d73385,
+        type: 3}
+      propertyPath: _path.Array.data[2]
+      value: 
+      objectReference: {fileID: 470148741}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4584,6 +4967,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18014a47be164624e8b9ec0cd7d991b0, type: 3}
+--- !u!4 &1974741252 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3944209265225737900, guid: 86611be70142d2d4c9c1026e261df7bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 387571523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1976993390 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1289794329103742599, guid: 18014a47be164624e8b9ec0cd7d991b0,
@@ -4805,6 +5194,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 85103063808690692, guid: 4c4049c4be9ca6544935095038d73385,
     type: 3}
   m_PrefabInstance: {fileID: 120380946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2075461459 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5516882247579462574, guid: 86611be70142d2d4c9c1026e261df7bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 387571523}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2146643249 stripped
 Transform:
@@ -5046,6 +5441,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3580821059455622553, guid: 200731beced8b154c8ca562033c4a9da,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580821059455622553, guid: 200731beced8b154c8ca562033c4a9da,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9355464961f590341bbd1cad93c341ef, type: 3}
     - target: {fileID: 6457413739013153605, guid: 200731beced8b154c8ca562033c4a9da,
         type: 3}
       propertyPath: m_Name
