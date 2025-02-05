@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class SWTrigger : MonoBehaviour
 {
-    public Action<Transform> OnTryFocusAction;
+    public Action<HealthManager> OnTryFocusAction;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out HealthManager stateMachine))
+        if (other.TryGetComponent(out HealthManager healthManager))
         {
-            OnTryFocusAction?.Invoke(stateMachine.transform);
+            OnTryFocusAction?.Invoke(healthManager);
         }
     }
 }

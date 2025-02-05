@@ -1,6 +1,7 @@
+using Lean.Pool;
 using UnityEngine;
 
-public class HealthManager : MonoBehaviour, IDamageable
+public class HealthManager : MonoBehaviour, IDamageable, IPoolable
 {
     [SerializeField] private int _maxHealth = 100;
 
@@ -9,6 +10,17 @@ public class HealthManager : MonoBehaviour, IDamageable
     public bool IsDied => _currentHealth <= 0;
 
     public bool IsKilled { get; private set; }
+
+    public void OnSpawn()
+    {
+        _currentHealth = _maxHealth;
+        IsKilled = false;
+    }
+
+    public void OnDespawn()
+    {
+        
+    }
 
     private void Awake()
     {
@@ -28,6 +40,6 @@ public class HealthManager : MonoBehaviour, IDamageable
 
     private void Die()
     {
-        Destroy(gameObject);
+        LeanPool.Despawn(gameObject);
     }
 }

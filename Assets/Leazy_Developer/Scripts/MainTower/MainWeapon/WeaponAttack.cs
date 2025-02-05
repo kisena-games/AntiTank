@@ -1,3 +1,4 @@
+using Lean.Pool;
 using UnityEngine;
 
 public class WeaponAttack : MonoBehaviour, ICanAttack
@@ -36,11 +37,13 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
 
     public void DefaultAttack()
     {
-        Instantiate(_bulletPrefab, _bulletDefaultSpawnPosition.position, _bulletDefaultSpawnPosition.rotation);
+        LeanPool.Spawn(_bulletPrefab, _bulletDefaultSpawnPosition.position, _bulletDefaultSpawnPosition.rotation);
+        //Instantiate(_bulletPrefab, _bulletDefaultSpawnPosition.position, _bulletDefaultSpawnPosition.rotation);
     }
 
     public void SniperAttack()
     {
-        Instantiate(_bulletPrefab, _bulletSniperSpawnPosition.position, _bulletSniperSpawnPosition.rotation);
+        LeanPool.Spawn(_bulletPrefab, _bulletSniperSpawnPosition.position, _bulletSniperSpawnPosition.rotation);
+        //Instantiate(_bulletPrefab, _bulletSniperSpawnPosition.position, _bulletSniperSpawnPosition.rotation);
     }
 }

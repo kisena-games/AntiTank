@@ -1,18 +1,17 @@
-using System;
-using System.Collections;
+using Lean.Pool;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(HealthManager), typeof(NavMeshAgent))]
-public class TankStateMachine : MonoBehaviour, IPauseHandler
+public class TankStateMachine : MonoBehaviour, IPauseHandler, IPoolable
 {
     [SerializeField] private TankSO _tankSO;
     [SerializeField] private Animator _animator;
 
-    [Header("Move Parameters")]
-    [SerializeField] private List<Transform> _path;
+    //[Header("Move Parameters")]
+    private TankPath _path;
+    private Vector3 _lastDestination;
 
     private TankAudioManager _audioManager;
     private NavMeshAgent _agent;
@@ -24,6 +23,39 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler
     private bool _isMove = false;
 
     private Vector3 _targetPosition = Vector3.zero;
+
+    public void OnSpawn()
+    {
+        
+    }
+
+    public void OnDespawn()
+    {
+        _isMove = false;
+    }
+
+    public void Initialize(TankPath path)
+    {
+        _path = path;
+
+        foreach (var lastDestin in _path.LastDestinations)
+        {
+            if (lastDestin.TryPlaceTank(gameObject.transform))
+            {
+                _lastDestination = lastDestin.transform.position;
+                break;
+            }
+        }
+
+        if (_lastDestination == null)
+        {
+            _lastDestination = _path.LastDestinations[0].transform.position;
+        }
+
+        InitializeStateMachine();
+
+        _isMove = true;
+    }
 
     private void OnEnable()
     {
@@ -40,12 +72,11 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler
         _aimToAttack = FindObjectOfType<MWHeadMovement>().transform;
         _agent = GetComponent<NavMeshAgent>();
         _audioManager = GetComponent<TankAudioManager>();
-        InitializeStateMachine();
     }
 
     private void Start()
     {
-        _isMove = true;
+        
     }
 
     private void Update()
@@ -55,7 +86,7 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler
             return;
         }
 
-        _distanceToLastDestination = Vector3.Distance(transform.position, _path[^1].position);
+        _distanceToLastDestination = Vector3.Distance(transform.position, _lastDestination);
         _stateMachine?.OnUpdate();
     }
 
@@ -74,7 +105,7 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler
         _animationController = new TankAnimationController(_animator);
 
         State emptyState = new State();
-        State moveState = new TankMoveState(transform.gameObject.ToString(), _audioManager, _animationController, _agent, _path);
+        State moveState = new TankMoveState(transform.gameObject.ToString(), _audioManager, _animationController, _agent, _path.Destinations, _lastDestination);
         State fireState = new TankFireState(_audioManager, _animationController, _agent, transform, _aimToAttack, _tankSO.bulletSO);
 
         emptyState.AddTransition(new StateTransition(moveState, new FuncStateCondition(() => _isMove)));

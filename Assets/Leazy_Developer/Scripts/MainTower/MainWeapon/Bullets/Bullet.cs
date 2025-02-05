@@ -1,8 +1,9 @@
+using Lean.Pool;
 using System;
 using System.Collections;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, IPoolable
 {
     [SerializeField] private float _flySpeed;
     [SerializeField] private int _damage;
@@ -14,6 +15,10 @@ public class Bullet : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, _radius);
     }
+
+    public void OnSpawn() { }
+
+    public void OnDespawn() { }
 
     private void Update()
     {
@@ -30,6 +35,11 @@ public class Bullet : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        ReturnToPool();
+    }
+
+    public void ReturnToPool()
+    {
+        LeanPool.Despawn(gameObject);
     }
 }

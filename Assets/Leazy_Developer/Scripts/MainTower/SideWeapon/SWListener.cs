@@ -1,3 +1,4 @@
+using Lean.Pool;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,8 +22,8 @@ public class SWListener : MonoBehaviour, IPauseHandler
     [SerializeField] private float _fireRate = 2f; // Частота стрельбы в выстрелах в секунду
 
     private Quaternion _originBodyRotation;
-    private Transform _targetTank;
-    private List<Transform> _tanks;
+    private HealthManager _targetTank;
+    private List<HealthManager> _tanks;
     private SWState _state = SWState.Wait;
     private float _nextFireTime = 0f;
 
@@ -54,7 +55,7 @@ public class SWListener : MonoBehaviour, IPauseHandler
 
     private void Awake()
     {
-        _tanks = new List<Transform>();
+        _tanks = new List<HealthManager>();
         _originBodyRotation = _bodyTransform.rotation;
     }
 
@@ -73,7 +74,7 @@ public class SWListener : MonoBehaviour, IPauseHandler
             _state = SWState.Attack;
         }
 
-        if (_targetTank != null && _state == SWState.Attack)
+        if (_targetTank != null && !_targetTank.IsKilled && _state == SWState.Attack)
         {
             RotateBodyTowardsEnemy();
             RotateHeadTowardsEnemy();
@@ -82,7 +83,7 @@ public class SWListener : MonoBehaviour, IPauseHandler
             {
                 if (hitInfo.collider.TryGetComponent(out HealthManager healthManager))
                 {
-                    if (healthManager.transform == _targetTank && Time.time >= _nextFireTime)
+                    if (healthManager == _targetTank && Time.time >= _nextFireTime)
                     {
                         Shoot();
                         _nextFireTime = Time.time + 1f / _fireRate;
@@ -90,8 +91,9 @@ public class SWListener : MonoBehaviour, IPauseHandler
                 }
             }
         }
-        else if (_targetTank == null && _state == SWState.Attack)
+        else if (_targetTank != null && _targetTank.IsKilled && _state == SWState.Attack)
         {
+            _targetTank = null;
             _state = SWState.Wait;
             StartCoroutine(ResetBodyRotation());
             _headTransform.localRotation = Quaternion.identity;
@@ -100,17 +102,18 @@ public class SWListener : MonoBehaviour, IPauseHandler
 
     private void CheckDiedTanks()
     {
-        _tanks.RemoveAll(enemy => enemy == null);
+        _tanks.RemoveAll(enemy => enemy.IsKilled);
     }
 
     private void Shoot()
     {
-        Instantiate(_bulletPrefab, _headTransform.position, _headTransform.rotation);
+        //Instantiate(_bulletPrefab, _headTransform.position, _headTransform.rotation);
+        LeanPool.Spawn(_bulletPrefab, _headTransform.position, _headTransform.rotation);
     }
 
     private void RotateBodyTowardsEnemy()
     {
-        Vector3 direction = _targetTank.position - _bodyTransform.position;
+        Vector3 direction = _targetTank.transform.position - _bodyTransform.position;
         direction.y = 0;
 
         Quaternion targetRotation = Quaternion.LookRotation(direction);
@@ -119,12 +122,12 @@ public class SWListener : MonoBehaviour, IPauseHandler
 
     private void RotateHeadTowardsEnemy()
     {
-        Vector3 relativePosition = _targetTank.position - _headTransform.position;
+        Vector3 relativePosition = _targetTank.transform.position - _headTransform.position;
         Quaternion targetRotation = Quaternion.LookRotation(relativePosition, Vector3.up);
         _headTransform.rotation = Quaternion.Euler(targetRotation.eulerAngles.x, _headTransform.rotation.eulerAngles.y, _headTransform.rotation.eulerAngles.z);
     }
 
-    private void OnTryFocus(Transform tank)
+    private void OnTryFocus(HealthManager tank)
     {
         if (tank != null)
         {
