@@ -22,8 +22,8 @@ public class SWListener : MonoBehaviour, IPauseHandler
     [SerializeField] private float _fireRate = 2f; // Частота стрельбы в выстрелах в секунду
 
     private Quaternion _originBodyRotation;
-    private HealthManager _targetTank;
-    private List<HealthManager> _tanks;
+    private TankHealth _targetTank;
+    private List<TankHealth> _tanks;
     private SWState _state = SWState.Wait;
     private float _nextFireTime = 0f;
 
@@ -55,7 +55,7 @@ public class SWListener : MonoBehaviour, IPauseHandler
 
     private void Awake()
     {
-        _tanks = new List<HealthManager>();
+        _tanks = new List<TankHealth>();
         _originBodyRotation = _bodyTransform.rotation;
     }
 
@@ -81,7 +81,7 @@ public class SWListener : MonoBehaviour, IPauseHandler
 
             if (Physics.Raycast(new Ray(_headTransform.position, _headTransform.forward), out RaycastHit hitInfo))
             {
-                if (hitInfo.collider.TryGetComponent(out HealthManager healthManager))
+                if (hitInfo.collider.TryGetComponent(out TankHealth healthManager))
                 {
                     if (healthManager == _targetTank && Time.time >= _nextFireTime)
                     {
@@ -127,7 +127,7 @@ public class SWListener : MonoBehaviour, IPauseHandler
         _headTransform.rotation = Quaternion.Euler(targetRotation.eulerAngles.x, _headTransform.rotation.eulerAngles.y, _headTransform.rotation.eulerAngles.z);
     }
 
-    private void OnTryFocus(HealthManager tank)
+    private void OnTryFocus(TankHealth tank)
     {
         if (tank != null)
         {

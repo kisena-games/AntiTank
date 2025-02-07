@@ -5,7 +5,7 @@ using UnityEngine;
 public class SWAttack : MonoBehaviour
 {
     private SWListener _SWListener;
-    private List<HealthManager> _enemies;
+    private List<TankHealth> _tanks;
 
     private void OnDisable()
     {
@@ -15,7 +15,7 @@ public class SWAttack : MonoBehaviour
     private void Awake()
     {
         _SWListener = GetComponent<SWListener>();
-        _enemies = new List<HealthManager>();
+        _tanks = new List<TankHealth>();
     }
 
     private void Update()

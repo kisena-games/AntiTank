@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.TryGetComponent(out HealthManager enemyHealthManager))
+        if(collision.gameObject.TryGetComponent(out TankHealth enemyHealthManager))
         {
             enemyHealthManager.TakeDamage(_damage);
         }

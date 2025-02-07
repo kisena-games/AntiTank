@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(HealthManager), typeof(NavMeshAgent))]
+[RequireComponent(typeof(TankHealth), typeof(NavMeshAgent))]
 public class TankStateMachine : MonoBehaviour, IPauseHandler, IPoolable
 {
     [SerializeField] private TankSO _tankSO;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class LastDestination : MonoBehaviour
 {
     private Transform _tank;
-    private HealthManager _tankHealth;
+    private TankHealth _tankHealth;
 
     public bool IsFree
     {
@@ -32,17 +32,12 @@ public class LastDestination : MonoBehaviour
         Gizmos.DrawSphere(transform.position, 2f);
     }
 
-    private void Update()
-    {
-        Debug.Log(IsFree);
-    }
-
     public bool TryPlaceTank(Transform tank)
     {
         if (IsFree)
         {
             _tank = tank;
-            _tankHealth = tank.GetComponent<HealthManager>();
+            _tankHealth = tank.GetComponent<TankHealth>();
             return true;
         }
 

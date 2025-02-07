@@ -1,13 +1,13 @@
 using Lean.Pool;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class HealthManager : MonoBehaviour, IDamageable, IPoolable
+public class TankHealth : MonoBehaviour, IDamageable, IPoolable
 {
     [SerializeField] private int _maxHealth = 100;
+    [SerializeField] private Image _slider;
 
     private int _currentHealth;
-
-    public bool IsDied => _currentHealth <= 0;
 
     public bool IsKilled { get; private set; }
 
@@ -15,11 +15,13 @@ public class HealthManager : MonoBehaviour, IDamageable, IPoolable
     {
         _currentHealth = _maxHealth;
         IsKilled = false;
+        _slider.fillAmount = _currentHealth / _maxHealth;
+        _slider.enabled = true;
     }
 
     public void OnDespawn()
     {
-        
+
     }
 
     private void Awake()
@@ -30,6 +32,7 @@ public class HealthManager : MonoBehaviour, IDamageable, IPoolable
     public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
+        _slider.fillAmount -= (float)damage / _maxHealth;
 
         if (_currentHealth <= 0)
         {
@@ -40,6 +43,7 @@ public class HealthManager : MonoBehaviour, IDamageable, IPoolable
 
     private void Die()
     {
+        _slider.enabled = false;
         LeanPool.Despawn(gameObject);
     }
 }
