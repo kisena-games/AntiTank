@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(TankHealth), typeof(NavMeshAgent))]
-public class TankStateMachine : MonoBehaviour, IPauseHandler, IPoolable
+public class TankStateMachine : MonoBehaviour, IPoolable
 {
     [SerializeField] private TankSO _tankSO;
     [SerializeField] private Animator _animator;
@@ -57,15 +57,15 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler, IPoolable
         _isMove = true;
     }
 
-    private void OnEnable()
-    {
-        GamePause.Instance?.AddPauseList(this);
-    }
+    //private void OnEnable()
+    //{
+    //    GamePause.Instance?.AddPauseList(this);
+    //}
 
-    private void OnDisable()
-    {
-        GamePause.Instance?.RemovePauseList(this);
-    }
+    //private void OnDisable()
+    //{
+    //    GamePause.Instance?.RemovePauseList(this);
+    //}
 
     private void Awake()
     {
@@ -81,10 +81,10 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler, IPoolable
 
     private void Update()
     {
-        if (GamePause.Instance.IsPause)
-        {
-            return;
-        }
+        //if (GamePause.Instance.IsPause)
+        //{
+        //    return;
+        //}
 
         _distanceToLastDestination = Vector3.Distance(transform.position, _lastDestination);
         _stateMachine?.OnUpdate();
@@ -92,10 +92,10 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler, IPoolable
 
     private void FixedUpdate()
     {
-        if (GamePause.Instance.IsPause)
-        {
-            return;
-        }
+        //if (GamePause.Instance.IsPause)
+        //{
+        //    return;
+        //}
 
         _stateMachine?.OnFixedUpdate();
     }
@@ -116,19 +116,19 @@ public class TankStateMachine : MonoBehaviour, IPauseHandler, IPoolable
 
     public void IsPaused(bool isPaused)
     {
-        if (isPaused)
-        {
-            _animationController.StopAnimator();
-            _agent.isStopped = true;
-            _targetPosition = _agent.destination;
-            _agent.Warp(_agent.transform.position);
-        }
-        else
-        {
-            _animationController.PlayAnimator();
-            _agent.isStopped = false;
-            _agent.SetDestination(_targetPosition);
-        }
+        //if (isPaused)
+        //{
+        //    _animationController.StopAnimator();
+        //    _agent.isStopped = true;
+        //    _targetPosition = _agent.destination;
+        //    _agent.Warp(_agent.transform.position);
+        //}
+        //else
+        //{
+        //    _animationController.PlayAnimator();
+        //    _agent.isStopped = false;
+        //    _agent.SetDestination(_targetPosition);
+        //}
         
     }
 }

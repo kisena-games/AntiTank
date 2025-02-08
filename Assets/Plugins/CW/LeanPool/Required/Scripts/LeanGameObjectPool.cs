@@ -470,7 +470,7 @@ namespace Lean.Pool
 			if (prefab != null)
 			{
 				// Create clone
-				var clone = CreateClone(Vector3.zero, Quaternion.identity, Vector3.one, null, false);
+				var clone = CreateClone(new Vector3(500, 0, 500), Quaternion.identity, Vector3.one, null, false);
 
 				// Add clone to despawned list
 				despawnedClones.Add(clone);
