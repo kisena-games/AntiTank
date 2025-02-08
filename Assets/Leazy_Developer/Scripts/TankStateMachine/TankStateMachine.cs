@@ -6,23 +6,22 @@ using UnityEngine.AI;
 [RequireComponent(typeof(TankHealth), typeof(NavMeshAgent))]
 public class TankStateMachine : MonoBehaviour, IPoolable
 {
-    [SerializeField] private TankSO _tankSO;
+    [SerializeField] private Transform _attackPoint;
+    [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Animator _animator;
-
-    //[Header("Move Parameters")]
-    private TankPath _path;
-    private Vector3 _lastDestination;
+    [SerializeField] private float _fireRate = 2f; // Частота стрельбы в выстрелах в секунду
 
     private TankAudioManager _audioManager;
     private NavMeshAgent _agent;
     private StateMachine _stateMachine;
     private TankAnimationController _animationController;
 
-    private Transform _aimToAttack;
+    private TankPath _path;
+    private Vector3 _lastDestination;
     private float _distanceToLastDestination = 1f;
     private bool _isMove = false;
 
-    private Vector3 _targetPosition = Vector3.zero;
+    private Transform _aimToAttack;
 
     public void OnSpawn()
     {
@@ -81,6 +80,8 @@ public class TankStateMachine : MonoBehaviour, IPoolable
 
     private void Update()
     {
+        Debug.DrawRay(_attackPoint.position, _aimToAttack.position, Color.black);
+
         //if (GamePause.Instance.IsPause)
         //{
         //    return;
@@ -106,7 +107,7 @@ public class TankStateMachine : MonoBehaviour, IPoolable
 
         State emptyState = new State();
         State moveState = new TankMoveState(transform.gameObject.ToString(), _audioManager, _animationController, _agent, _path.Destinations, _lastDestination);
-        State fireState = new TankFireState(_audioManager, _animationController, _agent, transform, _aimToAttack, _tankSO.bulletSO);
+        State fireState = new TankFireState(_audioManager, _animationController, _agent, _attackPoint, _aimToAttack, _bulletPrefab, _fireRate);
 
         emptyState.AddTransition(new StateTransition(moveState, new FuncStateCondition(() => _isMove)));
         moveState.AddTransition(new StateTransition(fireState, new FuncStateCondition(() => _distanceToLastDestination <= _agent.stoppingDistance)));

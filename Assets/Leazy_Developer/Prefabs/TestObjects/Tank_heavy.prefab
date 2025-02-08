@@ -3486,7 +3486,18 @@ PrefabInstance:
         type: 2}
     - target: {fileID: -7772460404533441695, guid: df9a19fa662336c4ca505c6101dee806,
         type: 3}
+      propertyPath: _fireRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7772460404533441695, guid: df9a19fa662336c4ca505c6101dee806,
+        type: 3}
       propertyPath: _bulettPrefab
+      value: 
+      objectReference: {fileID: 7835489689424445374, guid: 1bb0bf3b90213ee4abc96d32c23a9eac,
+        type: 3}
+    - target: {fileID: -7772460404533441695, guid: df9a19fa662336c4ca505c6101dee806,
+        type: 3}
+      propertyPath: _bulletPrefab
       value: 
       objectReference: {fileID: 7835489689424445374, guid: 1bb0bf3b90213ee4abc96d32c23a9eac,
         type: 3}
