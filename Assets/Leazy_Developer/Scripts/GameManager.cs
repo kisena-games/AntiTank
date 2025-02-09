@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     public static int MaxTanksCount { get; private set; }
     public static int KilledTanksCount { get; private set; }
     public static string[] StringNumbers { get; private set; }
+
+    public static Action OnWinAction;
 
     private AudioSource _audioSource;
 

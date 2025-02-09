@@ -15,8 +15,7 @@ public class TankFireState : State
     private readonly GameObject _bulletPrefab;
     private readonly float _fireRate;
 
-    //private float _nextFireTime = 0f;
-    private Vector3 _targetDirection = Vector3.zero;
+    private float _nextFireTime = 0f;
     private Quaternion _targetRotation = Quaternion.identity;
 
     public TankFireState(TankAudioManager audioManager, TankAnimationController controller, NavMeshAgent agent, Transform attackPoint, Transform aimToAttack, GameObject bulletPrefab, float fireRate)
@@ -27,16 +26,15 @@ public class TankFireState : State
         _aimToAttack = aimToAttack;
         _attackPoint = attackPoint;
         _bulletPrefab = bulletPrefab;
-        _targetDirection = (_aimToAttack.position - attackPoint.position);
-        _targetRotation = Quaternion.LookRotation(_targetDirection);
         _fireRate = fireRate;
     }
 
     public override void OnEnter()
     {
-        _agent.updateRotation = false;
-        //_tank.rotation = Quaternion.FromToRotation(_tank.forward, -_targetDirection);
-        _targetRotation = Quaternion.FromToRotation(_aimToAttack.forward, _targetDirection);
+        //_agent.updateRotation = false;
+        Vector3 direction = (_aimToAttack.position - _attackPoint.position).normalized;
+        _targetRotation = Quaternion.LookRotation(direction);
+
         _controller.SetBool(TankAnimationType.FireBool, true);
         
     }
@@ -48,12 +46,12 @@ public class TankFireState : State
 
     public override void OnUpdate()
     {
-        //if (Time.time >= _nextFireTime)
-        //{
-        //    _audioManager.PlayShoot();
-        //    Shoot();
-        //    _nextFireTime = Time.time + 1f / _fireRate;
-        //}
+        if (Time.time >= _nextFireTime)
+        {
+            _audioManager.PlayShoot();
+            Shoot();
+            _nextFireTime = Time.time + 1f / _fireRate;
+        }
     }
 
     private void Shoot()

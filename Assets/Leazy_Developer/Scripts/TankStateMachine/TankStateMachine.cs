@@ -31,8 +31,7 @@ public class TankStateMachine : MonoBehaviour, IPoolable
     public void OnDespawn()
     {
         _isMove = false;
-        _agent.updateRotation = true;
-        //transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
+        //_agent.updateRotation = true;
         GameManager.OnTankKilled();
         TankSpawnManager.tankCount--;
     }
@@ -84,8 +83,6 @@ public class TankStateMachine : MonoBehaviour, IPoolable
 
     private void Update()
     {
-        Debug.DrawRay(_attackPoint.position, _aimToAttack.position, Color.black);
-
         //if (GamePause.Instance.IsPause)
         //{
         //    return;
