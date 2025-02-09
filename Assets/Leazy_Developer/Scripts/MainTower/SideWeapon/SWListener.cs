@@ -81,8 +81,6 @@ public class SWListener : MonoBehaviour, IPauseHandler
 
             if (Physics.Raycast(new Ray(_headTransform.position, _headTransform.forward), out RaycastHit hitInfo))
             {
-                Debug.Log(hitInfo);
-
                 if (hitInfo.collider.TryGetComponent(out TankHealth healthManager))
                 {
                     if (healthManager == _targetTank && Time.time >= _nextFireTime)
