@@ -15,7 +15,7 @@ public class TankFireState : State
     private readonly GameObject _bulletPrefab;
     private readonly float _fireRate;
 
-    private float _nextFireTime = 0f;
+    //private float _nextFireTime = 0f;
     private Vector3 _targetDirection = Vector3.zero;
     private Quaternion _targetRotation = Quaternion.identity;
 

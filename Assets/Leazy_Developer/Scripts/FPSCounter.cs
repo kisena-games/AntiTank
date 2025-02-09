@@ -10,17 +10,15 @@ public class FPSCounter : MonoBehaviour
 
     private TextMeshProUGUI _textMeshPro;
     private float _elapsedTime = 0.0f;
-    private string[] _stringNumbers;
 
     private void Awake()
     {
         _textMeshPro = GetComponent<TextMeshProUGUI>();
-        _stringNumbers = new string[_maxFPSDisplayed + 1];
+    }
 
-        for (int i = 0; i < _stringNumbers.Length; i++)
-        {
-            _stringNumbers[i] = i.ToString();
-        }
+    private void Start()
+    {
+        _maxFPSDisplayed = Mathf.Clamp(_maxFPSDisplayed, 0, GameManager.StringNumbers.Length);
     }
 
     private void Update()
@@ -32,7 +30,7 @@ public class FPSCounter : MonoBehaviour
             int currentFPS = (int)(1 / Time.unscaledDeltaTime);
             currentFPS = Mathf.Clamp(currentFPS, 0, _maxFPSDisplayed);
 
-            _textMeshPro.text = _stringNumbers[currentFPS];
+            _textMeshPro.text = GameManager.StringNumbers[currentFPS];
             _elapsedTime = 0.0f;
         }
     }

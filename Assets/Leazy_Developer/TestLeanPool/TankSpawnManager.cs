@@ -6,9 +6,16 @@ using UnityEngine;
 
 public class TankSpawnManager : MonoBehaviour
 {
+    public static int tankCount = 0;
+
     public List<TanksWave> tanksWaves;
 
     private int _currentWaveIndex = 0;
+
+    private void Awake()
+    {
+        
+    }
 
     private void Update()
     {
@@ -24,5 +31,10 @@ public class TankSpawnManager : MonoBehaviour
         {
             tanksWaves[_currentWaveIndex - 1].UpdateWave();
         }
+    }
+
+    private void FixedUpdate()
+    {
+        //Debug.Log(tankCount);
     }
 }

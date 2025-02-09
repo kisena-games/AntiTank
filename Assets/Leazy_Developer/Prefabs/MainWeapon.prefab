@@ -496,7 +496,7 @@ Transform:
   m_GameObject: {fileID: 5871646096072999755}
   serializedVersion: 2
   m_LocalRotation: {x: 0.22070073, y: -0.00000012290494, z: 0.000000022275808, w: 0.9753416}
-  m_LocalPosition: {x: -0.30207324, y: 24.710777, z: -37.457592}
+  m_LocalPosition: {x: -0.30207068, y: 19.08078, z: -25.654253}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -555,6 +555,7 @@ GameObject:
   - component: {fileID: 1545160480586406052}
   - component: {fileID: 9103612912643532971}
   - component: {fileID: 6699478870689623954}
+  - component: {fileID: 2388751911276071038}
   - component: {fileID: 3889563825585885659}
   m_Layer: 0
   m_Name: MainWeapon
@@ -638,6 +639,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sniperCamera: {fileID: 1936631130088399626}
+--- !u!114 &2388751911276071038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6933076178080561520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547e3aea40eb5f54fa6f2c671b0498e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
 --- !u!65 &3889563825585885659
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -657,8 +671,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.3799124, y: 5.765317, z: 7.513716}
-  m_Center: {x: 0.011231422, y: 5.0330663, z: 0.40430045}
+  m_Size: {x: 5.8499756, y: 3.415078, z: 5.668315}
+  m_Center: {x: -0.032287598, y: 0.7416989, z: 0.056101482}
 --- !u!1 &7299027129458336683
 GameObject:
   m_ObjectHideFlags: 0

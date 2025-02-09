@@ -25,12 +25,14 @@ public class TankStateMachine : MonoBehaviour, IPoolable
 
     public void OnSpawn()
     {
-        
+        TankSpawnManager.tankCount++;
     }
 
     public void OnDespawn()
     {
+        GameManager.OnTankKilled();
         _isMove = false;
+        TankSpawnManager.tankCount--;
     }
 
     public void Initialize(TankPath path)
