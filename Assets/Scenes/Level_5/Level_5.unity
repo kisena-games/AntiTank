@@ -830,7 +830,7 @@ Transform:
   m_GameObject: {fileID: 1473350270}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 150, y: 0, z: 150}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1364,6 +1364,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3580821059455622553, guid: 200731beced8b154c8ca562033c4a9da,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580821059455622553, guid: 200731beced8b154c8ca562033c4a9da,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580821059455622553, guid: 200731beced8b154c8ca562033c4a9da,
+        type: 3}
+      propertyPath: MinDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580821059455622553, guid: 200731beced8b154c8ca562033c4a9da,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9355464961f590341bbd1cad93c341ef, type: 3}
     - target: {fileID: 6457413739013153605, guid: 200731beced8b154c8ca562033c4a9da,
         type: 3}
       propertyPath: m_Name
