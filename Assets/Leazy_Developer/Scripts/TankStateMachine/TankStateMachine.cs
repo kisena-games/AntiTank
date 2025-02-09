@@ -30,8 +30,10 @@ public class TankStateMachine : MonoBehaviour, IPoolable
 
     public void OnDespawn()
     {
-        GameManager.OnTankKilled();
         _isMove = false;
+        _agent.updateRotation = true;
+        //transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
+        GameManager.OnTankKilled();
         TankSpawnManager.tankCount--;
     }
 
