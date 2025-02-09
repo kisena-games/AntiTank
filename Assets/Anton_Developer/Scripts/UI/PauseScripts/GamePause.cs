@@ -31,7 +31,6 @@ public class GamePause : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightAlt))
         {
             SetPause(!IsPause);
-            _pausePanel.SetActive(IsPause);
         }
     }
 
@@ -43,6 +42,8 @@ public class GamePause : MonoBehaviour
         {
             _pauses[i].IsPaused(isEnable);
         }
+
+        _pausePanel.SetActive(IsPause);
     }
 
     public void AddPauseList(IPauseHandler pauseHandler)
