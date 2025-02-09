@@ -3992,7 +3992,7 @@ PrefabInstance:
     - target: {fileID: -7772460404533441695, guid: df9a19fa662336c4ca505c6101dee806,
         type: 3}
       propertyPath: _fireRate
-      value: 4
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -7772460404533441695, guid: df9a19fa662336c4ca505c6101dee806,
         type: 3}
@@ -4031,6 +4031,27 @@ PrefabInstance:
       propertyPath: _tankSO
       value: 
       objectReference: {fileID: 11400000, guid: c0de9ffedc9d1664f9b04f18e02fdcc7,
+        type: 2}
+    - target: {fileID: -1158889903681243104, guid: df9a19fa662336c4ca505c6101dee806,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1158889903681243104, guid: df9a19fa662336c4ca505c6101dee806,
+        type: 3}
+      propertyPath: MinDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -1158889903681243104, guid: df9a19fa662336c4ca505c6101dee806,
+        type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1158889903681243104, guid: df9a19fa662336c4ca505c6101dee806,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -7989532108582540192, guid: 596056adab5de264b8db69045a72e58b,
         type: 2}
     - target: {fileID: 4142900402732817498, guid: df9a19fa662336c4ca505c6101dee806,
         type: 3}
@@ -4081,6 +4102,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tank_med
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664142775844865320, guid: df9a19fa662336c4ca505c6101dee806,
+        type: 3}
+      propertyPath: _maxHealth
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7397308584988142652, guid: df9a19fa662336c4ca505c6101dee806,
         type: 3}
@@ -4152,6 +4178,26 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7549724121218205893, guid: df9a19fa662336c4ca505c6101dee806,
+        type: 3}
+      propertyPath: _tank_shoot
+      value: 
+      objectReference: {fileID: 8300000, guid: b944e33c7206009478f6e5d5a21c9378, type: 3}
+    - target: {fileID: 7549724121218205893, guid: df9a19fa662336c4ca505c6101dee806,
+        type: 3}
+      propertyPath: _tank_engine
+      value: 
+      objectReference: {fileID: 8300000, guid: 0eda42678739586498618b539c07bc58, type: 3}
+    - target: {fileID: 7549724121218205893, guid: df9a19fa662336c4ca505c6101dee806,
+        type: 3}
+      propertyPath: _tank_explosion
+      value: 
+      objectReference: {fileID: 8300000, guid: 4fdf8e2edc55c8947b48593b60b67b57, type: 3}
+    - target: {fileID: 7549724121218205893, guid: df9a19fa662336c4ca505c6101dee806,
+        type: 3}
+      propertyPath: _tank_engine_forsage
+      value: 
+      objectReference: {fileID: 8300000, guid: a87577b33db2d40409841d761c246f82, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
