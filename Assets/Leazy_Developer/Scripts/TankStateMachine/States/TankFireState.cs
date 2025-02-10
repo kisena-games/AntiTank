@@ -46,11 +46,11 @@ public class TankFireState : State
 
     public override void OnUpdate()
     {
-        if (Time.time >= _nextFireTime)
+        if (Time.timeSinceLevelLoad >= _nextFireTime)
         {
             _audioManager.PlayShoot();
             Shoot();
-            _nextFireTime = Time.time + 1f / _fireRate;
+            _nextFireTime = Time.timeSinceLevelLoad + 1f / _fireRate;
         }
     }
 

@@ -44,6 +44,5 @@ public class TankHealth : MonoBehaviour, IDamageable, IPoolable
     private void Die()
     {
         _slider.enabled = false;
-        LeanPool.Despawn(gameObject);
     }
 }

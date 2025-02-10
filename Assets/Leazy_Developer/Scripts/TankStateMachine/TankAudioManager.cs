@@ -30,6 +30,12 @@ public class TankAudioManager : MonoBehaviour
         _audioSource.PlayOneShot(_tank_shoot);
     }
 
+    public void PlayExplosion()
+    {
+        _audioSource.clip = _tank_explosion;
+        _audioSource.PlayOneShot(_tank_shoot);
+    }
+
     IEnumerator PlayEngineAfterForsage()
     {
         while (IsPlaying)

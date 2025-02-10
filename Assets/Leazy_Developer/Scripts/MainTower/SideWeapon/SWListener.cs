@@ -85,16 +85,16 @@ public class SWListener : MonoBehaviour, IPauseHandler
             {
                 if (hitInfo.collider.TryGetComponent(out TankHealth healthManager))
                 {
-                    if (healthManager == _targetTank && Time.time >= _nextFireTime)
+                    if (healthManager == _targetTank && Time.timeSinceLevelLoad >= _nextFireTime)
                     {
                         Shoot();
-                        _nextFireTime = Time.time + 1f / _fireRate;
+                        _nextFireTime = Time.timeSinceLevelLoad + 1f / _fireRate;
                     }
-                    else if (healthManager != _targetTank && Time.time >= _nextFireTime)
+                    else if (healthManager != _targetTank && Time.timeSinceLevelLoad >= _nextFireTime)
                     {
                         _targetTank = healthManager;
                         Shoot();
-                        _nextFireTime = Time.time + 1f / _fireRate;
+                        _nextFireTime = Time.timeSinceLevelLoad + 1f / _fireRate;
                     }
                 }
             }

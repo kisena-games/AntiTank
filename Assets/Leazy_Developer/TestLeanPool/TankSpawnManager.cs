@@ -12,6 +12,8 @@ public class TankSpawnManager : MonoBehaviour
 
     private int _currentWaveIndex = 0;
 
+
+
     private void Awake()
     {
         
@@ -21,7 +23,7 @@ public class TankSpawnManager : MonoBehaviour
     {
         if (_currentWaveIndex < tanksWaves.Count)
         {
-            if (Time.time >= tanksWaves[_currentWaveIndex].timeToWave)
+            if (Time.timeSinceLevelLoad >= tanksWaves[_currentWaveIndex].timeToWave)
             {
                 _currentWaveIndex++;
             }

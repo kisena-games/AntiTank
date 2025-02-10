@@ -15,12 +15,12 @@ public class SpawnPoint
 
     public void UpdateSpawn()
     {
-        if (Time.time >= _nextTimeToSpawn && _currentSpawnIndex < tanksCount)
+        if (Time.timeSinceLevelLoad >= _nextTimeToSpawn && _currentSpawnIndex < tanksCount)
         {
             var tank = LeanPool.Spawn(tankPrefab, path.SpawnPosition).GetComponent<TankStateMachine>();
             tank.Initialize(path);
             _currentSpawnIndex++;
-            _nextTimeToSpawn = Time.time + spawnTime;
+            _nextTimeToSpawn = Time.timeSinceLevelLoad + spawnTime;
         }
     }
 }
