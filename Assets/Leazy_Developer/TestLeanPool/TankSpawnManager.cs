@@ -16,7 +16,17 @@ public class TankSpawnManager : MonoBehaviour
 
     private void Awake()
     {
-        
+        int maxTanksCount = 0;
+
+        foreach (var tanksWave in tanksWaves)
+        {
+            foreach (var spawnPoint in tanksWave.spawnPoints)
+            {
+                maxTanksCount += spawnPoint.tanksCount;
+            }
+        }
+
+        GameManager.SetMaxTanksCount(maxTanksCount);
     }
 
     private void Update()

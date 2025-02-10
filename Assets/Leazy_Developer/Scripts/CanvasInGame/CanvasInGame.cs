@@ -1,35 +1,44 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CanvasInGame : MonoBehaviour
 {
-    [SerializeField] private GameObject _inGameUI;
     [SerializeField] private LosePanel _losePanel;
     [SerializeField] private WinPanel _winPanel;
+    [SerializeField] private TextMeshProUGUI _currentTanksCount;
+    [SerializeField] private TextMeshProUGUI _maxTanksCount;
+
+    private int _tanksCount = 0;
 
     private void OnEnable()
     {
+        GameManager.OnChangeTankCountAction += OnChangeTankCount;
         MainWeaponHealth.OnLoseAction += OnLose;
         GameManager.OnWinAction += OnWin;
     }
 
     private void OnDisable()
     {
+        GameManager.OnChangeTankCountAction -= OnChangeTankCount;
         MainWeaponHealth.OnLoseAction -= OnLose;
         GameManager.OnWinAction -= OnWin;
     }
 
+    private void OnChangeTankCount()
+    {
+        _currentTanksCount.text = GameManager.StringNumbers[++_tanksCount];
+    }
+
     private void OnLose()
     {
-        _inGameUI.SetActive(false);
         _losePanel.gameObject.SetActive(true);
     }
 
     private void OnWin()
     {
-        _inGameUI.SetActive(false);
-        _losePanel.gameObject.SetActive(true);
+        _winPanel.gameObject.SetActive(true);
     }
 }

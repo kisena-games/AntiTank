@@ -21,7 +21,7 @@ public class TimeCounter : MonoBehaviour
 
         if (_elapsedTime >= _updateDelay)
         {
-            int currentTime = (int)Time.unscaledTime;
+            int currentTime = (int)Time.timeSinceLevelLoad;
 
             _textMeshPro.text = currentTime.ToString();
             _elapsedTime = 0.0f;
