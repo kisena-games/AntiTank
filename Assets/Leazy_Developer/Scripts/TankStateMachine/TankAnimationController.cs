@@ -44,5 +44,6 @@ public class TankAnimationController
 public enum TankAnimationType
 {
     MoveBool,
-    FireBool
+    FireBool,
+    DeadBool
 }

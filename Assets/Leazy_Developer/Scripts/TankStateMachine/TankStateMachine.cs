@@ -9,8 +9,10 @@ public class TankStateMachine : MonoBehaviour, IPoolable
     [SerializeField] private Transform _attackPoint;
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Animator _animator;
+    [SerializeField] private ParticleSystem _particleSystem;
     [SerializeField] private float _fireRate = 2f; // Частота стрельбы в выстрелах в секунду
 
+    private TankHealth _health;
     private TankAudioManager _audioManager;
     private NavMeshAgent _agent;
     private StateMachine _stateMachine;
@@ -71,6 +73,7 @@ public class TankStateMachine : MonoBehaviour, IPoolable
 
     private void Awake()
     {
+        _health = GetComponent<TankHealth>();
         _aimToAttack = FindObjectOfType<MWHeadMovement>().transform;
         _agent = GetComponent<NavMeshAgent>();
         _audioManager = GetComponent<TankAudioManager>();
@@ -109,9 +112,14 @@ public class TankStateMachine : MonoBehaviour, IPoolable
         State emptyState = new State();
         State moveState = new TankMoveState(transform.gameObject.ToString(), _audioManager, _animationController, _agent, _path.Destinations, _lastDestination);
         State fireState = new TankFireState(_audioManager, _animationController, _agent, _attackPoint, _aimToAttack, _bulletPrefab, _fireRate);
+        State deadState = new TankDeadState(_audioManager, _animationController, _particleSystem);
 
         emptyState.AddTransition(new StateTransition(moveState, new FuncStateCondition(() => _isMove)));
+        
         moveState.AddTransition(new StateTransition(fireState, new FuncStateCondition(() => _distanceToLastDestination <= _agent.stoppingDistance)));
+        
+        moveState.AddTransition(new StateTransition(deadState, new FuncStateCondition(() => _health.IsKilled)));
+        fireState.AddTransition(new StateTransition(deadState, new FuncStateCondition(() => _health.IsKilled)));
 
         _stateMachine = new StateMachine(emptyState);
     }
