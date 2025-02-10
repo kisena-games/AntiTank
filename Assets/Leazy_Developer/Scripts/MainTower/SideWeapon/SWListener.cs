@@ -21,6 +21,7 @@ public class SWListener : MonoBehaviour, IPauseHandler
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private float _fireRate = 2f; // Частота стрельбы в выстрелах в секунду
 
+    private AudioSource _audioSource;
     private Quaternion _originBodyRotation;
     private TankHealth _targetTank;
     private List<TankHealth> _tanks;
@@ -55,6 +56,7 @@ public class SWListener : MonoBehaviour, IPauseHandler
 
     private void Awake()
     {
+        _audioSource = GetComponent<AudioSource>();
         _tanks = new List<TankHealth>();
         _originBodyRotation = _bodyTransform.rotation;
     }
@@ -113,8 +115,9 @@ public class SWListener : MonoBehaviour, IPauseHandler
 
     private void Shoot()
     {
-        //Instantiate(_bulletPrefab, _headTransform.position, _headTransform.rotation);
+        _audioSource.PlayOneShot(_audioSource.clip);
         LeanPool.Spawn(_bulletPrefab, _headTransform.position, _headTransform.rotation);
+        //Instantiate(_bulletPrefab, _headTransform.position, _headTransform.rotation);
     }
 
     private void RotateBodyTowardsEnemy()

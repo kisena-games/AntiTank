@@ -11,6 +11,8 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
     [Header("Sniper Mode Parameters")]
     [SerializeField] private Transform _bulletSniperSpawnPosition;
 
+    private AudioSource _audioSource;
+
     private void OnEnable()
     {
         InputManager.AttackAction += Attack;
@@ -19,6 +21,11 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
     private void OnDisable()
     {
         InputManager.AttackAction -= Attack;
+    }
+
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void Attack()
@@ -37,12 +44,14 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
 
     public void DefaultAttack()
     {
+        _audioSource.PlayOneShot(_audioSource.clip);
         LeanPool.Spawn(_bulletPrefab, _bulletDefaultSpawnPosition.position, _bulletDefaultSpawnPosition.rotation);
         //Instantiate(_bulletPrefab, _bulletDefaultSpawnPosition.position, _bulletDefaultSpawnPosition.rotation);
     }
 
     public void SniperAttack()
     {
+        _audioSource.PlayOneShot(_audioSource.clip);
         LeanPool.Spawn(_bulletPrefab, _bulletSniperSpawnPosition.position, _bulletSniperSpawnPosition.rotation);
         //Instantiate(_bulletPrefab, _bulletSniperSpawnPosition.position, _bulletSniperSpawnPosition.rotation);
     }
