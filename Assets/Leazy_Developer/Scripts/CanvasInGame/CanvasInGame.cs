@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class CanvasInGame : MonoBehaviour
 {
-    [SerializeField] private GameObject _inGameUI;
     [SerializeField] private LosePanel _losePanel;
     [SerializeField] private WinPanel _winPanel;
 
@@ -23,13 +22,11 @@ public class CanvasInGame : MonoBehaviour
 
     private void OnLose()
     {
-        _inGameUI.SetActive(false);
         _losePanel.gameObject.SetActive(true);
     }
 
     private void OnWin()
     {
-        _inGameUI.SetActive(false);
         _losePanel.gameObject.SetActive(true);
     }
 }
