@@ -35,10 +35,14 @@ public class CanvasInGame : MonoBehaviour
     private void OnLose()
     {
         _losePanel.gameObject.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private void OnWin()
     {
         _winPanel.gameObject.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
