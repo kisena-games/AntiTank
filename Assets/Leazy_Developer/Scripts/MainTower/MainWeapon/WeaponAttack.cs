@@ -45,14 +45,12 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
     public void DefaultAttack()
     {
         _audioSource.PlayOneShot(_audioSource.clip);
-        LeanPool.Spawn(_bulletPrefab, _bulletDefaultSpawnPosition.position, _bulletDefaultSpawnPosition.rotation);
-        //Instantiate(_bulletPrefab, _bulletDefaultSpawnPosition.position, _bulletDefaultSpawnPosition.rotation);
+        GameObject bullet = LeanPool.Spawn(_bulletPrefab, _bulletDefaultSpawnPosition.position, _bulletDefaultSpawnPosition.rotation);
     }
 
     public void SniperAttack()
     {
         _audioSource.PlayOneShot(_audioSource.clip);
-        LeanPool.Spawn(_bulletPrefab, _bulletSniperSpawnPosition.position, _bulletSniperSpawnPosition.rotation);
-        //Instantiate(_bulletPrefab, _bulletSniperSpawnPosition.position, _bulletSniperSpawnPosition.rotation);
+        GameObject bullet = LeanPool.Spawn(_bulletPrefab, _bulletSniperSpawnPosition.position, _bulletSniperSpawnPosition.rotation);
     }
 }

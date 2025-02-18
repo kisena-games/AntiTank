@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour, IPoolable
     [SerializeField] private int _damage;
 
     private float _radius = 0.2f;
+    private Rigidbody _rigidBody;
 
     private void OnDrawGizmos()
     {
@@ -16,18 +17,24 @@ public class Bullet : MonoBehaviour, IPoolable
         Gizmos.DrawWireSphere(transform.position, _radius);
     }
 
-    public void OnSpawn() { }
-
-    public void OnDespawn() { }
-
-    private void Update()
+    public void OnSpawn()
     {
-        transform.localPosition += transform.forward * _flySpeed * Time.deltaTime;
+        _rigidBody.velocity = transform.forward * _flySpeed;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnDespawn()
     {
-        if (other.TryGetComponent(out IDamageable damageableObject))
+        _rigidBody.velocity = Vector3.zero;
+    }
+
+    private void Awake()
+    {
+        _rigidBody = GetComponent<Rigidbody>();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.TryGetComponent(out IDamageable damageableObject))
         {
             if (!damageableObject.IsKilled)
             {
