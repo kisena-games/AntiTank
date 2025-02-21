@@ -6,7 +6,7 @@
             "id": "00079709-b6d8-4caf-9f99-3a90611cf146",
             "actions": [
                 {
-                    "name": "MoveWeaponBase",
+                    "name": "MoveWeaponBaseInput",
                     "type": "Value",
                     "id": "b4f29932-62b0-498f-9404-84b87800d5e3",
                     "expectedControlType": "Vector2",
@@ -103,7 +103,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveWeaponBase",
+                    "action": "MoveWeaponBaseInput",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -114,7 +114,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveWeaponBase",
+                    "action": "MoveWeaponBaseInput",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -125,7 +125,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveWeaponBase",
+                    "action": "MoveWeaponBaseInput",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -136,7 +136,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveWeaponBase",
+                    "action": "MoveWeaponBaseInput",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -147,7 +147,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveWeaponBase",
+                    "action": "MoveWeaponBaseInput",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

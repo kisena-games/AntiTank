@@ -75,7 +75,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4773594837155657585}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: OnWeaponMoveBase
+        m_MethodName: OnWeaponBaseMoveInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -10,26 +10,42 @@ public class InputManager : MonoBehaviour
     public static Vector2 WeaponTopMoveDelta { get; private set; } = Vector2.zero;
     public static bool IsWeaponTopMoving { get; private set; } = false;
 
+    public static Action<float> BaseRotateAction;
     public static Action AttackAction;
     public static Action SwitchCameraModeAction;
 
 
-    public void OnWeaponMoveBase(InputAction.CallbackContext context)
+    public void OnWeaponBaseMoveInput(InputAction.CallbackContext context)
     {
-        if (context.performed && !IsWeaponBaseMoving)
+        if (GamePause.Instance.IsPause)
         {
-            IsWeaponBaseMoving = true;
-        }
-        else if (context.canceled && IsWeaponBaseMoving)
-        {
-            IsWeaponBaseMoving = false;
+            return;
         }
 
-        WeaponBaseMoveInput = context.ReadValue<Vector2>();
+        if (context.performed)
+        {
+            BaseRotateAction?.Invoke(context.ReadValue<Vector2>().x);
+        }
+
+        //if (context.performed && !IsWeaponBaseMoving)
+        //{
+        //    IsWeaponBaseMoving = true;
+        //}
+        //else if (context.canceled && IsWeaponBaseMoving)
+        //{
+        //    IsWeaponBaseMoving = false;
+        //}
+
+        //WeaponBaseMoveInput = context.ReadValue<Vector2>();
     }
 
     public void OnWeaponTopMoveDelta(InputAction.CallbackContext context)
     {
+        if (GamePause.Instance.IsPause)
+        {
+            return;
+        }
+
         WeaponTopMoveDelta = context.ReadValue<Vector2>();
 
         if (context.performed && !IsWeaponTopMoving)
