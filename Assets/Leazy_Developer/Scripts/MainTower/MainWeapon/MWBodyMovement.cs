@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class MWBodyMovement : MonoBehaviour
 {
-    [Header("Body Moving Parameters")]
-    [SerializeField] private Transform _body;
-
     private void Update()
     {
         if (GamePause.Instance.IsPause)
@@ -23,6 +20,6 @@ public class MWBodyMovement : MonoBehaviour
     private void RotateBase()
     {
         Vector2 direction = InputManager.WeaponBaseMoveInput;
-        _body.forward = new Vector3(direction.x, 0, direction.y);
+        transform.forward = new Vector3(direction.x, 0, direction.y);
     }
 }

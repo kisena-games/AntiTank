@@ -31864,6 +31864,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 372599223}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1267752606 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4578167664487359965, guid: be81cc7e638e9f841b347688f92fe42d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8098172636639275269}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1270188075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1707407959190529244, guid: c89dd18dd2dbbfa46b3f44223898aa33,
@@ -53727,7 +53739,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _healthText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1267752606}
     - target: {fileID: 7923473414866361783, guid: e09215c8021dc5c4c82835044d044eeb,
         type: 3}
       propertyPath: _triggers.Array.data[0]

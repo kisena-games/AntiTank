@@ -4,34 +4,55 @@ using UnityEngine.UI;
 
 public class Radar : MonoBehaviour
 {
-    [SerializeField] private Transform tower; // Центр радара (башня)
-    [SerializeField] private RectTransform radarUI; // UI-элемент радара
-    [SerializeField] private GameObject tankIconPrefab; // Префаб иконки танка
-    [SerializeField] private float radarSize = 115f; // Радиус радара
+    [SerializeField] private RectTransform _radarUI;
+    [SerializeField] private Image _tankIconPrefab;
+    [SerializeField] private float _detectionRadius = 100f;
 
-    private List<GameObject> tankIcons = new List<GameObject>(); // Иконки на радаре
-    private List<Transform> enemies = new List<Transform>(); // Список врагов
+    private Transform _mainWeapon;
+    private Dictionary<Transform, Image> _tanks = new Dictionary<Transform, Image>();
+
+
+    private void Awake()
+    {
+        _mainWeapon = FindObjectOfType<MWBodyMovement>().transform;
+    }
 
     private void Update()
     {
-        for (int i = 0; i < enemies.Count; i++)
+        foreach (var kvp in _tanks)
         {
-            if (i >= tankIcons.Count) continue;
+            Transform tank = kvp.Key;
+            Image tankIcon = kvp.Value;
 
-            Vector3 enemyPos = enemies[i].position;
-            Vector3 relativePos = enemyPos - tower.position;
-            Vector2 radarPos = new Vector2(relativePos.x, relativePos.z) / radarSize;
-            radarPos = Vector2.ClampMagnitude(radarPos, 0.5f) * radarUI.rect.width;
+            if (tank == null) continue;
 
-            tankIcons[i].GetComponent<RectTransform>().anchoredPosition = radarPos;
+            Vector3 directionToTank = tank.position - _mainWeapon.position;
+            directionToTank = Quaternion.Inverse(_mainWeapon.rotation) * directionToTank;
+
+            float distanceToTank = directionToTank.magnitude;
+            float normalizedDistance = Mathf.Clamp01(distanceToTank / _detectionRadius);
+
+            Vector2 radarPos = new Vector2(directionToTank.x, directionToTank.z).normalized * (normalizedDistance * 0.5f * _radarUI.rect.width);
+
+            tankIcon.rectTransform.anchoredPosition = radarPos;
         }
     }
 
-    // Метод для регистрации танка на радаре
-    public void RegisterTank(Transform enemy)
+    public void RegisterTank(Transform tank)
     {
-        GameObject icon = Instantiate(tankIconPrefab, radarUI);
-        tankIcons.Add(icon);
-        enemies.Add(enemy);
+        if (!_tanks.ContainsKey(tank))
+        {
+            Image tankIcon = Instantiate(_tankIconPrefab, _radarUI);
+            _tanks[tank] = tankIcon;
+        }
+    }
+
+    public void UnRegisterTank(Transform tank)
+    {
+        if (_tanks.ContainsKey(tank))
+        {
+            Destroy(_tanks[tank].gameObject);
+            _tanks.Remove(tank);
+        }
     }
 }

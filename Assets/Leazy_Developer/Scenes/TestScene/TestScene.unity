@@ -13959,6 +13959,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2851842008066507629, guid: be81cc7e638e9f841b347688f92fe42d,
+        type: 3}
+      propertyPath: _detectionRadius
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 5709913611083734222, guid: be81cc7e638e9f841b347688f92fe42d,
         type: 3}
       propertyPath: m_Pivot.x
@@ -31508,10 +31513,10 @@ PrefabInstance:
       propertyPath: _triggers.Array.data[1]
       value: 
       objectReference: {fileID: 1472257251}
-    - target: {fileID: 1396011694341603906, guid: e09215c8021dc5c4c82835044d044eeb,
+    - target: {fileID: 765104913453869157, guid: e09215c8021dc5c4c82835044d044eeb,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2025289697206231098, guid: e09215c8021dc5c4c82835044d044eeb,
         type: 3}

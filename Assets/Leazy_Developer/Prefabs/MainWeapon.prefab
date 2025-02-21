@@ -249,6 +249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7233620946207668870}
+  - component: {fileID: 1971383700801438506}
   m_Layer: 0
   m_Name: MWBody
   m_TagString: Untagged
@@ -273,6 +274,18 @@ Transform:
   - {fileID: 7943582819697246736}
   m_Father: {fileID: 3250091753094872126}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1971383700801438506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4213694391510482860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157aa59293cd4334aad924cb2fcaf4bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4569431984397915757
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,10 +564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3250091753094872126}
-  - component: {fileID: 5082117041440652287}
-  - component: {fileID: 1545160480586406052}
   - component: {fileID: 9103612912643532971}
-  - component: {fileID: 6699478870689623954}
   - component: {fileID: 2388751911276071038}
   - component: {fileID: 3889563825585885659}
   - component: {fileID: 8007821848333600013}
@@ -582,35 +592,6 @@ Transform:
   - {fileID: 7233620946207668870}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5082117041440652287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6933076178080561520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2041331285878b849975a68e185185b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _head: {fileID: 7943582819697246736}
-  _mouseSensitivity: 2
-  verticalClampAngle: 7
-  horizontalClampAngle: 45
---- !u!114 &1545160480586406052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6933076178080561520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 157aa59293cd4334aad924cb2fcaf4bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _body: {fileID: 7233620946207668870}
 --- !u!114 &9103612912643532971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,19 +608,6 @@ MonoBehaviour:
     type: 3}
   _bulletDefaultSpawnPosition: {fileID: 6325998794678754632}
   _bulletSniperSpawnPosition: {fileID: 8347719059043495927}
---- !u!114 &6699478870689623954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6933076178080561520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dff88ff558ee5c4fa9980bb020092ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sniperCamera: {fileID: 1936631130088399626}
 --- !u!114 &2388751911276071038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -853,6 +821,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7943582819697246736}
+  - component: {fileID: 8645947715728202075}
+  - component: {fileID: 7175067039468626110}
   m_Layer: 0
   m_Name: MWHead
   m_TagString: Untagged
@@ -878,6 +848,34 @@ Transform:
   - {fileID: 6325998794678754632}
   m_Father: {fileID: 7233620946207668870}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8645947715728202075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631873080894309684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dff88ff558ee5c4fa9980bb020092ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sniperCamera: {fileID: 1936631130088399626}
+--- !u!114 &7175067039468626110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7631873080894309684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2041331285878b849975a68e185185b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseSensitivity: 2
+  verticalClampAngle: 10
+  horizontalClampAngle: 45
 --- !u!1 &8420751208075019473
 GameObject:
   m_ObjectHideFlags: 0

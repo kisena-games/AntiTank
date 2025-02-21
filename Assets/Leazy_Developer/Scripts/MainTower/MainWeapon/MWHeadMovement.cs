@@ -7,9 +7,6 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(SwitchCameraMode))]
 public class MWHeadMovement : MonoBehaviour
 {
-    [Header("Head Moving Parameters")]
-    [SerializeField] private Transform _head;
-
     [Header("Sniper Mode Parameters")]
     [SerializeField] private float _mouseSensitivity = 2.0f;
     [SerializeField] private float verticalClampAngle = 10.0f;
@@ -30,7 +27,7 @@ public class MWHeadMovement : MonoBehaviour
         Gizmos.DrawRay(Camera.main.transform.position, _directionCameraToWorldCursor);
 
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(_head.position, _directionWeaponToCursorAim);
+        Gizmos.DrawRay(transform.position, _directionWeaponToCursorAim);
     }
 
     private void Update()
@@ -56,13 +53,13 @@ public class MWHeadMovement : MonoBehaviour
 
     private void DefaultRotateHead()
     {
-        _head.forward = _directionWeaponToCursorAim.normalized;
+        transform.forward = _directionWeaponToCursorAim.normalized;
     }
 
     private void SniperRotateHead()
     {
         
-        _head.transform.localRotation = Quaternion.Euler(-_rotation.x, _rotation.y, 0.0f);
+        transform.localRotation = Quaternion.Euler(-_rotation.x, _rotation.y, 0.0f);
     }
 
     private void CalculateDirections()
@@ -77,9 +74,9 @@ public class MWHeadMovement : MonoBehaviour
             resultPosition = Camera.main.transform.position;
         }
 
-        _directionCameraToWeapon = _head.position - Camera.main.transform.position;
+        _directionCameraToWeapon = transform.position - Camera.main.transform.position;
         _directionCameraToWorldCursor = resultPosition - Camera.main.transform.position;
-        _directionWeaponToCursorAim = resultPosition - _head.position;
+        _directionWeaponToCursorAim = resultPosition - transform.position;
     }
 
     private void CalculateRotation()

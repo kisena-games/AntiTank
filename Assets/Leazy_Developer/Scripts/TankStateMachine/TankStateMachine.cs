@@ -17,6 +17,7 @@ public class TankStateMachine : MonoBehaviour, IPoolable
     private NavMeshAgent _agent;
     private StateMachine _stateMachine;
     private TankAnimationController _animationController;
+    private Radar _radar;
 
     private TankPath _path;
     private Vector3 _lastDestination;
@@ -27,14 +28,15 @@ public class TankStateMachine : MonoBehaviour, IPoolable
 
     public void OnSpawn()
     {
+        _radar.RegisterTank(transform);
         TankSpawnManager.tankCount++;
     }
 
     public void OnDespawn()
     {
         _isMove = false;
-        //_agent.updateRotation = true;
         GameManager.OnTankKilled();
+        _radar.UnRegisterTank(transform);
         TankSpawnManager.tankCount--;
     }
 
@@ -77,6 +79,7 @@ public class TankStateMachine : MonoBehaviour, IPoolable
         _aimToAttack = FindObjectOfType<MWHeadMovement>().transform;
         _agent = GetComponent<NavMeshAgent>();
         _audioManager = GetComponent<TankAudioManager>();
+        _radar = FindObjectOfType<Radar>();
     }
 
     private void Start()
