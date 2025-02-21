@@ -76,7 +76,7 @@ public class TankStateMachine : MonoBehaviour, IPoolable
     private void Awake()
     {
         _health = GetComponent<TankHealth>();
-        _aimToAttack = FindObjectOfType<MWHeadMovement>().transform;
+        _aimToAttack = FindObjectOfType<MainWeaponHealth>().transform;
         _agent = GetComponent<NavMeshAgent>();
         _audioManager = GetComponent<TankAudioManager>();
         _radar = FindObjectOfType<Radar>();
