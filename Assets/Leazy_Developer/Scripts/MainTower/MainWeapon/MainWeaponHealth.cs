@@ -1,5 +1,6 @@
 using Lean.Pool;
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +15,16 @@ public class MainWeaponHealth : MonoBehaviour, IDamageable
 
     public static Action OnLoseAction;
 
+    private void OnEnable()
+    {
+        CheatsInputManager.CheatHealthAction += OnCheatHealth;
+    }
+
+    private void OnDisable()
+    {
+        CheatsInputManager.CheatHealthAction -= OnCheatHealth;
+    }
+
     private void Awake()
     {
         CurrentHealth = _maxHealth;
@@ -21,13 +32,13 @@ public class MainWeaponHealth : MonoBehaviour, IDamageable
 
     private void Start()
     {
-        _healthText.text = GameManager.StringNumbers[CurrentHealth];
+        _healthText.text = CurrentHealth.ToString();
     }
 
     public void TakeDamage(int damage)
     {
         CurrentHealth -= damage;
-        _healthText.text = GameManager.StringNumbers[CurrentHealth];
+        _healthText.text = CurrentHealth.ToString();
 
         if (CurrentHealth <= 0)
         {
@@ -39,5 +50,12 @@ public class MainWeaponHealth : MonoBehaviour, IDamageable
     private void Die()
     {
         OnLoseAction?.Invoke();
+    }
+
+    private void OnCheatHealth(int cheatHealth)
+    {
+        CurrentHealth = cheatHealth;
+        _healthText.text = CurrentHealth.ToString();
+        Debug.Log("1000 health is success. Relax and enjoy!");
     }
 }

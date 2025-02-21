@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,7 +14,6 @@ public class InputManager : MonoBehaviour
     public static Action<float> BaseRotateAction;
     public static Action AttackAction;
     public static Action SwitchCameraModeAction;
-
 
     public void OnWeaponBaseMoveInput(InputAction.CallbackContext context)
     {
