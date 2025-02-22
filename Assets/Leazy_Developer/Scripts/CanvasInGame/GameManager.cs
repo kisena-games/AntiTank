@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //DynamicGI.UpdateEnvironment();
+        DynamicGI.UpdateEnvironment();
         StartCoroutine(WinListener());
         _maxTanksCount.text = string.Format("/{0}", GameManager.StringNumbers[MaxTanksCount]);
     }
