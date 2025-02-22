@@ -4,20 +4,44 @@ using UnityEngine;
 
 public class MWBodyMovement : MonoBehaviour
 {
-    [Header("Body Moving Parameters")]
-    [SerializeField] private Transform _body;
-    [SerializeField] private float _moveBodySpeed = 50f;
+    [SerializeField] private float _rotationSpeed = 2.0f;
+
+    private Quaternion _targetRotation;
+    private float _rotationProgress = 0;
+
+    private void OnEnable()
+    {
+        InputManager.BaseRotateAction += RotateBase;
+    }
+
+    private void OnDisable()
+    {
+        InputManager.BaseRotateAction -= RotateBase;
+    }
 
     private void Update()
     {
-        if (InputManager.IsWeaponBaseMoving)
+        if (_rotationProgress < 1.0f)
         {
-            RotateBase();
+            _rotationProgress += Time.deltaTime * _rotationSpeed;
+            transform.rotation = Quaternion.Slerp(transform.rotation, _targetRotation, _rotationProgress);
         }
+
+        //if (InputManager.IsWeaponBaseMoving)
+        //{
+        //    RotateBase();
+        //}
     }
 
-    private void RotateBase()
+    private void RotateBase(float dirX)
     {
-        _body.Rotate(Vector3.up, InputManager.WeaponBaseMoveInput.x * _moveBodySpeed * Time.deltaTime);
+        _targetRotation = transform.rotation * Quaternion.Euler(0, dirX * 90, 0);
+        _rotationProgress = 0;
     }
+
+    //private void RotateBase()
+    //{
+    //    Vector2 direction = InputManager.WeaponBaseMoveInput;
+    //    transform.forward = new Vector3(direction.x, 0, direction.y);
+    //}
 }

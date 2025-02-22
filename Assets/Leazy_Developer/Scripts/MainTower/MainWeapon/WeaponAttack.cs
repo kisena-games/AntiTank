@@ -1,9 +1,17 @@
+using Lean.Pool;
 using UnityEngine;
 
 public class WeaponAttack : MonoBehaviour, ICanAttack
 {
     [SerializeField] private GameObject _bulletPrefab;
-    [SerializeField] private Transform _bulletSpawnPosition;
+
+    [Header("Default Mode Parameters")]
+    [SerializeField] private Transform _bulletDefaultSpawnPosition;
+
+    [Header("Sniper Mode Parameters")]
+    [SerializeField] private Transform _bulletSniperSpawnPosition;
+
+    private AudioSource _audioSource;
 
     private void OnEnable()
     {
@@ -15,8 +23,34 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
         InputManager.AttackAction -= Attack;
     }
 
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
+
     public void Attack()
     {
-        Instantiate(_bulletPrefab, _bulletSpawnPosition.position, _bulletSpawnPosition.rotation);
+        if (GamePause.Instance.IsPause)
+        {
+            return;
+        }
+
+        switch (SwitchCameraMode.CurrentMode)
+        {
+            case CameraMode.Default: DefaultAttack(); break;
+            case CameraMode.Sniper: SniperAttack(); break;
+        }
+    }
+
+    public void DefaultAttack()
+    {
+        _audioSource.PlayOneShot(_audioSource.clip);
+        GameObject bullet = LeanPool.Spawn(_bulletPrefab, _bulletDefaultSpawnPosition.position, _bulletDefaultSpawnPosition.rotation);
+    }
+
+    public void SniperAttack()
+    {
+        _audioSource.PlayOneShot(_audioSource.clip);
+        GameObject bullet = LeanPool.Spawn(_bulletPrefab, _bulletSniperSpawnPosition.position, _bulletSniperSpawnPosition.rotation);
     }
 }

@@ -1,15 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(SwitchCameraMode))]
 public class MWHeadMovement : MonoBehaviour
 {
-    [Header("Head Moving Parameters")]
-    [SerializeField] private Transform _head;
+    [Header("Sniper Mode Parameters")]
+    [SerializeField] private float _mouseSensitivity = 2.0f;
+    [SerializeField] private float verticalClampAngle = 10.0f;
+    [SerializeField] private float horizontalClampAngle = 45.0f;
 
     private Vector3 _directionCameraToWeapon = Vector3.zero;
     private Vector3 _directionCameraToWorldCursor = Vector3.zero;
     private Vector3 _directionWeaponToCursorAim = Vector3.zero;
+
+    private Vector2 _rotation = Vector2.zero;
 
     private void OnDrawGizmos()
     {
@@ -20,16 +27,39 @@ public class MWHeadMovement : MonoBehaviour
         Gizmos.DrawRay(Camera.main.transform.position, _directionCameraToWorldCursor);
 
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(_head.position, _directionWeaponToCursorAim);
+        Gizmos.DrawRay(transform.position, _directionWeaponToCursorAim);
     }
 
     private void Update()
     {
-        CalculateDirections();
+        if (GamePause.Instance.IsPause)
+        {
+            return;
+        }
+
         if (InputManager.IsWeaponTopMoving)
         {
-            RotateTop();
+            CalculateDirections();
+            CalculateRotation();
+
+            switch (SwitchCameraMode.CurrentMode)
+            {
+                case CameraMode.Default: DefaultRotateHead(); break;
+                case CameraMode.Sniper: SniperRotateHead(); break;
+                default: break;
+            }
         }
+    }
+
+    private void DefaultRotateHead()
+    {
+        transform.forward = _directionWeaponToCursorAim.normalized;
+    }
+
+    private void SniperRotateHead()
+    {
+        
+        transform.localRotation = Quaternion.Euler(-_rotation.x, _rotation.y, 0.0f);
     }
 
     private void CalculateDirections()
@@ -44,13 +74,19 @@ public class MWHeadMovement : MonoBehaviour
             resultPosition = Camera.main.transform.position;
         }
 
-        _directionCameraToWeapon = _head.position - Camera.main.transform.position;
+        _directionCameraToWeapon = transform.position - Camera.main.transform.position;
         _directionCameraToWorldCursor = resultPosition - Camera.main.transform.position;
-        _directionWeaponToCursorAim = resultPosition - _head.position;
+        _directionWeaponToCursorAim = resultPosition - transform.position;
     }
 
-    private void RotateTop()
+    private void CalculateRotation()
     {
-        _head.forward = _directionWeaponToCursorAim.normalized;
+        Vector2 mouseDelta = InputManager.WeaponTopMoveDelta * Time.deltaTime;
+
+        _rotation.y += mouseDelta.x * _mouseSensitivity;
+        _rotation.x += mouseDelta.y * _mouseSensitivity;
+
+        _rotation.x = Mathf.Clamp(_rotation.x, -verticalClampAngle, verticalClampAngle);
+        _rotation.y = Mathf.Clamp(_rotation.y, -horizontalClampAngle, horizontalClampAngle);
     }
 }

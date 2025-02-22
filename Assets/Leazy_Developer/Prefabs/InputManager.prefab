@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7106336094049327509}
   - component: {fileID: 4773594837155657585}
+  - component: {fileID: 3133529954139909404}
   - component: {fileID: 7998227776926745074}
   m_Layer: 0
   m_Name: InputManager
@@ -45,6 +46,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2943060fa9e183a4eb9d655a3c37411b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3133529954139909404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5447295300464562754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc520908c33d8647a788050e8783347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7998227776926745074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,7 +88,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4773594837155657585}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: OnWeaponMoveBase
+        m_MethodName: OnWeaponBaseMoveInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -91,7 +104,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4773594837155657585}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: OnWeaponMoveTopDelta
+        m_MethodName: OnWeaponTopMoveDelta
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -123,7 +136,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4773594837155657585}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: OnWeaponMoveTopInput
+        m_MethodName: OnWeaponTopMoveInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -139,7 +152,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4773594837155657585}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: OnTestMoveTank
+        m_MethodName: OnSwitchCameraMode
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -149,24 +162,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 3bf9641f-c1be-4f41-b59b-9910158891d3
-    m_ActionName: Level/TestMoveTank[/Keyboard/f]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4773594837155657585}
-        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: OnTestFireTank
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 4e722b05-e2aa-41a9-b1c4-bab52ba32519
-    m_ActionName: Level/TestFireTank[/Keyboard/g]
+    m_ActionId: f1a8afaa-4f8a-4580-8552-9459e618e57d
+    m_ActionName: Level/SniperMode[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Level
