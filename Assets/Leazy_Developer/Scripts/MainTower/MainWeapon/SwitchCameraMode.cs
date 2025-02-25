@@ -24,7 +24,7 @@ public class SwitchCameraMode : MonoBehaviour
         if (CurrentMode == CameraMode.Default)
         {
             Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.None;
             
             _sniperCamera.SetActive(true);
             CurrentMode = CameraMode.Sniper;
