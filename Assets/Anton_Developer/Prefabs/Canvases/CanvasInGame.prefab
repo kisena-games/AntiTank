@@ -1517,7 +1517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2584330778850997901
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3412,11 +3412,11 @@ RectTransform:
   - {fileID: 7287404504300660559}
   m_Father: {fileID: 4384025144604766308}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.1, y: 1}
-  m_AnchorMax: {x: 0.1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 250, y: 150}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 15}
+  m_SizeDelta: {x: 260, y: 160}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &6273123047781416392
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3441,7 +3441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4765910003603137152
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5409,7 +5409,7 @@ PrefabInstance:
     - target: {fileID: 8144441847581188591, guid: 98ab068394eab0547960fd812ef063d3,
         type: 3}
       propertyPath: _detectionRadius
-      value: 250
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
