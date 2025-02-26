@@ -13,7 +13,7 @@ public class GamePause : MonoBehaviour
     private List<IPauseHandler> _pauses = new List<IPauseHandler>();
 
     private void Awake()
-    {
+    {        
         if (Instance != null && Instance != this)
             Destroy(this);
         else
