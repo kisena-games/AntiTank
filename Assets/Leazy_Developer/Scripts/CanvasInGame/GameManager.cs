@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        KilledTanksCount = 0;
         StringNumbers = new string[_maxNumberForStrings + 1];
         for (int i = 0; i < StringNumbers.Length; i++)
         {
