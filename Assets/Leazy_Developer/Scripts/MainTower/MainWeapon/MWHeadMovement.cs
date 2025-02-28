@@ -54,12 +54,38 @@ public class MWHeadMovement : MonoBehaviour
     private void DefaultRotateHead()
     {
         transform.forward = _directionWeaponToCursorAim.normalized;
+        ClampVertical();
     }
 
     private void SniperRotateHead()
     {
-        
-        transform.localRotation = Quaternion.Euler(-_rotation.x, _rotation.y, 0.0f);
+        // Применяем вращение
+        transform.Rotate(-_rotation.x, _rotation.y, 0.0f);
+
+        ClampVertical();
+        ClampHorizontal();
+
+    }
+    private void ClampVertical()
+    {
+        float currentXAngle = transform.eulerAngles.x;
+        // Ограничиваем вертикальный угол поворота
+        currentXAngle = transform.eulerAngles.x;
+        if (currentXAngle > 180) currentXAngle -= 360; // Приводим угол к диапазону -180..+180
+
+        // Ограничиваем вертикальный угол
+        currentXAngle = Mathf.Clamp(currentXAngle, -verticalClampAngle, verticalClampAngle);
+        transform.eulerAngles = new Vector3(currentXAngle, transform.eulerAngles.y, 0);
+    }
+    private void ClampHorizontal()
+    {
+        float currentYAngle = transform.eulerAngles.y;
+        // Ограничиваем горизонтальный угол
+        currentYAngle = transform.eulerAngles.y;
+        if (currentYAngle > 180) currentYAngle -= 360; // Приводим угол к диапазону -180..+180
+
+        currentYAngle = Mathf.Clamp(currentYAngle, -horizontalClampAngle, horizontalClampAngle);
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, currentYAngle, 0);
     }
 
     private void CalculateDirections()
@@ -83,10 +109,7 @@ public class MWHeadMovement : MonoBehaviour
     {
         Vector2 mouseDelta = InputManager.WeaponTopMoveDelta * Time.deltaTime;
 
-        _rotation.y += mouseDelta.x * _mouseSensitivity;
-        _rotation.x += mouseDelta.y * _mouseSensitivity;
-
-        _rotation.x = Mathf.Clamp(_rotation.x, -verticalClampAngle, verticalClampAngle);
-        _rotation.y = Mathf.Clamp(_rotation.y, -horizontalClampAngle, horizontalClampAngle);
+        _rotation.y = mouseDelta.x * _mouseSensitivity;
+        _rotation.x = mouseDelta.y * _mouseSensitivity;
     }
 }
