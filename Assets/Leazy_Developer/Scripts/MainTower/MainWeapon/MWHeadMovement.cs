@@ -9,7 +9,7 @@ public class MWHeadMovement : MonoBehaviour
 {
     [Header("Sniper Mode Parameters")]
     [SerializeField] private float _mouseSensitivity = 2.0f;
-    [SerializeField] private float verticalClampAngle = 10.0f;
+    [SerializeField] private float verticalClampAngle = 30.0f;
     [SerializeField] private float horizontalClampAngle = 100.0f;
 
     private Vector3 _directionCameraToWeapon = Vector3.zero;
