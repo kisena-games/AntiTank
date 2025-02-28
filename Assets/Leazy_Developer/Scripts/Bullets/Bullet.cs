@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour, IPoolable
 {
     [SerializeField] private float _flySpeed;
     [SerializeField] private int _damage;
+    [SerializeField] private int _sniperDamage;
 
     private float _radius = 0.2f;
     private Rigidbody _rigidBody;
@@ -38,7 +39,13 @@ public class Bullet : MonoBehaviour, IPoolable
         {
             if (!damageableObject.IsKilled)
             {
-                damageableObject.TakeDamage(_damage);
+                switch (SwitchCameraMode.CurrentMode)
+                {
+                    case CameraMode.Default: damageableObject.TakeDamage(_damage); break;
+                    case CameraMode.Sniper: damageableObject.TakeDamage(_sniperDamage); break;
+                    default: break;
+                }
+                
             }
         }
 
