@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class MWBodyMovement : MonoBehaviour
 {
+    public enum Direction { Forward, Left, Right }
+
     [SerializeField] private float _rotationSpeed = 2.0f;
 
     private Quaternion _targetRotation;
     private float _rotationProgress = 0;
+    private Direction _currentDirection = Direction.Forward;
 
     private void OnEnable()
     {
@@ -26,22 +29,47 @@ public class MWBodyMovement : MonoBehaviour
             _rotationProgress += Time.deltaTime * _rotationSpeed;
             transform.rotation = Quaternion.Slerp(transform.rotation, _targetRotation, _rotationProgress);
         }
-
-        //if (InputManager.IsWeaponBaseMoving)
-        //{
-        //    RotateBase();
-        //}
     }
 
     private void RotateBase(float dirX)
     {
-        _targetRotation = transform.rotation * Quaternion.Euler(0, dirX * 90, 0);
-        _rotationProgress = 0;
-    }
+        if (dirX > 0) // Поворот вправо
+        {
+            if (_currentDirection == Direction.Forward)
+            {
+                _currentDirection = Direction.Right;
+                _targetRotation = transform.rotation * Quaternion.Euler(0, 90, 0); // Поворот на 90 градусов вправо
+            }
+            else if (_currentDirection == Direction.Right)
+            {
+                // Ничего не делаем, т.к. не можем повернуть вправо из направления Right
+                return;
+            }
+            else if (_currentDirection == Direction.Left)
+            {
+                _currentDirection = Direction.Forward;
+                _targetRotation = transform.rotation * Quaternion.Euler(0, 90, 0); // Теперь можем вернуться к Forward
+            }
+        }
+        else if (dirX < 0) // Поворот влево
+        {
+            if (_currentDirection == Direction.Forward)
+            {
+                _currentDirection = Direction.Left;
+                _targetRotation = transform.rotation * Quaternion.Euler(0, -90, 0); // Поворот на 90 градусов влево
+            }
+            else if (_currentDirection == Direction.Left)
+            {
+                // Ничего не делаем, т.к. не можем повернуть влево из направления Left
+                return;
+            }
+            else if (_currentDirection == Direction.Right)
+            {
+                _currentDirection = Direction.Forward;
+                _targetRotation = transform.rotation * Quaternion.Euler(0, -90, 0); // Теперь можем вернуться к Forward
+            }
+        }
 
-    //private void RotateBase()
-    //{
-    //    Vector2 direction = InputManager.WeaponBaseMoveInput;
-    //    transform.forward = new Vector3(direction.x, 0, direction.y);
-    //}
+        _rotationProgress = 0; // Сброс прогресса вращения
+    }
 }
