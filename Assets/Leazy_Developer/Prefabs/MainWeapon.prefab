@@ -640,7 +640,9 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 7835489689424445374, guid: 1bb0bf3b90213ee4abc96d32c23a9eac,
     type: 3}
   _bulletDefaultSpawnPosition: {fileID: 2525234570073657055}
+  _defaultAttackInterval: 0
   _bulletSniperSpawnPosition: {fileID: 8347719059043495927}
+  _sniperAttackInterval: 1
 --- !u!114 &2388751911276071038
 MonoBehaviour:
   m_ObjectHideFlags: 0

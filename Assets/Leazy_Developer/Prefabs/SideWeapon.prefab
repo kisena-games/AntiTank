@@ -167,7 +167,7 @@ MonoBehaviour:
   _triggers:
   - {fileID: 0}
   - {fileID: 0}
-  _rotationSpeed: 50
+  _rotationSpeed: 100
   _bulletPrefab: {fileID: 9130539055861110083, guid: a581a91a590f8a445a8453aafd564d6b,
     type: 3}
   _fireRate: 2
