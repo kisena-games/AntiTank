@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 966eeea52695ced42bf83c4e071d0b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionPrefab: {fileID: 8421566441976276334, guid: 4ded6dd7f15814f47ae882df609c85b0,
+  _explosionPrefab: {fileID: 8270204496685901519, guid: f4beb18921288f54eb96e28b81cc303e,
     type: 3}
   _timeToStartAttack: 4
   _attackDuration: 3
