@@ -27,6 +27,7 @@ public class SWListener : MonoBehaviour, IPauseHandler
     private List<TankHealth> _tanks;
     private SWState _state = SWState.Wait;
     private float _nextFireTime = 0f;
+    private bool _isLose;
 
     private void OnDrawGizmos()
     {
@@ -42,6 +43,8 @@ public class SWListener : MonoBehaviour, IPauseHandler
         {
             _trigger.OnTryFocusAction += OnTryFocus;
         }
+
+        MainWeaponHealth.OnLoseAction += OnLose;
     }
 
     private void OnDisable()
@@ -52,6 +55,8 @@ public class SWListener : MonoBehaviour, IPauseHandler
         {
             _trigger.OnTryFocusAction -= OnTryFocus;
         }
+
+        MainWeaponHealth.OnLoseAction -= OnLose;
     }
 
     private void Awake()
@@ -63,7 +68,7 @@ public class SWListener : MonoBehaviour, IPauseHandler
 
     private void Update()
     {
-        if (GamePause.Instance.IsPause)
+        if (GamePause.Instance.IsPause || _isLose)
         {
             return;
         }
@@ -158,11 +163,15 @@ public class SWListener : MonoBehaviour, IPauseHandler
         }
     }
 
-
     public void IsPaused(bool isPaused)
     {
         throw new NotImplementedException();
     }
+    private void OnLose()
+    {
+        _isLose = true;
+    }
+
 }
 
 public enum SWState
