@@ -6,18 +6,19 @@ public class ParticleControl : MonoBehaviour
     private bool areParticlesActive = true;
     public float reactivationDelay = 5f; // Время задержки перед повторным включением
 
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             if (areParticlesActive)
             {
+                StopAllCoroutines();
                 DisableParticles();
             }
         }
     }
 
-    void DisableParticles()
+    private void DisableParticles()
     {
         foreach (var particle in particles)
         {
@@ -27,7 +28,7 @@ public class ParticleControl : MonoBehaviour
         Invoke("ReactivateParticles", reactivationDelay); // Запускаем метод для повторного включения
     }
 
-    void ReactivateParticles()
+    private void ReactivateParticles()
     {
         StartCoroutine(ActivateParticles());
     }

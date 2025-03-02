@@ -6,6 +6,7 @@ using System;
 public class WeaponAttack : MonoBehaviour, ICanAttack
 {
     [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private ParticleSystem _defaultFireParticles;
 
     [Header("Default Mode Parameters")]
     [SerializeField] private Transform _bulletDefaultSpawnPosition;
@@ -56,10 +57,12 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
     {
         if (_defaultFireRate == 0f)
         {
+            _defaultFireParticles.Play();
             Shoot(_defaultAttackMultiplier, _bulletDefaultSpawnPosition);
         }
         else if (Time.timeSinceLevelLoad >= _nextDefaultFireTime)
         {
+            _defaultFireParticles.Play();
             Shoot(_defaultAttackMultiplier, _bulletDefaultSpawnPosition);
             _nextDefaultFireTime = Time.timeSinceLevelLoad + 1f / _defaultFireRate;
         }
