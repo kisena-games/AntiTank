@@ -122,6 +122,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &416122 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8003480579428539717, guid: e09215c8021dc5c4c82835044d044eeb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1022353980040957889}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1546721 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f052462e9cf0c8d4183e50cd578204a6,
@@ -226,6 +232,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 16f74b014ca661d459c69fa3c8bcb9f4,
     type: 3}
   m_PrefabInstance: {fileID: 193296204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5675556 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2460155223946482058, guid: e09215c8021dc5c4c82835044d044eeb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1022353980040957889}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9659702
 PrefabInstance:
@@ -20296,7 +20308,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\u041F\u0440\u0438\u043C\u0435\u043D\u0438\u0442\u044C \u0430\u0432\u0438\u0430\u0443\u0434\u0430\u0440
-    - T"
+    - 1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -31695,11 +31707,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2231147473895656856, guid: e09215c8021dc5c4c82835044d044eeb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3133380057392247236, guid: e09215c8021dc5c4c82835044d044eeb,
         type: 3}
       propertyPath: m_Name
       value: MainTower
       objectReference: {fileID: 0}
+    - target: {fileID: 3425982770519847716, guid: e09215c8021dc5c4c82835044d044eeb,
+        type: 3}
+      propertyPath: _gun
+      value: 
+      objectReference: {fileID: 416122}
+    - target: {fileID: 3425982770519847716, guid: e09215c8021dc5c4c82835044d044eeb,
+        type: 3}
+      propertyPath: _head
+      value: 
+      objectReference: {fileID: 5675556}
     - target: {fileID: 7872276126745287652, guid: e09215c8021dc5c4c82835044d044eeb,
         type: 3}
       propertyPath: _healthText
