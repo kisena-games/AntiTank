@@ -7,10 +7,10 @@ public class Bullet : MonoBehaviour, IPoolable
 {
     [SerializeField] private float _flySpeed;
     [SerializeField] private int _damage;
-    [SerializeField] private int _sniperDamage;
 
     private float _radius = 0.2f;
     private Rigidbody _rigidBody;
+    private float _attackMultiplier = 1f;
 
     private void OnDrawGizmos()
     {
@@ -26,11 +26,17 @@ public class Bullet : MonoBehaviour, IPoolable
     public void OnDespawn()
     {
         _rigidBody.velocity = Vector3.zero;
+        _attackMultiplier = 1f;
     }
 
     private void Awake()
     {
         _rigidBody = GetComponent<Rigidbody>();
+    }
+
+    internal void Initialize(float attackMultiplier)
+    {
+        _attackMultiplier = attackMultiplier;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -39,13 +45,8 @@ public class Bullet : MonoBehaviour, IPoolable
         {
             if (!damageableObject.IsKilled)
             {
-                switch (SwitchCameraMode.CurrentMode)
-                {
-                    case CameraMode.Default: damageableObject.TakeDamage(_damage); break;
-                    case CameraMode.Sniper: damageableObject.TakeDamage(_sniperDamage); break;
-                    default: break;
-                }
-                
+                int totalDamage = (int)(_damage * _attackMultiplier);
+                damageableObject.TakeDamage(totalDamage);
             }
         }
 
