@@ -660,7 +660,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 547e3aea40eb5f54fa6f2c671b0498e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeImage: {fileID: 0}
   _maxHealth: 200
   _healthText: {fileID: 0}
   _smokeParticles: {fileID: 2678352273334212539}
@@ -707,7 +706,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 30
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 100
   MaxDistance: 1000
   Pan2D: 0
