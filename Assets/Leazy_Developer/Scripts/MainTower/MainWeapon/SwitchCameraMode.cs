@@ -19,6 +19,11 @@ public class SwitchCameraMode : MonoBehaviour
         InputManager.SwitchCameraModeAction -= Switch;
     }
 
+    private void Awake()
+    {
+        CurrentMode = CameraMode.Default;
+    }
+
     private void Switch()
     {
         if (CurrentMode == CameraMode.Default)

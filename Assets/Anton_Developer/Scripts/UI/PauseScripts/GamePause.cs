@@ -31,6 +31,7 @@ public class GamePause : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SetPause(!IsPause);
+            GameManager.Instance.SetPause(IsPause);
             //if (IsPause)
             //{
             //    Time.timeScale = 0.0f;

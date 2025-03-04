@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_1/Level_1.unity
     guid: 24af58a35ddb2454d81145dee3a7215f
   - enabled: 1
+    path: Assets/Anton_Developer/Scenes/SceneForVideo2.unity
+    guid: a78f7423292eb664ab2dbc4ccd662980
+  - enabled: 1
     path: Assets/Scenes/Level_2/Level_2.unity
     guid: 72fa8899187c61b4abeaa5cd8a84820f
   - enabled: 1
