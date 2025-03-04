@@ -1,5 +1,6 @@
 using Lean.Pool;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -7,13 +8,21 @@ using UnityEngine.UI;
 
 public class MainWeaponHealth : MonoBehaviour, IDamageable
 {
+    public static Action OnLoseAction;
+
     [SerializeField] private int _maxHealth = 100;
     [SerializeField] private TextMeshProUGUI _healthText;
 
+    [SerializeField] private ParticleSystem _smokeParticles;
+    [SerializeField] private ParticleSystem _electricParticles;
+    [SerializeField] private ParticleSystem _boomParticles;
+
+    private float[] _partsOfHealth = new float[3]{ 0, 40, 60 };
+    private int _indexPart;
+
     public int CurrentHealth { get; private set; }
     public bool IsKilled { get; private set; }
-
-    public static Action OnLoseAction;
+    
 
     private void OnEnable()
     {
@@ -28,11 +37,18 @@ public class MainWeaponHealth : MonoBehaviour, IDamageable
     private void Awake()
     {
         CurrentHealth = _maxHealth;
+        _healthText.text = CurrentHealth.ToString();
     }
 
-    private void Start()
+    private void OnCheatHealth(int cheatHealth)
     {
+        _smokeParticles.Stop();
+        _electricParticles.Stop();
+        _boomParticles.Stop();
+
+        CurrentHealth = cheatHealth;
         _healthText.text = CurrentHealth.ToString();
+        Debug.Log("1000 health is success. Relax and enjoy!");
     }
 
     public void TakeDamage(int damage)
@@ -40,9 +56,37 @@ public class MainWeaponHealth : MonoBehaviour, IDamageable
         CurrentHealth -= damage;
         _healthText.text = CurrentHealth.ToString();
 
+        float tempPart = (float)CurrentHealth / (float)_maxHealth;
+
+        switch (_indexPart)
+        {
+            case 0:
+                if (tempPart <= _partsOfHealth[2] / 100f)
+                {
+                    _smokeParticles.Play();
+                    _indexPart++;
+                }
+                break;
+            case 1:
+                if (tempPart <= _partsOfHealth[1] / 100f)
+                {
+                    _electricParticles.Play();
+                    _indexPart++;
+                }
+                break;
+            case 2:
+                if (tempPart <= _partsOfHealth[0] / 100f)
+                {
+                    _boomParticles.Play();
+                    IsKilled = true;
+                    _indexPart++;
+                }
+                break;
+            default: break;
+        }
+
         if (CurrentHealth <= 0)
         {
-            IsKilled = true;
             Die();
         }
     }
@@ -50,12 +94,5 @@ public class MainWeaponHealth : MonoBehaviour, IDamageable
     private void Die()
     {
         OnLoseAction?.Invoke();
-    }
-
-    private void OnCheatHealth(int cheatHealth)
-    {
-        CurrentHealth = cheatHealth;
-        _healthText.text = CurrentHealth.ToString();
-        Debug.Log("1000 health is success. Relax and enjoy!");
     }
 }
