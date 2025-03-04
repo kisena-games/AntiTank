@@ -9,7 +9,8 @@ public class TankStateMachine : MonoBehaviour, IPoolable
     [SerializeField] private Transform _attackPoint;
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Animator _animator;
-    [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private ParticleSystem _attackParticles;
+    [SerializeField] private ParticleSystem _deadParticles;
     [SerializeField] private float _fireRate = 2f; // Частота стрельбы в выстрелах в секунду
 
     private TankHealth _health;
@@ -28,6 +29,7 @@ public class TankStateMachine : MonoBehaviour, IPoolable
 
     public void OnSpawn()
     {
+        _agent.enabled = true;
         _radar.RegisterTank(transform);
         TankSpawnManager.tankCount++;
     }
@@ -113,9 +115,9 @@ public class TankStateMachine : MonoBehaviour, IPoolable
         _animationController = new TankAnimationController(_animator);
 
         State emptyState = new State();
-        State moveState = new TankMoveState(transform.gameObject.ToString(), _audioManager, _animationController, _agent, _path.Destinations, _lastDestination);
-        State fireState = new TankFireState(_audioManager, _animationController, _agent, _attackPoint, _aimToAttack, _bulletPrefab, _fireRate);
-        State deadState = new TankDeadState(_audioManager, _animationController, _particleSystem);
+        State moveState = new TankMoveState(transform.gameObject.ToString(), _audioManager, _animationController, _agent, _path.Destinations, _lastDestination, _aimToAttack);
+        State fireState = new TankFireState(_audioManager, _animationController, _agent, _attackPoint, _aimToAttack, _bulletPrefab, _fireRate, _attackParticles);
+        State deadState = new TankDeadState(_audioManager, _animationController, _deadParticles);
 
         emptyState.AddTransition(new StateTransition(moveState, new FuncStateCondition(() => _isMove)));
         
