@@ -34,14 +34,19 @@ public class CanvasInGame : MonoBehaviour
 
     private void OnLose()
     {
+        SetMenuCursor();
         _losePanel.gameObject.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
     }
 
     private void OnWin()
     {
+        SetMenuCursor();
         _winPanel.gameObject.SetActive(true);
+    }
+
+    private void SetMenuCursor()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
