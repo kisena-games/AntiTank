@@ -431,6 +431,11 @@ PrefabInstance:
       objectReference: {fileID: 5760946918054862570}
     - target: {fileID: 7129936780642974918, guid: ae296335e8293a8418efa879de8b8bf4,
         type: 3}
+      propertyPath: _maxHealth
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129936780642974918, guid: ae296335e8293a8418efa879de8b8bf4,
+        type: 3}
       propertyPath: _alembicHouse
       value: 
       objectReference: {fileID: 3966689209208758285}
