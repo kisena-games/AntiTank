@@ -17,7 +17,7 @@ public class MainWeaponHealth : MonoBehaviour, IDamageable
     [SerializeField] private ParticleSystem _electricParticles;
     [SerializeField] private ParticleSystem _boomParticles;
 
-    private float[] _partsOfHealth = new float[3]{ 0, 40, 60 };
+    private float[] _partsOfHealth = new float[3]{ 20, 40, 75 };
     private int _indexPart;
 
     public int CurrentHealth { get; private set; }
@@ -78,7 +78,6 @@ public class MainWeaponHealth : MonoBehaviour, IDamageable
                 if (tempPart <= _partsOfHealth[0] / 100f)
                 {
                     _boomParticles.Play();
-                    IsKilled = true;
                     _indexPart++;
                 }
                 break;
@@ -87,6 +86,7 @@ public class MainWeaponHealth : MonoBehaviour, IDamageable
 
         if (CurrentHealth <= 0)
         {
+            IsKilled = true;
             Die();
         }
     }
