@@ -63,19 +63,33 @@ public class MWHeadMovement : MonoBehaviour
         transform.Rotate(-_rotation.x, _rotation.y, 0.0f);
 
         ClampVertical();
+        ClampHorizontal();
 
     }
     private void ClampVertical()
     {
-        float currentXAngle = transform.eulerAngles.x;
+
         // Ограничиваем вертикальный угол поворота
-        currentXAngle = transform.eulerAngles.x;
+        float currentXAngle = transform.localEulerAngles.x;
         if (currentXAngle > 180) currentXAngle -= 360; // Приводим угол к диапазону -180..+180
 
         // Ограничиваем вертикальный угол
         currentXAngle = Mathf.Clamp(currentXAngle, -verticalClampAngle, verticalClampAngle);
-        transform.eulerAngles = new Vector3(currentXAngle, transform.eulerAngles.y, 0);
+        transform.localEulerAngles = new Vector3(currentXAngle, transform.localEulerAngles.y, 0);
     }
+    private void ClampHorizontal()
+    {
+        // Ограничиваем горизонтальный угол поворота
+        float currentYAngle = transform.localEulerAngles.y;
+        if (currentYAngle > 180) currentYAngle -= 360; // Приводим угол к диапазону -180..+180
+
+        // Ограничиваем горизонтальный угол
+        currentYAngle = Mathf.Clamp(currentYAngle, -horizontalClampAngle, horizontalClampAngle);
+
+        // Применяем изменённый угол Y, сохраняя текущие углы X и Z
+        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, currentYAngle, transform.localEulerAngles.z);
+    }
+
 
     private void CalculateDirections()
     {
