@@ -6935,6 +6935,11 @@ PrefabInstance:
       propertyPath: _airStrikeUI
       value: 
       objectReference: {fileID: 822569495}
+    - target: {fileID: 6902824022760828954, guid: 5d5645b7279e30e4ba110b303e28ded1,
+        type: 3}
+      propertyPath: _timeToChargeAirStrike
+      value: 85
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
