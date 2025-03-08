@@ -644,10 +644,10 @@ MonoBehaviour:
   _defaultFireParticles: {fileID: 2794542240299478657}
   _bulletDefaultSpawnPosition: {fileID: 2525234570073657055}
   _defaultFireRate: 0
-  _defaultAttackMultiplier: 1
+  _defaultAttackMultiplier: 0.4
   _bulletSniperSpawnPosition: {fileID: 8347719059043495927}
-  _sniperFireRate: 2
-  _sniperAttackMultiplier: 4
+  _sniperFireRate: 0.7
+  _sniperAttackMultiplier: 5
 --- !u!114 &2388751911276071038
 MonoBehaviour:
   m_ObjectHideFlags: 0

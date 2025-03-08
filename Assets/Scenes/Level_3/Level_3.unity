@@ -3503,32 +3503,32 @@ PrefabInstance:
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[2].spawnPoints.Array.data[2].spawnTime
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[2].spawnPoints.Array.data[3].spawnTime
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[2].spawnPoints.Array.data[4].spawnTime
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[2].spawnPoints.Array.data[5].spawnTime
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[2].spawnPoints.Array.data[6].spawnTime
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[2].spawnPoints.Array.data[7].spawnTime
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
@@ -3726,7 +3726,7 @@ PrefabInstance:
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[2].spawnPoints.Array.data[1].tanksCount
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
@@ -3770,7 +3770,7 @@ PrefabInstance:
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[2].spawnPoints.Array.data[5].tanksCount
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
@@ -3781,7 +3781,7 @@ PrefabInstance:
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[2].spawnPoints.Array.data[6].tanksCount
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
@@ -3792,7 +3792,7 @@ PrefabInstance:
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[2].spawnPoints.Array.data[7].tanksCount
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

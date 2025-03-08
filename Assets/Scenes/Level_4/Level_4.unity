@@ -1663,7 +1663,7 @@ PrefabInstance:
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[1].timeToWave
-      value: 35
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
@@ -1768,22 +1768,22 @@ PrefabInstance:
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[1].spawnPoints.Array.data[0].spawnTime
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[1].spawnPoints.Array.data[1].spawnTime
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[1].spawnPoints.Array.data[2].spawnTime
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[1].spawnPoints.Array.data[3].spawnTime
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
@@ -1845,7 +1845,7 @@ PrefabInstance:
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[0].spawnPoints.Array.data[1].tanksCount
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
@@ -1856,7 +1856,7 @@ PrefabInstance:
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[1].spawnPoints.Array.data[0].tanksCount
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
@@ -1878,7 +1878,7 @@ PrefabInstance:
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[1].spawnPoints.Array.data[2].tanksCount
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
@@ -1889,7 +1889,7 @@ PrefabInstance:
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
       propertyPath: tanksWaves.Array.data[1].spawnPoints.Array.data[3].tanksCount
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8600801985728781405, guid: bf3553b766bc0b446b5c1e7a516eb938,
         type: 3}
