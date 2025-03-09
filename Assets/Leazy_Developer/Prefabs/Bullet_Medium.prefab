@@ -146,6 +146,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet_Medium
       objectReference: {fileID: 0}
+    - target: {fileID: 8201680754098687569, guid: a91a781f8c8a7804b83f9680c50b8082,
+        type: 3}
+      propertyPath: _damage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
