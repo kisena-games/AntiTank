@@ -643,11 +643,11 @@ MonoBehaviour:
     type: 3}
   _defaultFireParticles: {fileID: 2794542240299478657}
   _bulletDefaultSpawnPosition: {fileID: 2525234570073657055}
-  _defaultFireRate: 0
-  _defaultAttackMultiplier: 0.4
   _bulletSniperSpawnPosition: {fileID: 8347719059043495927}
+  _cinemachineCamera: {fileID: 7728252315995631552}
+  _sniperDamage: 60
   _sniperFireRate: 0.7
-  _sniperAttackMultiplier: 5
+  _noiseDuration: 0.05
 --- !u!114 &2388751911276071038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,6 +794,7 @@ GameObject:
   - component: {fileID: 3418340605115205746}
   - component: {fileID: 3584862147217603806}
   - component: {fileID: 6259965375402987390}
+  - component: {fileID: 407412692786752372}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -855,6 +856,23 @@ MonoBehaviour:
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
+--- !u!114 &407412692786752372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7299027129458336683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &7631873080894309684
 GameObject:
   m_ObjectHideFlags: 0

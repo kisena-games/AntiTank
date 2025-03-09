@@ -2,6 +2,7 @@ using Lean.Pool;
 using UnityEngine;
 using System.Collections;
 using System;
+using Cinemachine;
 
 public class WeaponAttack : MonoBehaviour, ICanAttack
 {
@@ -10,17 +11,18 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
 
     [Header("Default Mode Parameters")]
     [SerializeField] private Transform _bulletDefaultSpawnPosition;
-    [SerializeField] private float _defaultFireRate = 0.0f;
 
     [Header("Sniper Mode Parameters")]
     [SerializeField] private Transform _bulletSniperSpawnPosition;
-    [SerializeField] private float _sniperFireRate = 2f;
+    [SerializeField] private CinemachineVirtualCamera _cinemachineCamera;
     [SerializeField] private int _sniperDamage = 60;
+    [SerializeField] private float _sniperFireRate = 0.7f;
+    [SerializeField] private float _noiseDuration = 0.1f;
 
+    private CinemachineBasicMultiChannelPerlin _cameraNoise;
     private AudioSource _audioSource;
     private Coroutine _attackCoroutine;
 
-    private float _nextDefaultFireTime = 0f;
     private float _nextSniperFireTime = 0f;
 
     private void OnEnable()
@@ -36,6 +38,11 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        _cameraNoise = _cinemachineCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
     public void Attack()
@@ -54,24 +61,15 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
 
     private void DefaultAttack()
     {
-        if (Time.timeSinceLevelLoad >= _nextDefaultFireTime)
-        {
-            _defaultFireParticles.Play();
-            _audioSource.PlayOneShot(_audioSource.clip);
+        _defaultFireParticles.Play();
+        _audioSource.PlayOneShot(_audioSource.clip);
 
-            LeanPool.Spawn(_bulletPrefab, _bulletDefaultSpawnPosition.position, _bulletDefaultSpawnPosition.rotation);
-
-            _nextDefaultFireTime = Time.timeSinceLevelLoad + 1f / _defaultFireRate;
-        }
+        LeanPool.Spawn(_bulletPrefab, _bulletDefaultSpawnPosition.position, _bulletDefaultSpawnPosition.rotation);
     }
 
     private void SniperAttack()
     {
-        if (_sniperFireRate == 0f)
-        {
-            SniperShoot();
-        }
-        else if (Time.timeSinceLevelLoad >= _nextSniperFireTime)
+        if (Time.timeSinceLevelLoad >= _nextSniperFireTime && _sniperFireRate != 0)
         {
             SniperShoot();
             _nextSniperFireTime = Time.timeSinceLevelLoad + 1f / _sniperFireRate;
@@ -81,6 +79,7 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
     private void SniperShoot()
     {
         _audioSource.PlayOneShot(_audioSource.clip);
+        StartCoroutine(Noize());
         if (Physics.Raycast(new Ray(_bulletSniperSpawnPosition.position, _bulletSniperSpawnPosition.forward), out RaycastHit hitInfo))
         {
             if (hitInfo.collider.TryGetComponent(out IDamageable damageableObject))
@@ -91,5 +90,16 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
                 }
             }
         }
+    }
+
+    private IEnumerator Noize()
+    {
+        _cameraNoise.m_AmplitudeGain = 1f;
+        _cameraNoise.m_FrequencyGain = 1f;
+
+        yield return new WaitForSeconds(_noiseDuration);
+
+        _cameraNoise.m_AmplitudeGain = 0f;
+        _cameraNoise.m_FrequencyGain = 0f;
     }
 }
