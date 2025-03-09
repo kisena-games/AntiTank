@@ -11,12 +11,11 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
     [Header("Default Mode Parameters")]
     [SerializeField] private Transform _bulletDefaultSpawnPosition;
     [SerializeField] private float _defaultFireRate = 0.0f;
-    [SerializeField] private float _defaultAttackMultiplier = 1.0f;
 
     [Header("Sniper Mode Parameters")]
     [SerializeField] private Transform _bulletSniperSpawnPosition;
     [SerializeField] private float _sniperFireRate = 2f;
-    [SerializeField] private float _sniperAttackMultiplier = 1.5f;
+    [SerializeField] private int _sniperDamage = 60;
 
     private AudioSource _audioSource;
     private Coroutine _attackCoroutine;
@@ -55,15 +54,13 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
 
     private void DefaultAttack()
     {
-        if (_defaultFireRate == 0f)
+        if (Time.timeSinceLevelLoad >= _nextDefaultFireTime)
         {
             _defaultFireParticles.Play();
-            Shoot(_defaultAttackMultiplier, _bulletDefaultSpawnPosition);
-        }
-        else if (Time.timeSinceLevelLoad >= _nextDefaultFireTime)
-        {
-            _defaultFireParticles.Play();
-            Shoot(_defaultAttackMultiplier, _bulletDefaultSpawnPosition);
+            _audioSource.PlayOneShot(_audioSource.clip);
+
+            LeanPool.Spawn(_bulletPrefab, _bulletDefaultSpawnPosition.position, _bulletDefaultSpawnPosition.rotation);
+
             _nextDefaultFireTime = Time.timeSinceLevelLoad + 1f / _defaultFireRate;
         }
     }
@@ -72,19 +69,27 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
     {
         if (_sniperFireRate == 0f)
         {
-            Shoot(_sniperAttackMultiplier, _bulletSniperSpawnPosition);
+            SniperShoot();
         }
         else if (Time.timeSinceLevelLoad >= _nextSniperFireTime)
         {
-            Shoot(_sniperAttackMultiplier, _bulletSniperSpawnPosition);
+            SniperShoot();
             _nextSniperFireTime = Time.timeSinceLevelLoad + 1f / _sniperFireRate;
         }
     }
 
-    private void Shoot(float attackMultiplier, Transform spawnPosition)
+    private void SniperShoot()
     {
         _audioSource.PlayOneShot(_audioSource.clip);
-        Bullet bullet = LeanPool.Spawn(_bulletPrefab, spawnPosition.position, spawnPosition.rotation).GetComponent<Bullet>();
-        bullet.Initialize(attackMultiplier);
+        if (Physics.Raycast(new Ray(_bulletSniperSpawnPosition.position, _bulletSniperSpawnPosition.forward), out RaycastHit hitInfo))
+        {
+            if (hitInfo.collider.TryGetComponent(out IDamageable damageableObject))
+            {
+                if (!damageableObject.IsKilled)
+                {
+                    damageableObject.TakeDamage(_sniperDamage);
+                }
+            }
+        }
     }
 }

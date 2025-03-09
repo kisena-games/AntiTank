@@ -10,7 +10,6 @@ public class Bullet : MonoBehaviour, IPoolable
 
     private float _radius = 0.2f;
     private Rigidbody _rigidBody;
-    private float _attackMultiplier = 1f;
 
     private void OnDrawGizmos()
     {
@@ -26,17 +25,11 @@ public class Bullet : MonoBehaviour, IPoolable
     public void OnDespawn()
     {
         _rigidBody.velocity = Vector3.zero;
-        _attackMultiplier = 1f;
     }
 
     private void Awake()
     {
         _rigidBody = GetComponent<Rigidbody>();
-    }
-
-    internal void Initialize(float attackMultiplier)
-    {
-        _attackMultiplier = attackMultiplier;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -45,8 +38,7 @@ public class Bullet : MonoBehaviour, IPoolable
         {
             if (!damageableObject.IsKilled)
             {
-                int totalDamage = (int)(_damage * _attackMultiplier);
-                damageableObject.TakeDamage(totalDamage);
+                damageableObject.TakeDamage(_damage);
             }
         }
 

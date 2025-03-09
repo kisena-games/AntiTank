@@ -37,8 +37,6 @@ public class SWListener : MonoBehaviour, IPauseHandler
 
     private void OnEnable()
     {
-        //GamePause.Instance.AddPauseList(this);
-
         foreach (var _trigger in _triggers)
         {
             _trigger.OnTryFocusAction += OnTryFocus;
@@ -49,8 +47,6 @@ public class SWListener : MonoBehaviour, IPauseHandler
 
     private void OnDisable()
     {
-        //GamePause.Instance.RemovePauseList(this);
-
         foreach (var _trigger in _triggers)
         {
             _trigger.OnTryFocusAction -= OnTryFocus;
