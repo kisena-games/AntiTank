@@ -79,7 +79,7 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
     private void SniperShoot()
     {
         _audioSource.PlayOneShot(_audioSource.clip);
-        StartCoroutine(Noize());
+
         if (Physics.Raycast(new Ray(_bulletSniperSpawnPosition.position, _bulletSniperSpawnPosition.forward), out RaycastHit hitInfo))
         {
             if (hitInfo.collider.TryGetComponent(out IDamageable damageableObject))
@@ -90,12 +90,14 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
                 }
             }
         }
+
+        StartCoroutine(Noize());
     }
 
     private IEnumerator Noize()
     {
-        _cameraNoise.m_AmplitudeGain = 1f;
-        _cameraNoise.m_FrequencyGain = 1f;
+        _cameraNoise.m_AmplitudeGain = 1.5f;
+        _cameraNoise.m_FrequencyGain = 3.0f;
 
         yield return new WaitForSeconds(_noiseDuration);
 
