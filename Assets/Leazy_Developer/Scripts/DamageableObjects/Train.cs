@@ -10,6 +10,7 @@ public class Train : MonoBehaviour, IDamageable
     [SerializeField] private ParticleSystem _boomParticles;
 
     private int _currentHealth;
+    private AudioSource _audioSource;
 
     public bool IsKilled { get; private set; }
 
@@ -18,6 +19,7 @@ public class Train : MonoBehaviour, IDamageable
     private void Awake()
     {
         _collider = GetComponent<Collider>();
+        _audioSource = GetComponent<AudioSource>();
         _currentHealth = _maxHealth;
     }
 
@@ -33,6 +35,7 @@ public class Train : MonoBehaviour, IDamageable
 
     private void Kill()
     {
+        _audioSource.Play();
         _boomParticles.Play();
 
         _collider.enabled = false;
