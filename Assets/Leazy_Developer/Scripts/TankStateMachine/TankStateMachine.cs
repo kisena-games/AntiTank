@@ -1,5 +1,6 @@
 using Lean.Pool;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -40,6 +41,13 @@ public class TankStateMachine : MonoBehaviour, IPoolable
         GameManager.OnTankKilled();
         _radar.UnRegisterTank(transform);
         TankSpawnManager.tankCount--;
+
+        var bulletHoles = GetComponentsInChildren<BulletHole>();
+
+        foreach (var bulletHole in bulletHoles)
+        {
+            Destroy(bulletHole.gameObject);
+        }
     }
 
     public void Initialize(TankPath path)

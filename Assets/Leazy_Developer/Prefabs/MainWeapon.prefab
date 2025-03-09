@@ -641,7 +641,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 7835489689424445374, guid: 1bb0bf3b90213ee4abc96d32c23a9eac,
     type: 3}
+  _bulletHole: {fileID: 1907994841631277229, guid: d43c3a82cd9d3ae4080266d4e344f364,
+    type: 3}
   _defaultFireParticles: {fileID: 2794542240299478657}
+  _buleltHoleExceptionLayers:
+    serializedVersion: 2
+    m_Bits: 4096
   _bulletDefaultSpawnPosition: {fileID: 2525234570073657055}
   _bulletSniperSpawnPosition: {fileID: 8347719059043495927}
   _cinemachineCamera: {fileID: 7728252315995631552}
@@ -684,8 +689,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.8499756, y: 3.415078, z: 7.2143965}
-  m_Center: {x: -0.032287598, y: 0.7416989, z: -0.71693933}
+  m_Size: {x: 3.3742921, y: 3.415078, z: 3.5058}
+  m_Center: {x: 0.060088955, y: 0.7416989, z: -0.8336436}
 --- !u!82 &8007821848333600013
 AudioSource:
   m_ObjectHideFlags: 0

@@ -48,7 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _flySpeed: 100
   _damage: 10
-  _sniperDamage: 90
+  _bulletHole: {fileID: 1907994841631277229, guid: d43c3a82cd9d3ae4080266d4e344f364,
+    type: 3}
 --- !u!54 &8227522224266118363
 Rigidbody:
   m_ObjectHideFlags: 0

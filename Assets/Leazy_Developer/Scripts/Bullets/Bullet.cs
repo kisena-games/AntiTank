@@ -1,15 +1,19 @@
 using Lean.Pool;
 using System;
 using System.Collections;
+using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.ProBuilder;
 
 public class Bullet : MonoBehaviour, IPoolable
 {
     [SerializeField] private float _flySpeed;
     [SerializeField] private int _damage;
+    [SerializeField] private GameObject _bulletHole;
 
     private float _radius = 0.2f;
     private Rigidbody _rigidBody;
+    private int _layerMask;
 
     private void OnDrawGizmos()
     {
@@ -30,6 +34,7 @@ public class Bullet : MonoBehaviour, IPoolable
     private void Awake()
     {
         _rigidBody = GetComponent<Rigidbody>();
+        _layerMask = LayerMask.NameToLayer("InvisibleWalls");
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -42,6 +47,14 @@ public class Bullet : MonoBehaviour, IPoolable
             }
         }
 
+        if (collision.transform.gameObject.layer != _layerMask)
+        {
+            ContactPoint contactPoint = collision.contacts[0];
+            Quaternion normalRotation = Quaternion.LookRotation(contactPoint.normal);
+
+            Instantiate(_bulletHole, contactPoint.point, normalRotation, collision.transform);
+        }
+        
         ReturnToPool();
     }
 

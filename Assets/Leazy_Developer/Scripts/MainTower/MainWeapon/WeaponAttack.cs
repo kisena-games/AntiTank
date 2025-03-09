@@ -7,7 +7,9 @@ using Cinemachine;
 public class WeaponAttack : MonoBehaviour, ICanAttack
 {
     [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private GameObject _bulletHole;
     [SerializeField] private ParticleSystem _defaultFireParticles;
+    [SerializeField] private LayerMask _buleltHoleExceptionLayers;
 
     [Header("Default Mode Parameters")]
     [SerializeField] private Transform _bulletDefaultSpawnPosition;
@@ -25,6 +27,9 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
 
     private float _nextSniperFireTime = 0f;
 
+    private int _layerMask;
+
+
     private void OnEnable()
     {
         InputManager.AttackAction += Attack;
@@ -35,9 +40,11 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
         InputManager.AttackAction -= Attack;
     }
 
+    
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
+        _layerMask = ~(1 << LayerMask.NameToLayer("InvisibleWalls"));
     }
 
     private void Start()
@@ -80,8 +87,10 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
     {
         _audioSource.PlayOneShot(_audioSource.clip);
 
-        if (Physics.Raycast(new Ray(_bulletSniperSpawnPosition.position, _bulletSniperSpawnPosition.forward), out RaycastHit hitInfo))
+        if (Physics.Raycast(new Ray(_bulletSniperSpawnPosition.position, _bulletSniperSpawnPosition.forward), out RaycastHit hitInfo, Mathf.Infinity, _layerMask))
         {
+            Debug.Log(hitInfo.collider.name);
+
             if (hitInfo.collider.TryGetComponent(out IDamageable damageableObject))
             {
                 if (!damageableObject.IsKilled)
@@ -89,6 +98,9 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
                     damageableObject.TakeDamage(_sniperDamage);
                 }
             }
+
+            Quaternion normalRotation = Quaternion.LookRotation(hitInfo.normal);
+            Instantiate(_bulletHole, hitInfo.point, normalRotation, hitInfo.transform);
         }
 
         StartCoroutine(Noize());
