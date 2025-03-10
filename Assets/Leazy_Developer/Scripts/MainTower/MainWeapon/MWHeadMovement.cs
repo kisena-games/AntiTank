@@ -53,7 +53,7 @@ public class MWHeadMovement : MonoBehaviour
 
     private void DefaultRotateHead()
     {
-        transform.forward = _directionWeaponToCursorAim.normalized;
+        transform.forward += _directionWeaponToCursorAim.normalized;
         ClampVertical();
     }
 
@@ -61,9 +61,8 @@ public class MWHeadMovement : MonoBehaviour
     {
         // Применяем вращение
         transform.Rotate(-_rotation.x, _rotation.y, 0.0f);
-
         ClampVertical();
-        ClampHorizontal();
+       // ClampHorizontal();
 
     }
     private void ClampVertical()
