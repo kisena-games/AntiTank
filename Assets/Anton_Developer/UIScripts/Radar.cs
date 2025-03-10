@@ -14,7 +14,7 @@ public class Radar : MonoBehaviour
 
     private void Awake()
     {
-        _mainWeapon = FindObjectOfType<MWBodyMovement>().transform;
+        _mainWeapon = FindObjectOfType<MWHeadMovement>().transform;
     }
 
     private void Update()
