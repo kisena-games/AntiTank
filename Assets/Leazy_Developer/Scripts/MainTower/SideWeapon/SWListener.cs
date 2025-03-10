@@ -118,7 +118,6 @@ public class SWListener : MonoBehaviour, IPauseHandler
     {
         _audioSource.PlayOneShot(_audioSource.clip);
         LeanPool.Spawn(_bulletPrefab, _headTransform.position, _headTransform.rotation);
-        //Instantiate(_bulletPrefab, _headTransform.position, _headTransform.rotation);
     }
 
     private void RotateBodyTowardsEnemy()

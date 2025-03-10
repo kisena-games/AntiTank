@@ -54,12 +54,12 @@ public class Bullet : MonoBehaviour, IPoolable
 
             Instantiate(_bulletHole, contactPoint.point, normalRotation, collision.transform);
         }
-        
+
         ReturnToPool();
     }
 
     public void ReturnToPool()
     {
-        LeanPool.Despawn(gameObject);
+        LeanPool.Despawn(gameObject, 0.01f);
     }
 }
