@@ -54,10 +54,8 @@ public class MWHeadMovement : MonoBehaviour
 
     private void SniperRotateHead()
     {
-        // Применяем вращение
         transform.Rotate(-_rotation.x, _rotation.y, 0.0f);
         ClampVertical();
-       // ClampHorizontal();
 
     }
     private void ClampVertical()

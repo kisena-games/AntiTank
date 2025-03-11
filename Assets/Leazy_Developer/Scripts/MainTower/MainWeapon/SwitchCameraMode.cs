@@ -8,6 +8,7 @@ public class SwitchCameraMode : MonoBehaviour
     [SerializeField] private GameObject _sniperCamera;
 
     public static CameraMode CurrentMode { get; private set; }
+    public static Action SwitchToDefaultModeAction;
 
     private void OnEnable()
     {
@@ -41,6 +42,8 @@ public class SwitchCameraMode : MonoBehaviour
 
             _sniperCamera.SetActive(false);
             CurrentMode = CameraMode.Default;
+
+            SwitchToDefaultModeAction?.Invoke();
         }
     }
 }

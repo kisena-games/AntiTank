@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MWBodyMovement : MonoBehaviour
@@ -10,16 +12,24 @@ public class MWBodyMovement : MonoBehaviour
 
     private Quaternion _targetRotation;
     private float _rotationProgress = 0;
-    private Direction _currentDirection = Direction.Forward;
+
+    private Transform _mwHeadMovement;
 
     private void OnEnable()
     {
         InputManager.BaseRotateAction += RotateBase;
+        SwitchCameraMode.SwitchToDefaultModeAction += SwitchToDefault;
     }
 
     private void OnDisable()
     {
         InputManager.BaseRotateAction -= RotateBase;
+        SwitchCameraMode.SwitchToDefaultModeAction -= SwitchToDefault;
+    }
+
+    private void Awake()
+    {
+        _mwHeadMovement = FindObjectOfType<MWHeadMovement>().transform;
     }
 
     private void Update()
@@ -35,5 +45,10 @@ public class MWBodyMovement : MonoBehaviour
     {
         _targetRotation = transform.rotation * Quaternion.Euler(0, dirX * 90, 0);
         _rotationProgress = 0;
+    }
+
+    private void SwitchToDefault()
+    {
+        // реализация поворота тела при переходе из снайперки в обычный режим
     }
 }
