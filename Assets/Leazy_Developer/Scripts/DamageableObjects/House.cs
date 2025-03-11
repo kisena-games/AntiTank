@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Formats.Alembic.Importer;
 
-public class House : MonoBehaviour, IDamageable, IPauseHandler
+public class House : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _maxHealth = 40;
     [SerializeField] private GameObject _defaultHouse;
@@ -16,25 +16,10 @@ public class House : MonoBehaviour, IDamageable, IPauseHandler
 
     protected Collider _collider;
 
-    private void OnEnable()
-    {
-        GamePause.Instance?.AddPauseList(this);
-    }
-
-    private void OnDisable()
-    {
-        GamePause.Instance?.RemovePauseList(this);
-    }
-
     private void Awake()
     {
         _collider = GetComponent<Collider>();
         _currentHealth = _maxHealth;
-    }
-
-    public void IsPaused(bool isPaused)
-    {
-        _animator.enabled = !isPaused;
     }
 
     public void TakeDamage(int damage)

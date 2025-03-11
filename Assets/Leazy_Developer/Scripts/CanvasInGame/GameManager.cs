@@ -97,6 +97,12 @@ public class GameManager : MonoBehaviour
         else
         {
             Cursor.SetCursor(_defaultCursor, new Vector2(_defaultCursor.width / 2, _defaultCursor.height / 2), CursorMode.Auto);
+
+            if (SwitchCameraMode.CurrentMode == CameraMode.Sniper)
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Confined;
+            }
         }
     }
 

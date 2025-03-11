@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 
-public class PauseAnimatorController : MonoBehaviour, IPauseHandler
+public class PauseAnimatorController : MonoBehaviour
 {
     private Animator _animator;
 
@@ -14,15 +14,5 @@ public class PauseAnimatorController : MonoBehaviour, IPauseHandler
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-    }
-
-    private void OnEnable()
-    {
-        GamePause.Instance.AddPauseList(this);
-    }
-
-    private void OnDisable()
-    {
-        GamePause.Instance.RemovePauseList(this);
     }
 }

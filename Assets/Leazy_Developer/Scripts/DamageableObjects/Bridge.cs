@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bridge : MonoBehaviour, IDamageable, IPauseHandler
+public class Bridge : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _maxHealth = 40;
     [SerializeField] private Animator _animator;
@@ -15,25 +15,10 @@ public class Bridge : MonoBehaviour, IDamageable, IPauseHandler
 
     protected Collider _collider;
 
-    private void OnEnable()
-    {
-        GamePause.Instance?.AddPauseList(this);
-    }
-
-    private void OnDisable()
-    {
-        GamePause.Instance?.RemovePauseList(this);
-    }
-
     private void Awake()
     {
         _collider = GetComponent<Collider>();
         _currentHealth = _maxHealth;
-    }
-
-    public void IsPaused(bool isPaused)
-    {
-        _animator.enabled = !isPaused;
     }
 
     public void TakeDamage(int damage)
