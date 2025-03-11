@@ -5,19 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class PausePanel : MonoBehaviour
 {
-    public void OnContinue()
-    {
-        GamePause.Instance.SetPause(false);
-        gameObject.SetActive(false);
-    }
+    [SerializeField] private GameObject _settingsPanel;
 
-    public void OnRestart()
+    private void OnDisable()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void OnGoToMenu()
-    {
-        SceneManager.LoadScene(0);
+        if (_settingsPanel.activeSelf)
+        {
+            _settingsPanel.SetActive(false);
+        }
     }
 }
