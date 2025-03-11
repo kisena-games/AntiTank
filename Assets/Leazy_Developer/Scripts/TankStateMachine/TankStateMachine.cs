@@ -73,16 +73,6 @@ public class TankStateMachine : MonoBehaviour, IPoolable
         _isMove = true;
     }
 
-    //private void OnEnable()
-    //{
-    //    GamePause.Instance?.AddPauseList(this);
-    //}
-
-    //private void OnDisable()
-    //{
-    //    GamePause.Instance?.RemovePauseList(this);
-    //}
-
     private void Awake()
     {
         _health = GetComponent<TankHealth>();
@@ -99,22 +89,12 @@ public class TankStateMachine : MonoBehaviour, IPoolable
 
     private void Update()
     {
-        //if (GamePause.Instance.IsPause)
-        //{
-        //    return;
-        //}
-
         _distanceToLastDestination = Vector3.Distance(transform.position, _lastDestination);
         _stateMachine?.OnUpdate();
     }
 
     private void FixedUpdate()
     {
-        //if (GamePause.Instance.IsPause)
-        //{
-        //    return;
-        //}
-
         _stateMachine?.OnFixedUpdate();
     }
 
@@ -135,23 +115,5 @@ public class TankStateMachine : MonoBehaviour, IPoolable
         fireState.AddTransition(new StateTransition(deadState, new FuncStateCondition(() => _health.IsKilled)));
 
         _stateMachine = new StateMachine(emptyState);
-    }
-
-    public void IsPaused(bool isPaused)
-    {
-        //if (isPaused)
-        //{
-        //    _animationController.StopAnimator();
-        //    _agent.isStopped = true;
-        //    _targetPosition = _agent.destination;
-        //    _agent.Warp(_agent.transform.position);
-        //}
-        //else
-        //{
-        //    _animationController.PlayAnimator();
-        //    _agent.isStopped = false;
-        //    _agent.SetDestination(_targetPosition);
-        //}
-        
     }
 }

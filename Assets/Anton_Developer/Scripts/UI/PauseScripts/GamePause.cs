@@ -8,9 +8,6 @@ public class GamePause : MonoBehaviour
     [SerializeField] GameObject _pausePanel;
 
     public bool IsPause { get; private set; }
-    
-
-    private List<IPauseHandler> _pauses = new List<IPauseHandler>();
 
     private void Awake()
     {        
@@ -31,15 +28,6 @@ public class GamePause : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SetPause(!IsPause);
-            GameManager.Instance.SetPause(IsPause);
-            //if (IsPause)
-            //{
-            //    Time.timeScale = 0.0f;
-            //}
-            //else
-            //{
-            //    Time.timeScale = 1.0f;
-            //}
         }
     }
 
@@ -47,24 +35,16 @@ public class GamePause : MonoBehaviour
     {
         IsPause = isEnable;
 
-        for (int i = 0; i < _pauses.Count; i++)
+        if (IsPause)
         {
-            _pauses[i].IsPaused(isEnable);
+            Time.timeScale = 0.0f;
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
         }
 
+        GameManager.Instance.SetPause(isEnable);
         _pausePanel.SetActive(IsPause);
-    }
-
-    public void AddPauseList(IPauseHandler pauseHandler)
-    {
-        if (!_pauses.Contains(pauseHandler))
-        {
-            _pauses.Add(pauseHandler);
-        }
-    }
-
-    public void RemovePauseList(IPauseHandler pauseHandler)
-    {
-        _pauses.Remove(pauseHandler);
     }
 }

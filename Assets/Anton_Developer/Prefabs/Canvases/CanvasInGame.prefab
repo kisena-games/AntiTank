@@ -4060,7 +4060,8 @@ AudioSource:
   m_GameObject: {fileID: 7433618191375702537}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7989532108582540192, guid: 596056adab5de264b8db69045a72e58b,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -5088,13 +5089,14 @@ GameObject:
   - component: {fileID: 4248768003748931843}
   - component: {fileID: 4501043302170881190}
   - component: {fileID: 2868070607823078094}
+  - component: {fileID: 3779955216907135143}
   m_Layer: 5
   m_Name: PausePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4248768003748931843
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5157,6 +5159,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3779955216907135143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8482793358613789578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 638fe277ef91a554ead678dbea724ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _settingsPanel: {fileID: 2680810010027078276}
 --- !u!1001 &2493849734333553348
 PrefabInstance:
   m_ObjectHideFlags: 0

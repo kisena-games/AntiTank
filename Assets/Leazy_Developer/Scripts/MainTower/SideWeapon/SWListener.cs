@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class SWListener : MonoBehaviour, IPauseHandler
+public class SWListener : MonoBehaviour
 {
     [SerializeField] private Transform _bodyTransform;
     [SerializeField] private Transform _headTransform;
@@ -64,7 +64,7 @@ public class SWListener : MonoBehaviour, IPauseHandler
 
     private void Update()
     {
-        if (GamePause.Instance.IsPause || _isLose)
+        if (_isLose)
         {
             return;
         }
@@ -156,11 +156,6 @@ public class SWListener : MonoBehaviour, IPauseHandler
             _bodyTransform.rotation = Quaternion.RotateTowards(_bodyTransform.rotation, _originBodyRotation, _rotationSpeed * Time.deltaTime);
             yield return new WaitForEndOfFrame();
         }
-    }
-
-    public void IsPaused(bool isPaused)
-    {
-        throw new NotImplementedException();
     }
     private void OnLose()
     {

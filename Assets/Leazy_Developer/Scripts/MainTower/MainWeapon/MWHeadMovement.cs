@@ -32,11 +32,6 @@ public class MWHeadMovement : MonoBehaviour
 
     private void Update()
     {
-        if (GamePause.Instance.IsPause)
-        {
-            return;
-        }
-
         if (InputManager.IsWeaponTopMoving)
         {
             CalculateDirections();

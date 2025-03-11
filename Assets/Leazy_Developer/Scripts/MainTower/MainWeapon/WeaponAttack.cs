@@ -54,7 +54,7 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
 
     public void Attack()
     {
-        if (GamePause.Instance.IsPause || _attackCoroutine != null)
+        if (_attackCoroutine != null)
         {
             return;
         }
@@ -89,8 +89,6 @@ public class WeaponAttack : MonoBehaviour, ICanAttack
 
         if (Physics.Raycast(new Ray(_bulletSniperSpawnPosition.position, _bulletSniperSpawnPosition.forward), out RaycastHit hitInfo, Mathf.Infinity, _layerMask))
         {
-            Debug.Log(hitInfo.collider.name);
-
             if (hitInfo.collider.TryGetComponent(out IDamageable damageableObject))
             {
                 if (!damageableObject.IsKilled)
