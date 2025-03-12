@@ -11,11 +11,9 @@ public class MWBodyMovement : MonoBehaviour
     [SerializeField] private float _rotationSpeed = 2.0f;
 
     private Quaternion _targetRotation;
-    private Transform _mwHeadMovement;
-
     private float _rotationProgress = 0;
-    private bool _isRotating = false;
 
+    private Transform _mwHeadMovement;
     private void Start()
     {
         _mwHeadMovement = GameObject.FindObjectOfType<MWHeadMovement>().transform;
@@ -40,30 +38,19 @@ public class MWBodyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (_isRotating)
+        if (_rotationProgress < 1.0f)
         {
-            if (_rotationProgress < 1.0f)
-            {
-                _rotationProgress += Time.deltaTime * _rotationSpeed;
-                transform.rotation = Quaternion.Slerp(transform.rotation, _targetRotation, _rotationProgress);
-            }
-            else
-            {
-                _isRotating = false;
-            }
+            _rotationProgress += Time.deltaTime * _rotationSpeed;
+            transform.rotation = Quaternion.Slerp(transform.rotation, _targetRotation, _rotationProgress);
         }
     }
 
     private void RotateBase(float dirX)
     {
-        if (_isRotating)
-        {
-            return;
-        }
-
-        _targetRotation = transform.rotation * Quaternion.Euler(0, dirX * 90, 0);
+        float currentYAngle = transform.eulerAngles.y;
+        float nearestMultiple = Mathf.Round(currentYAngle / 90) * 90;
+        _targetRotation = Quaternion.Euler(0, nearestMultiple + dirX * 90, 0);
         _rotationProgress = 0;
-        _isRotating = true;
     }
 
     private void SwitchToDefault()
@@ -72,7 +59,7 @@ public class MWBodyMovement : MonoBehaviour
         float angleDifference = Mathf.DeltaAngle(transform.eulerAngles.y, _mwHeadMovement.eulerAngles.y);
 
         // Check if the angle difference exceeds the threshold.  No reason to constantly set rotation.
-        if (Mathf.Abs(angleDifference) > 45)
+        if (Mathf.Abs(angleDifference) > 90)
         {
             // Determine the closest 90-degree multiple
             float currentYRotation = transform.eulerAngles.y; // Current rotation of cannon body
