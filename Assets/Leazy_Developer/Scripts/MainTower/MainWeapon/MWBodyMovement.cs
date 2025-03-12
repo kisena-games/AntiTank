@@ -14,6 +14,10 @@ public class MWBodyMovement : MonoBehaviour
     private float _rotationProgress = 0;
 
     private Transform _mwHeadMovement;
+    private void Start()
+    {
+        _mwHeadMovement = GameObject.FindObjectOfType<MWHeadMovement>().transform;
+    }
 
     private void OnEnable()
     {
@@ -43,12 +47,39 @@ public class MWBodyMovement : MonoBehaviour
 
     private void RotateBase(float dirX)
     {
-        _targetRotation = transform.rotation * Quaternion.Euler(0, dirX * 90, 0);
+        float currentYAngle = transform.eulerAngles.y;
+        float nearestMultiple = Mathf.Round(currentYAngle / 90) * 90;
+        _targetRotation = Quaternion.Euler(0, nearestMultiple + dirX * 90, 0);
         _rotationProgress = 0;
     }
 
     private void SwitchToDefault()
     {
-        // реализация поворота тела при переходе из снайперки в обычный режим
+        // Calculate the difference between the head's Y rotation and the body's Y rotation
+        float angleDifference = Mathf.DeltaAngle(transform.eulerAngles.y, _mwHeadMovement.eulerAngles.y);
+
+        // Check if the angle difference exceeds the threshold.  No reason to constantly set rotation.
+        if (Mathf.Abs(angleDifference) > 90)
+        {
+            // Determine the closest 90-degree multiple
+            float currentYRotation = transform.eulerAngles.y; // Current rotation of cannon body
+            float closestAngle = Mathf.Round(currentYRotation / 90f) * 90f; // find the cloest cardinal direction
+
+            // Check each angle
+            float angle0Diff = Mathf.Abs(Mathf.DeltaAngle(_mwHeadMovement.eulerAngles.y, currentYRotation + 0));
+            float angle90Diff = Mathf.Abs(Mathf.DeltaAngle(_mwHeadMovement.eulerAngles.y, currentYRotation + 90));
+            float angle180Diff = Mathf.Abs(Mathf.DeltaAngle(_mwHeadMovement.eulerAngles.y, currentYRotation + 180));
+            float angle270Diff = Mathf.Abs(Mathf.DeltaAngle(_mwHeadMovement.eulerAngles.y, currentYRotation + 270));
+            float minAngle = Mathf.Min(angle0Diff, angle90Diff, angle180Diff, angle270Diff);
+
+            // Determine closest angle
+            if (minAngle == angle0Diff) closestAngle = currentYRotation + 0;
+            else if (minAngle == angle90Diff) closestAngle = currentYRotation + 90;
+            else if (minAngle == angle180Diff) closestAngle = currentYRotation + 180;
+            else closestAngle = currentYRotation + 270;
+
+            // Apply the new rotation to the body
+            transform.rotation = Quaternion.Euler(transform.eulerAngles.x, closestAngle, transform.eulerAngles.z);
+        }
     }
 }
