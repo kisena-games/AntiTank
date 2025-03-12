@@ -11,9 +11,11 @@ public class MWBodyMovement : MonoBehaviour
     [SerializeField] private float _rotationSpeed = 2.0f;
 
     private Quaternion _targetRotation;
-    private float _rotationProgress = 0;
-
     private Transform _mwHeadMovement;
+
+    private float _rotationProgress = 0;
+    private bool _isRotating = false;
+
     private void Start()
     {
         _mwHeadMovement = GameObject.FindObjectOfType<MWHeadMovement>().transform;
@@ -38,17 +40,30 @@ public class MWBodyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (_rotationProgress < 1.0f)
+        if (_isRotating)
         {
-            _rotationProgress += Time.deltaTime * _rotationSpeed;
-            transform.rotation = Quaternion.Slerp(transform.rotation, _targetRotation, _rotationProgress);
+            if (_rotationProgress < 1.0f)
+            {
+                _rotationProgress += Time.deltaTime * _rotationSpeed;
+                transform.rotation = Quaternion.Slerp(transform.rotation, _targetRotation, _rotationProgress);
+            }
+            else
+            {
+                _isRotating = false;
+            }
         }
     }
 
     private void RotateBase(float dirX)
     {
+        if (_isRotating)
+        {
+            return;
+        }
+
         _targetRotation = transform.rotation * Quaternion.Euler(0, dirX * 90, 0);
         _rotationProgress = 0;
+        _isRotating = true;
     }
 
     private void SwitchToDefault()
