@@ -5007,59 +5007,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 249373019945972220, guid: be81cc7e638e9f841b347688f92fe42d,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a1214577040702e4ea872ae9e1d62d63,
-        type: 3}
-    - target: {fileID: 2033998106306141046, guid: be81cc7e638e9f841b347688f92fe42d,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a1214577040702e4ea872ae9e1d62d63,
-        type: 3}
-    - target: {fileID: 2038745946502661358, guid: be81cc7e638e9f841b347688f92fe42d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2749181406588022251, guid: be81cc7e638e9f841b347688f92fe42d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 15.000061
-      objectReference: {fileID: 0}
-    - target: {fileID: 2868070607823078094, guid: be81cc7e638e9f841b347688f92fe42d,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2868070607823078094, guid: be81cc7e638e9f841b347688f92fe42d,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a1214577040702e4ea872ae9e1d62d63,
-        type: 3}
-    - target: {fileID: 4248768003748931843, guid: be81cc7e638e9f841b347688f92fe42d,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4248768003748931843, guid: be81cc7e638e9f841b347688f92fe42d,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4248768003748931843, guid: be81cc7e638e9f841b347688f92fe42d,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4248768003748931843, guid: be81cc7e638e9f841b347688f92fe42d,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5709913611083734222, guid: be81cc7e638e9f841b347688f92fe42d,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5164,11 +5111,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CanvasInGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 8482793358613789578, guid: be81cc7e638e9f841b347688f92fe42d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
