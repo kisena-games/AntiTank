@@ -17,6 +17,11 @@ public class GamePause : MonoBehaviour
             Instance = this;
     }
 
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     private void OnDestroy()
     {
         if(Instance == this)
