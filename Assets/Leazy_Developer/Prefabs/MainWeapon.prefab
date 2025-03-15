@@ -651,7 +651,7 @@ MonoBehaviour:
   _bulletSniperSpawnPosition: {fileID: 8347719059043495927}
   _cinemachineCamera: {fileID: 7728252315995631552}
   _sniperDamage: 100
-  _sniperFireRate: 0.85
+  _sniperFireRate: 0.8
   _noiseDuration: 0.05
 --- !u!114 &2388751911276071038
 MonoBehaviour:
