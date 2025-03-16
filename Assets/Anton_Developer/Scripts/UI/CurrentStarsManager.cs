@@ -4,8 +4,13 @@ public class CurrentStarsManager : MonoBehaviour
 {
     [SerializeField] private GameObject _twoStars;
     [SerializeField] private GameObject _threeStars;
-    [SerializeField] private MainWeaponHealth _weaponHealth;
 
+    private MainWeaponHealth _weaponHealth;
+
+    private void Awake()
+    {
+        _weaponHealth = FindObjectOfType<MainWeaponHealth>();
+    }
     private void OnEnable()
     {
         GameManager.OnWinAction += ShowCurrentHealth;
