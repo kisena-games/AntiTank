@@ -4010,7 +4010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _defaultCursor: {fileID: 2800000, guid: f640dadbb99ff4d46a1813a119f9ea98, type: 3}
   _maxNumberForStrings: 300
-  _buttonClick: {fileID: 8300000, guid: 414aec2079062d748983e5604d065a8f, type: 3}
+  _buttonClick: {fileID: 8300000, guid: 6026db9448756c34696b80974a006a83, type: 3}
   _currentTanksCount: {fileID: 7673550653564004104}
   _maxTanksCount: {fileID: 4249468538768864784}
 --- !u!82 &5282776164587957348
