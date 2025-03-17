@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (QualitySettings.vSyncCount == 1)
+        {
+            QualitySettings.vSyncCount = 0;
+        }
+
         KilledTanksCount = 0;
         StringNumbers = new string[_maxNumberForStrings + 1];
         for (int i = 0; i < StringNumbers.Length; i++)

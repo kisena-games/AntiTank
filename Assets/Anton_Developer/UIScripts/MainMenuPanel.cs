@@ -5,6 +5,14 @@ public class MainMenuPanel : MonoBehaviour
 {
     [SerializeField] private Button _quit;
 
+    private void Awake()
+    {
+        if (QualitySettings.vSyncCount == 1)
+        {
+            QualitySettings.vSyncCount = 0;
+        }
+    }
+
     private void OnEnable()
     {
         _quit.onClick.AddListener(OnExitButtonClick);

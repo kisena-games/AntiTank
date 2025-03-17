@@ -56,12 +56,10 @@ public class FPSManager : MonoBehaviour
     {
         if (_currentFPS == -1)
         {
-            QualitySettings.vSyncCount = 1;
             Application.targetFrameRate = -1;
         }
         else
         {
-            QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = _currentFPS;
         }
 
