@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour, IPoolable
     [SerializeField] private int _damage;
     [SerializeField] private GameObject _bulletHole;
 
+    [SerializeField] private GameObject _explosionPrefab;
+
     private float _radius = 0.2f;
     private Rigidbody _rigidBody;
     private int _layerMask;
@@ -42,6 +44,15 @@ public class Bullet : MonoBehaviour, IPoolable
             if (!damageableObject.IsKilled)
             {
                 damageableObject.TakeDamage(_damage);
+            }
+
+            if (collision.collider.TryGetComponent(out MainWeaponHealth mainWeaponHealth))
+            {
+                ContactPoint contactPoint = collision.contacts[0];
+                Quaternion normalRotation = Quaternion.LookRotation(contactPoint.normal);
+
+                GameObject obj = Instantiate(_explosionPrefab, contactPoint.point, normalRotation, collision.transform);
+                Destroy(obj, 2);
             }
         }
 
