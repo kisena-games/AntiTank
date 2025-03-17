@@ -10,12 +10,14 @@ public class MainWeaponHealth : MonoBehaviour, IDamageable
 {
     public static Action OnLoseAction;
 
-    [SerializeField] private int _maxHealth = 100;
     [SerializeField] private TextMeshProUGUI _healthText;
 
     [SerializeField] private ParticleSystem _smokeParticles;
     [SerializeField] private ParticleSystem _electricParticles;
     [SerializeField] private ParticleSystem _boomParticles;
+    [SerializeField] private ParticleSystem _deathParticles;
+
+    [field: SerializeField] public int MaxHealth { get; private set; }
 
     private float[] _partsOfHealth = new float[3]{ 20, 40, 75 };
     private int _indexPart;
@@ -36,7 +38,7 @@ public class MainWeaponHealth : MonoBehaviour, IDamageable
 
     private void Awake()
     {
-        CurrentHealth = _maxHealth;
+        CurrentHealth = MaxHealth;
         _healthText.text = CurrentHealth.ToString();
     }
 
@@ -56,7 +58,7 @@ public class MainWeaponHealth : MonoBehaviour, IDamageable
         CurrentHealth -= damage;
         _healthText.text = CurrentHealth.ToString();
 
-        float tempPart = (float)CurrentHealth / (float)_maxHealth;
+        float tempPart = (float)CurrentHealth / MaxHealth;
 
         switch (_indexPart)
         {
@@ -93,6 +95,7 @@ public class MainWeaponHealth : MonoBehaviour, IDamageable
 
     private void Die()
     {
+        _deathParticles.Play();
         OnLoseAction?.Invoke();
     }
 }
