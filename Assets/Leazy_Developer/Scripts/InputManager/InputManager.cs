@@ -17,7 +17,7 @@ public class InputManager : MonoBehaviour
 
     public void OnWeaponBaseMoveInput(InputAction.CallbackContext context)
     {
-        if (GamePause.Instance.IsPause)
+        if (CanvasInGame.IsLoseOrWin)
         {
             return;
         }
@@ -41,11 +41,6 @@ public class InputManager : MonoBehaviour
 
     public void OnWeaponTopMoveDelta(InputAction.CallbackContext context)
     {
-        if (GamePause.Instance.IsPause)
-        {
-            return;
-        }
-
         WeaponTopMoveDelta = context.ReadValue<Vector2>();
 
         if (context.performed && !IsWeaponTopMoving)
@@ -65,7 +60,7 @@ public class InputManager : MonoBehaviour
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (GamePause.Instance.IsPause)
+        if (CanvasInGame.IsLoseOrWin)
         {
             return;
         }
@@ -78,7 +73,7 @@ public class InputManager : MonoBehaviour
 
     public void OnSwitchCameraMode(InputAction.CallbackContext context)
     {
-        if (GamePause.Instance.IsPause)
+        if (CanvasInGame.IsLoseOrWin)
         {
             return;
         }

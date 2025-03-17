@@ -32,6 +32,11 @@ public class MWHeadMovement : MonoBehaviour
 
     private void Update()
     {
+        if (CanvasInGame.IsLoseOrWin)
+        {
+            return;
+        }
+
         if (InputManager.IsWeaponTopMoving)
         {
             CalculateDirections();
@@ -60,25 +65,16 @@ public class MWHeadMovement : MonoBehaviour
     }
     private void ClampVertical()
     {
-
-        // Ограничиваем вертикальный угол поворота
         float currentXAngle = transform.localEulerAngles.x;
-        if (currentXAngle > 180) currentXAngle -= 360; // Приводим угол к диапазону -180..+180
-
-        // Ограничиваем вертикальный угол
+        if (currentXAngle > 180) currentXAngle -= 360;
         currentXAngle = Mathf.Clamp(currentXAngle, -verticalClampAngle, verticalClampAngle);
         transform.localEulerAngles = new Vector3(currentXAngle, transform.localEulerAngles.y, 0);
     }
     private void ClampHorizontal()
     {
-        // Ограничиваем горизонтальный угол поворота
         float currentYAngle = transform.localEulerAngles.y;
-        if (currentYAngle > 180) currentYAngle -= 360; // Приводим угол к диапазону -180..+180
-
-        // Ограничиваем горизонтальный угол
+        if (currentYAngle > 180) currentYAngle -= 360;
         currentYAngle = Mathf.Clamp(currentYAngle, -horizontalClampAngle, horizontalClampAngle);
-
-        // Применяем изменённый угол Y, сохраняя текущие углы X и Z
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, currentYAngle, transform.localEulerAngles.z);
     }
 

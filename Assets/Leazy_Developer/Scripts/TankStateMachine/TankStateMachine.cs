@@ -89,12 +89,22 @@ public class TankStateMachine : MonoBehaviour, IPoolable
 
     private void Update()
     {
+        if (CanvasInGame.IsLoseOrWin)
+        {
+            return;
+        }
+
         _distanceToLastDestination = Vector3.Distance(transform.position, _lastDestination);
         _stateMachine?.OnUpdate();
     }
 
     private void FixedUpdate()
     {
+        if (CanvasInGame.IsLoseOrWin)
+        {
+            return;
+        }
+
         _stateMachine?.OnFixedUpdate();
     }
 

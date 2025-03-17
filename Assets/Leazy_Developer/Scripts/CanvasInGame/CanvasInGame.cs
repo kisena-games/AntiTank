@@ -14,6 +14,8 @@ public class CanvasInGame : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _currentTanksCount;
     [SerializeField] private TextMeshProUGUI _maxTanksCount;
 
+    public static bool IsLoseOrWin { get; private set; }
+
     private int _tanksCount = 0;
 
     private void OnEnable()
@@ -28,6 +30,11 @@ public class CanvasInGame : MonoBehaviour
         GameManager.OnChangeTankCountAction -= OnChangeTankCount;
         MainWeaponHealth.OnLoseAction -= OnLose;
         GameManager.OnWinAction -= OnWin;
+    }
+
+    private void Awake()
+    {
+        IsLoseOrWin = false;
     }
 
     private void OnChangeTankCount()
@@ -54,6 +61,7 @@ public class CanvasInGame : MonoBehaviour
 
     private IEnumerator LoseWinWithDelay(GameObject window)
     {
+        IsLoseOrWin = true;
         SetMenuCursor();
 
         float elapsedTime = 0f;
