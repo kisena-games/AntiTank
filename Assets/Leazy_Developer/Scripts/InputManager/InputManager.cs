@@ -17,7 +17,7 @@ public class InputManager : MonoBehaviour
 
     public void OnWeaponBaseMoveInput(InputAction.CallbackContext context)
     {
-        if (CanvasInGame.IsLoseOrWin)
+        if (GamePause.Instance.IsPause || CanvasInGame.IsLoseOrWin)
         {
             return;
         }
@@ -60,7 +60,7 @@ public class InputManager : MonoBehaviour
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (CanvasInGame.IsLoseOrWin)
+        if (GamePause.Instance.IsPause || CanvasInGame.IsLoseOrWin)
         {
             return;
         }
@@ -73,7 +73,7 @@ public class InputManager : MonoBehaviour
 
     public void OnSwitchCameraMode(InputAction.CallbackContext context)
     {
-        if (CanvasInGame.IsLoseOrWin)
+        if (GamePause.Instance.IsPause || CanvasInGame.IsLoseOrWin)
         {
             return;
         }
