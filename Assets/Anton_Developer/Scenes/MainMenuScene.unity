@@ -478,6 +478,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3565274306891429746, guid: b866dd256d5e1c249af1d7101ee9ffd4,
         type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2205d790bf0e53248a8e6da31ca1abb2,
+        type: 3}
+    - target: {fileID: 3565274306891429746, guid: b866dd256d5e1c249af1d7101ee9ffd4,
+        type: 3}
       propertyPath: m_PreserveAspect
       value: 0
       objectReference: {fileID: 0}
@@ -968,7 +974,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416678634}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: bae44fbe56ffc174a98bc146b5f20252, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: fb2e7f5ffa4f43e4db1cd94abfe101ed, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 2047485427}
