@@ -20,6 +20,14 @@ public class SpecSkillsManager : MonoBehaviour
 
     private void Update()
     {
+        if (CanvasInGame.IsLoseOrWin && _isAirStrikeAvailable)
+        {
+            _isAirStrikeAvailable = false;
+            _airStrikeUI.SetActive(false);
+
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.Alpha1) && _isAirStrikeAvailable)
         {
             _isAirStrikeAvailable = false;

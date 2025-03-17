@@ -30,6 +30,11 @@ public class GamePause : MonoBehaviour
 
     private void Update()
     {
+        if (CanvasInGame.IsLoseOrWin)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SetPause(!IsPause);
