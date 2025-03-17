@@ -27,7 +27,8 @@ public class CurrentStarsManager : MonoBehaviour
         {
             _twoStars.SetActive(true);
         }
-        if (_weaponHealth.CurrentHealth == 200)
+
+        if (_weaponHealth.CurrentHealth >= 200)
         {
             _threeStars.SetActive(true);
         }
