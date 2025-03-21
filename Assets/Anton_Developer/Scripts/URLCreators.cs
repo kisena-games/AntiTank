@@ -46,4 +46,14 @@ public class URLCreators : MonoBehaviour
     {
         Application.OpenURL("https://t.me/someonesome7");
     }
+
+    public void URLAlexeyProg()
+    {
+        Application.OpenURL("https://t.me/alexlogic24");
+    }
+
+    public void URLIra2D()
+    {
+        Application.OpenURL("https://t.me/irishkins_art");
+    }
 }
