@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class SWListener : MonoBehaviour, IPauseHandler
+public class SWListener : MonoBehaviour
 {
     [SerializeField] private Transform _bodyTransform;
     [SerializeField] private Transform _headTransform;
@@ -27,6 +27,7 @@ public class SWListener : MonoBehaviour, IPauseHandler
     private List<TankHealth> _tanks;
     private SWState _state = SWState.Wait;
     private float _nextFireTime = 0f;
+    private bool _isLose;
 
     private void OnDrawGizmos()
     {
@@ -36,22 +37,22 @@ public class SWListener : MonoBehaviour, IPauseHandler
 
     private void OnEnable()
     {
-        //GamePause.Instance.AddPauseList(this);
-
         foreach (var _trigger in _triggers)
         {
             _trigger.OnTryFocusAction += OnTryFocus;
         }
+
+        MainWeaponHealth.OnLoseAction += OnLose;
     }
 
     private void OnDisable()
     {
-        //GamePause.Instance.RemovePauseList(this);
-
         foreach (var _trigger in _triggers)
         {
             _trigger.OnTryFocusAction -= OnTryFocus;
         }
+
+        MainWeaponHealth.OnLoseAction -= OnLose;
     }
 
     private void Awake()
@@ -63,7 +64,7 @@ public class SWListener : MonoBehaviour, IPauseHandler
 
     private void Update()
     {
-        if (GamePause.Instance.IsPause)
+        if (_isLose)
         {
             return;
         }
@@ -117,7 +118,6 @@ public class SWListener : MonoBehaviour, IPauseHandler
     {
         _audioSource.PlayOneShot(_audioSource.clip);
         LeanPool.Spawn(_bulletPrefab, _headTransform.position, _headTransform.rotation);
-        //Instantiate(_bulletPrefab, _headTransform.position, _headTransform.rotation);
     }
 
     private void RotateBodyTowardsEnemy()
@@ -157,12 +157,11 @@ public class SWListener : MonoBehaviour, IPauseHandler
             yield return new WaitForEndOfFrame();
         }
     }
-
-
-    public void IsPaused(bool isPaused)
+    private void OnLose()
     {
-        throw new NotImplementedException();
+        _isLose = true;
     }
+
 }
 
 public enum SWState

@@ -10,10 +10,11 @@ public class TankMoveState : State
     private readonly TankAnimationController _controller;
     private readonly List<Vector3> _path;
     private readonly Vector3 _lastDestination;
+    private readonly Transform _aimToAttack;
     private readonly string _name;
     private int _indexOfDestination = 0;
 
-    public TankMoveState(string name, TankAudioManager audioManager, TankAnimationController controller, NavMeshAgent agent, List<Vector3> path, Vector3 lastDestination)
+    public TankMoveState(string name, TankAudioManager audioManager, TankAnimationController controller, NavMeshAgent agent, List<Vector3> path, Vector3 lastDestination, Transform aimToAttack)
     {
         _name = name;
         _audioManager = audioManager;
@@ -21,6 +22,7 @@ public class TankMoveState : State
         _controller = controller;
         _path = path;
         _lastDestination = lastDestination;
+        _aimToAttack = aimToAttack;
     }
 
     public override void OnEnter()
@@ -32,6 +34,8 @@ public class TankMoveState : State
 
     public override void OnExit()
     {
+        _agent.velocity = Vector3.zero;
+        _agent.transform.LookAt(_aimToAttack);
         _controller.SetBool(TankAnimationType.MoveBool, false);
     }
 

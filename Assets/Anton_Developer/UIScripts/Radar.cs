@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Radar : MonoBehaviour
 {
     [SerializeField] private RectTransform _radarUI;
@@ -10,14 +11,30 @@ public class Radar : MonoBehaviour
 
     private Transform _mainWeapon;
     private Dictionary<Transform, Image> _tanks = new Dictionary<Transform, Image>();
-
-
+    private Transform _MWHeadMovementTransform;
+    private Transform _MWBodyMovementTransform;
     private void Awake()
     {
-        _mainWeapon = FindObjectOfType<MWBodyMovement>().transform;
+        _MWHeadMovementTransform = FindObjectOfType<MWHeadMovement>().transform;
+        _MWBodyMovementTransform = FindObjectOfType<MWBodyMovement>().transform;
     }
 
     private void Update()
+    {
+        switch (SwitchCameraMode.CurrentMode) {
+            case CameraMode.Sniper: SniperRotation(); break;
+            case CameraMode.Default: DefaultRotation(); break;
+        }
+    }
+    private void SniperRotation()
+    {
+        RotationControl(_MWHeadMovementTransform);
+    }
+    private void DefaultRotation()
+    {
+        RotationControl(_MWBodyMovementTransform);
+    }
+    private void RotationControl(Transform transform)
     {
         foreach (var kvp in _tanks)
         {
@@ -26,8 +43,8 @@ public class Radar : MonoBehaviour
 
             if (tank == null) continue;
 
-            Vector3 directionToTank = tank.position - _mainWeapon.position;
-            directionToTank = Quaternion.Inverse(_mainWeapon.rotation) * directionToTank;
+            Vector3 directionToTank = tank.position - transform.position;
+            directionToTank = Quaternion.Inverse(transform.rotation) * directionToTank;
 
             float distanceToTank = directionToTank.magnitude;
             float normalizedDistance = Mathf.Clamp01(distanceToTank / _detectionRadius);
@@ -37,7 +54,7 @@ public class Radar : MonoBehaviour
             tankIcon.rectTransform.anchoredPosition = radarPos;
         }
     }
-
+   
     public void RegisterTank(Transform tank)
     {
         if (!_tanks.ContainsKey(tank))

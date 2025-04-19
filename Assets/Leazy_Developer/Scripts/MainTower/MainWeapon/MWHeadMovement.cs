@@ -9,8 +9,8 @@ public class MWHeadMovement : MonoBehaviour
 {
     [Header("Sniper Mode Parameters")]
     [SerializeField] private float _mouseSensitivity = 2.0f;
-    [SerializeField] private float verticalClampAngle = 10.0f;
-    [SerializeField] private float horizontalClampAngle = 45.0f;
+    [SerializeField] private float verticalClampAngle = 30.0f;
+    [SerializeField] private float horizontalClampAngle = 100.0f;
 
     private Vector3 _directionCameraToWeapon = Vector3.zero;
     private Vector3 _directionCameraToWorldCursor = Vector3.zero;
@@ -32,7 +32,7 @@ public class MWHeadMovement : MonoBehaviour
 
     private void Update()
     {
-        if (GamePause.Instance.IsPause)
+        if (CanvasInGame.IsLoseOrWin)
         {
             return;
         }
@@ -53,14 +53,31 @@ public class MWHeadMovement : MonoBehaviour
 
     private void DefaultRotateHead()
     {
-        transform.forward = _directionWeaponToCursorAim.normalized;
+        transform.forward += _directionWeaponToCursorAim.normalized;
+        ClampVertical();
     }
 
     private void SniperRotateHead()
     {
-        
-        transform.localRotation = Quaternion.Euler(-_rotation.x, _rotation.y, 0.0f);
+        transform.Rotate(-_rotation.x, _rotation.y, 0.0f);
+        ClampVertical();
+
     }
+    private void ClampVertical()
+    {
+        float currentXAngle = transform.localEulerAngles.x;
+        if (currentXAngle > 180) currentXAngle -= 360;
+        currentXAngle = Mathf.Clamp(currentXAngle, -verticalClampAngle, verticalClampAngle);
+        transform.localEulerAngles = new Vector3(currentXAngle, transform.localEulerAngles.y, 0);
+    }
+    private void ClampHorizontal()
+    {
+        float currentYAngle = transform.localEulerAngles.y;
+        if (currentYAngle > 180) currentYAngle -= 360;
+        currentYAngle = Mathf.Clamp(currentYAngle, -horizontalClampAngle, horizontalClampAngle);
+        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, currentYAngle, transform.localEulerAngles.z);
+    }
+
 
     private void CalculateDirections()
     {
@@ -83,10 +100,7 @@ public class MWHeadMovement : MonoBehaviour
     {
         Vector2 mouseDelta = InputManager.WeaponTopMoveDelta * Time.deltaTime;
 
-        _rotation.y += mouseDelta.x * _mouseSensitivity;
-        _rotation.x += mouseDelta.y * _mouseSensitivity;
-
-        _rotation.x = Mathf.Clamp(_rotation.x, -verticalClampAngle, verticalClampAngle);
-        _rotation.y = Mathf.Clamp(_rotation.y, -horizontalClampAngle, horizontalClampAngle);
+        _rotation.y = mouseDelta.x * _mouseSensitivity;
+        _rotation.x = mouseDelta.y * _mouseSensitivity;
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
     [SerializeField] private Texture2D _defaultCursor;
     [SerializeField] private int _maxNumberForStrings = 300;
     [SerializeField] private AudioClip _buttonClick;
@@ -23,6 +25,21 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        if (QualitySettings.vSyncCount == 1)
+        {
+            QualitySettings.vSyncCount = 0;
+        }
+
+        KilledTanksCount = 0;
         StringNumbers = new string[_maxNumberForStrings + 1];
         for (int i = 0; i < StringNumbers.Length; i++)
         {
@@ -36,6 +53,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        DynamicGI.UpdateEnvironment();
         StartCoroutine(WinListener());
         _maxTanksCount.text = string.Format("/{0}", GameManager.StringNumbers[MaxTanksCount]);
     }
@@ -73,6 +91,24 @@ public class GameManager : MonoBehaviour
     {
         PlayButtonSound();
         SceneManager.LoadScene(0);
+    }
+
+    public void SetPause(bool isPause)
+    {
+        if (isPause)
+        {
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        }
+        else
+        {
+            Cursor.SetCursor(_defaultCursor, new Vector2(_defaultCursor.width / 2, _defaultCursor.height / 2), CursorMode.Auto);
+
+            if (SwitchCameraMode.CurrentMode == CameraMode.Sniper)
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Confined;
+            }
+        }
     }
 
     private void PlayButtonSound()

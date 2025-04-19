@@ -8,6 +8,7 @@ public class SwitchCameraMode : MonoBehaviour
     [SerializeField] private GameObject _sniperCamera;
 
     public static CameraMode CurrentMode { get; private set; }
+    public static Action SwitchToDefaultModeAction;
 
     private void OnEnable()
     {
@@ -19,12 +20,17 @@ public class SwitchCameraMode : MonoBehaviour
         InputManager.SwitchCameraModeAction -= Switch;
     }
 
+    private void Awake()
+    {
+        CurrentMode = CameraMode.Default;
+    }
+
     private void Switch()
     {
         if (CurrentMode == CameraMode.Default)
         {
             Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Confined;
             
             _sniperCamera.SetActive(true);
             CurrentMode = CameraMode.Sniper;
@@ -36,6 +42,8 @@ public class SwitchCameraMode : MonoBehaviour
 
             _sniperCamera.SetActive(false);
             CurrentMode = CameraMode.Default;
+
+            SwitchToDefaultModeAction?.Invoke();
         }
     }
 }

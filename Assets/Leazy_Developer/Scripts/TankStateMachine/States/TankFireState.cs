@@ -14,11 +14,12 @@ public class TankFireState : State
     private readonly Transform _attackPoint;
     private readonly GameObject _bulletPrefab;
     private readonly float _fireRate;
+    ParticleSystem _attackParticles;
 
     private float _nextFireTime = 0f;
     private Quaternion _targetRotation = Quaternion.identity;
 
-    public TankFireState(TankAudioManager audioManager, TankAnimationController controller, NavMeshAgent agent, Transform attackPoint, Transform aimToAttack, GameObject bulletPrefab, float fireRate)
+    public TankFireState(TankAudioManager audioManager, TankAnimationController controller, NavMeshAgent agent, Transform attackPoint, Transform aimToAttack, GameObject bulletPrefab, float fireRate, ParticleSystem attackParticles)
     {
         _audioManager = audioManager;
         _controller = controller;
@@ -27,6 +28,7 @@ public class TankFireState : State
         _attackPoint = attackPoint;
         _bulletPrefab = bulletPrefab;
         _fireRate = fireRate;
+        _attackParticles = attackParticles;
     }
 
     public override void OnEnter()
@@ -48,6 +50,7 @@ public class TankFireState : State
     {
         if (Time.timeSinceLevelLoad >= _nextFireTime)
         {
+            _attackParticles.Play();
             _audioManager.PlayShoot();
             Shoot();
             _nextFireTime = Time.timeSinceLevelLoad + 1f / _fireRate;

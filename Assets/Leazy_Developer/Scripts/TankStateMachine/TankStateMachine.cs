@@ -1,5 +1,6 @@
 using Lean.Pool;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,7 +10,8 @@ public class TankStateMachine : MonoBehaviour, IPoolable
     [SerializeField] private Transform _attackPoint;
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Animator _animator;
-    [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private ParticleSystem _attackParticles;
+    [SerializeField] private ParticleSystem _deadParticles;
     [SerializeField] private float _fireRate = 2f; // Частота стрельбы в выстрелах в секунду
 
     private TankHealth _health;
@@ -28,6 +30,7 @@ public class TankStateMachine : MonoBehaviour, IPoolable
 
     public void OnSpawn()
     {
+        _agent.enabled = true;
         _radar.RegisterTank(transform);
         TankSpawnManager.tankCount++;
     }
@@ -38,6 +41,13 @@ public class TankStateMachine : MonoBehaviour, IPoolable
         GameManager.OnTankKilled();
         _radar.UnRegisterTank(transform);
         TankSpawnManager.tankCount--;
+
+        var bulletHoles = GetComponentsInChildren<BulletHole>();
+
+        foreach (var bulletHole in bulletHoles)
+        {
+            Destroy(bulletHole.gameObject);
+        }
     }
 
     public void Initialize(TankPath path)
@@ -63,16 +73,6 @@ public class TankStateMachine : MonoBehaviour, IPoolable
         _isMove = true;
     }
 
-    //private void OnEnable()
-    //{
-    //    GamePause.Instance?.AddPauseList(this);
-    //}
-
-    //private void OnDisable()
-    //{
-    //    GamePause.Instance?.RemovePauseList(this);
-    //}
-
     private void Awake()
     {
         _health = GetComponent<TankHealth>();
@@ -89,10 +89,10 @@ public class TankStateMachine : MonoBehaviour, IPoolable
 
     private void Update()
     {
-        //if (GamePause.Instance.IsPause)
-        //{
-        //    return;
-        //}
+        if (CanvasInGame.IsLoseOrWin)
+        {
+            return;
+        }
 
         _distanceToLastDestination = Vector3.Distance(transform.position, _lastDestination);
         _stateMachine?.OnUpdate();
@@ -100,10 +100,10 @@ public class TankStateMachine : MonoBehaviour, IPoolable
 
     private void FixedUpdate()
     {
-        //if (GamePause.Instance.IsPause)
-        //{
-        //    return;
-        //}
+        if (CanvasInGame.IsLoseOrWin)
+        {
+            return;
+        }
 
         _stateMachine?.OnFixedUpdate();
     }
@@ -113,9 +113,9 @@ public class TankStateMachine : MonoBehaviour, IPoolable
         _animationController = new TankAnimationController(_animator);
 
         State emptyState = new State();
-        State moveState = new TankMoveState(transform.gameObject.ToString(), _audioManager, _animationController, _agent, _path.Destinations, _lastDestination);
-        State fireState = new TankFireState(_audioManager, _animationController, _agent, _attackPoint, _aimToAttack, _bulletPrefab, _fireRate);
-        State deadState = new TankDeadState(_audioManager, _animationController, _particleSystem);
+        State moveState = new TankMoveState(transform.gameObject.ToString(), _audioManager, _animationController, _agent, _path.Destinations, _lastDestination, _aimToAttack);
+        State fireState = new TankFireState(_audioManager, _animationController, _agent, _attackPoint, _aimToAttack, _bulletPrefab, _fireRate, _attackParticles);
+        State deadState = new TankDeadState(_audioManager, _animationController, _deadParticles);
 
         emptyState.AddTransition(new StateTransition(moveState, new FuncStateCondition(() => _isMove)));
         
@@ -125,23 +125,5 @@ public class TankStateMachine : MonoBehaviour, IPoolable
         fireState.AddTransition(new StateTransition(deadState, new FuncStateCondition(() => _health.IsKilled)));
 
         _stateMachine = new StateMachine(emptyState);
-    }
-
-    public void IsPaused(bool isPaused)
-    {
-        //if (isPaused)
-        //{
-        //    _animationController.StopAnimator();
-        //    _agent.isStopped = true;
-        //    _targetPosition = _agent.destination;
-        //    _agent.Warp(_agent.transform.position);
-        //}
-        //else
-        //{
-        //    _animationController.PlayAnimator();
-        //    _agent.isStopped = false;
-        //    _agent.SetDestination(_targetPosition);
-        //}
-        
     }
 }

@@ -7,9 +7,13 @@ public class Bullet : MonoBehaviour, IPoolable
 {
     [SerializeField] private float _flySpeed;
     [SerializeField] private int _damage;
+    [SerializeField] private GameObject _bulletHole;
+
+    [SerializeField] private GameObject _explosionPrefab;
 
     private float _radius = 0.2f;
     private Rigidbody _rigidBody;
+    private int _layerMask;
 
     private void OnDrawGizmos()
     {
@@ -30,6 +34,7 @@ public class Bullet : MonoBehaviour, IPoolable
     private void Awake()
     {
         _rigidBody = GetComponent<Rigidbody>();
+        _layerMask = LayerMask.NameToLayer("InvisibleWalls");
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -40,6 +45,23 @@ public class Bullet : MonoBehaviour, IPoolable
             {
                 damageableObject.TakeDamage(_damage);
             }
+
+            if (collision.collider.TryGetComponent(out MainWeaponHealth mainWeaponHealth))
+            {
+                ContactPoint contactPoint = collision.contacts[0];
+                Quaternion normalRotation = Quaternion.LookRotation(contactPoint.normal);
+
+                GameObject obj = Instantiate(_explosionPrefab, contactPoint.point, normalRotation, collision.transform);
+                Destroy(obj, 2);
+            }
+        }
+
+        if (collision.transform.gameObject.layer != _layerMask)
+        {
+            ContactPoint contactPoint = collision.contacts[0];
+            Quaternion normalRotation = Quaternion.LookRotation(contactPoint.normal);
+
+            Instantiate(_bulletHole, contactPoint.point, normalRotation, collision.transform);
         }
 
         ReturnToPool();
@@ -47,6 +69,6 @@ public class Bullet : MonoBehaviour, IPoolable
 
     public void ReturnToPool()
     {
-        LeanPool.Despawn(gameObject);
+        LeanPool.Despawn(gameObject, 0.01f);
     }
 }
